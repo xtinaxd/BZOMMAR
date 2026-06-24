@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gallery — Explore the spaces, dining, and experiences of Bzommar Palace Hotel">
+    <title>Gallery | Bzommar Palace Hotel</title>
+    <link rel="icon" type="image/png" href="assets/images/bzommaricon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="gallery-page-body">
+    <canvas id="golden-droplets"></canvas>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav" aria-label="Primary navigation">
+            <div class="container">
+                <div class="nav__brand">
+                    <a href="index.html" class="nav__logo">
+                        <span class="nav__logo-text">BZOMMAR<span class="nav__logo-sub">PALACE HOTEL</span></span>
+                    </a>
+                </div>
+
+                <button type="button"
+                        class="nav__toggle"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                        aria-controls="nav-menu">
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                </button>
+
+                <div class="nav__backdrop"></div>
+                <div class="nav__menu" id="nav-menu">
+                    <div class="nav__menu-header">
+                        <a href="index.html" class="nav__menu-logo">
+                            <span class="nav__logo-text">BZOMMAR<span class="nav__logo-sub">PALACE HOTEL</span></span>
+                        </a>
+                        <button type="button" class="nav__close" aria-label="Close navigation menu">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <ul class="nav__menu-links">
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">ABOUT</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="about.html" class="nav__dropdown-item">Heritage</a></li>
+                                <li><a href="gallery.html" class="nav__dropdown-item">Gallery</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">ROOMS</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="rooms.html#twin-room" class="nav__dropdown-item">Twin Room</a></li>
+                                <li><a href="rooms.html#studio" class="nav__dropdown-item">Studio</a></li>
+                                <li><a href="rooms.html#family-room" class="nav__dropdown-item">Family Room</a></li>
+                                <li><a href="rooms.html#junior-suite" class="nav__dropdown-item">Junior Suite</a></li>
+                                <li><a href="rooms.html#executive-suite" class="nav__dropdown-item">Executive Suite</a></li>
+                                <li><a href="rooms.html#deluxe-sea-view" class="nav__dropdown-item">Deluxe Room-Sea View</a></li>
+                                <li><a href="rooms.html#standard-mountain-view" class="nav__dropdown-item">Standard Room-Mountain View</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">PACKAGES</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="wedding-packages.html" class="nav__dropdown-item">Weddings</a></li>
+                                <li><a href="event-packages.html#corporate" class="nav__dropdown-item">Corporate</a></li>
+                                <li><a href="event-packages.html#birthdays-galas" class="nav__dropdown-item">Birthdays &amp; Galas</a></li>
+                                <li><a href="event-packages.html#wellness-retreats" class="nav__dropdown-item">Wellness Retreats</a></li>
+                                <li><a href="event-packages.html#live-performance" class="nav__dropdown-item">Live Performance</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">SERVICES</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="tilalbzommar.html" class="nav__dropdown-item">Tilal Bzommar</a></li>
+                                <li><a href="pianobar.html" class="nav__dropdown-item">Piano Bar</a></li>
+                                <li><a href="pool.html" class="nav__dropdown-item">Pool</a></li>
+                                <li><a href="garden.html" class="nav__dropdown-item">Garden</a></li>
+                                <li><a href="conference-hall.html" class="nav__dropdown-item">Conference Hall</a></li>
+                                <li><a href="terrace.html" class="nav__dropdown-item">Terrace</a></li>
+                                <li><a href="gym.html" class="nav__dropdown-item">Gym</a></li>
+                                <li><a href="games-lounge.html" class="nav__dropdown-item">Games Lounge</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="contact.html" class="nav__link">
+                                <span class="nav__link-label">CONTACT</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <span class="star-border star-border--nav">
+                        <a href="booking.html" class="nav__cta btn btn--primary">BOOK NOW</a>
+                    </span>
+
+                    <div class="nav__menu-contact">
+                        <a href="tel:+9619240640" class="nav__menu-contact-item">
+                            <i data-lucide="phone" class="nav__menu-contact-icon"></i>
+                            +961 9 240 640
+                        </a>
+                        <a href="mailto:info@bzommarpalacehotel.com" class="nav__menu-contact-item">
+                            <i data-lucide="mail" class="nav__menu-contact-icon"></i>
+                            info@bzommarpalacehotel.com
+                        </a>
+                        <a href="https://maps.app.goo.gl/69iL68mLTKK5ZNaXA" target="_blank" rel="noopener noreferrer" class="nav__menu-contact-item">
+                            <i data-lucide="map-pin" class="nav__menu-contact-icon"></i>
+                            Bzommar, Mount Lebanon, Lebanon
+                        </a>
+                        <div class="nav__menu-socials" aria-label="Social links">
+                            <a href="https://www.instagram.com/bzommarpalacehotel?igsh=MW5tNDhrZGN5Z3oybQ==" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.facebook.com/share/1EsDgShjzD/" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="Facebook">
+                                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://wa.me/9619240640" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="WhatsApp">
+                                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Gallery Header -->
+        <section class="gallery-page__header">
+            <div class="gallery-page__bg" style="background-image: url('assets/images/footerpic.png');"></div>
+            <div class="gallery-page__bg-overlay"></div>
+            <div class="container">
+                <div class="gallery-page__intro">
+                    <span class="gallery-page__eyebrow">Visual Journal</span>
+                    <h1 class="gallery-page__title">The <em>Gallery</em></h1>
+                    <p class="gallery-page__lead">A curated collection of moments, from candlelit dinners and crystalline pools to misted gardens and grand gatherings, captured across every corner of Bzommar.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Bar -->
+        <section class="gallery-page__filter-section">
+            <div class="container">
+                <div class="gallery-filter" role="tablist" aria-label="Gallery categories">
+                    <button type="button" class="gallery-filter__chip gallery-filter__chip--active" data-filter="all" role="tab" aria-selected="true">All</button>
+                    <button type="button" class="gallery-filter__chip" data-filter="restaurant" role="tab" aria-selected="false">Restaurant</button>
+                    <button type="button" class="gallery-filter__chip" data-filter="pianobar" role="tab" aria-selected="false">Piano Bar</button>
+                    <button type="button" class="gallery-filter__chip" data-filter="pool" role="tab" aria-selected="false">Pool</button>
+                    <button type="button" class="gallery-filter__chip" data-filter="garden" role="tab" aria-selected="false">Garden</button>
+                    <button type="button" class="gallery-filter__chip" data-filter="conference" role="tab" aria-selected="false">Conference Hall</button>
+                    <button type="button" class="gallery-filter__chip" data-filter="terrace" role="tab" aria-selected="false">Terrace</button>
+                    <button type="button" class="gallery-filter__chip" data-filter="gym" role="tab" aria-selected="false">Gym</button>
+                    <button type="button" class="gallery-filter__chip" data-filter="games" role="tab" aria-selected="false">Games Lounge</button>
+                </div>
+                <label class="gallery-filter__mobile">
+                    <span class="gallery-filter__mobile-label">Sort Gallery</span>
+                    <select class="gallery-filter__mobile-select" id="gallery-filter-mobile" aria-label="Sort gallery by category">
+                        <option value="all">All</option>
+                        <option value="restaurant">Restaurant</option>
+                        <option value="pianobar">Piano Bar</option>
+                        <option value="pool">Pool</option>
+                        <option value="garden">Garden</option>
+                        <option value="conference">Conference Hall</option>
+                        <option value="terrace">Terrace</option>
+                        <option value="gym">Gym</option>
+                        <option value="games">Games Lounge</option>
+                    </select>
+                </label>
+                <div class="gallery-filter__meta">
+                    <span class="gallery-filter__count" id="gallery-count">0 photos</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Grid -->
+        <section class="gallery-page__grid-section">
+            <div class="container">
+                <div class="gallery-grid" id="gallery-grid" aria-live="polite"></div>
+                <p class="gallery-grid__empty" id="gallery-empty" hidden>No photos in this category yet.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" hidden>
+        <button type="button" class="lightbox__close" id="lightbox-close" aria-label="Close gallery viewer">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <button type="button" class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="Previous image">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <figure class="lightbox__figure">
+            <img class="lightbox__img" id="lightbox-img" alt="">
+            <figcaption class="lightbox__caption">
+                <span id="lightbox-category"></span>
+                <span class="lightbox__counter" id="lightbox-counter"></span>
+            </figcaption>
+        </figure>
+        <button type="button" class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="Next image">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-newsletter">
+                <div class="footer-newsletter__inner">
+                    <div class="footer-newsletter__content">
+                        <h3 class="footer-newsletter__heading">Sign up for our Newsletter</h3>
+                        <p class="footer-newsletter__text">Sign up to be the first to receive special news and event updates from us.</p>
+                    </div>
+                    <form class="footer-newsletter__form" action="#" method="post">
+                        <div class="footer-newsletter__input-row">
+                            <input type="email" class="footer-newsletter__input" placeholder="Your Email Address" required>
+                            <button type="submit" class="footer-newsletter__btn" aria-label="Subscribe">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </button>
+                        </div>
+                        <label class="footer-newsletter__checkbox">
+                            <input type="checkbox" required>
+                            <span>I agree to the <a href="privacy-policy.html" class="footer-newsletter__link">Privacy Policy</a></span>
+                        </label>
+                    </form>
+                </div>
+            </div>
+
+            <div class="site-footer__grid">
+                <div class="site-footer__col site-footer__col--brand">
+                    <h3 class="site-footer__logo">Bzommar</h3>
+                    <span class="site-footer__tagline">Palace Hotel</span>
+                    <p class="site-footer__brand-text">
+                        Set against the breathtaking backdrop of Bzommar's peaks, our hotel
+                        combines thoughtful design with warm hospitality.
+                    </p>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Quick Links</h4>
+                    <ul class="site-footer__list">
+                        <li><a href="rooms.html" class="site-footer__link">Rooms</a></li>
+                        <li><a href="events.html" class="site-footer__link">Events</a></li>
+                        <li><a href="about.html" class="site-footer__link">About</a></li>
+                        <li><a href="contact.html" class="site-footer__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Experiences</h4>
+                    <ul class="site-footer__list">
+                        <li><a href="tilalbzommar.html" class="site-footer__link">Tilal Bzommar</a></li>
+                        <li><a href="pianobar.html" class="site-footer__link">Piano Bar</a></li>
+                        <li><a href="pool.html" class="site-footer__link">Pool &amp; Terrace</a></li>
+                        <li><a href="#" class="site-footer__link">Wedding Venue</a></li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Contact</h4>
+                    <address class="site-footer__address">
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="map-pin" class="site-footer__icon"></i>
+                            <a href="https://maps.app.goo.gl/69iL68mLTKK5ZNaXA" target="_blank" rel="noopener noreferrer" class="site-footer__link">Bzommar, Lebanon</a>
+                        </p>
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="phone" class="site-footer__icon"></i>
+                            <a href="tel:+96112345678" class="site-footer__link">+961 1 234 5678</a>
+                        </p>
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="mail" class="site-footer__icon"></i>
+                            <a href="mailto:info@bzommar.com" class="site-footer__link">info@bzommar.com</a>
+                        </p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="site-footer__bottom">
+                <p>&copy; 2026 Bzommar Palace Hotel. All rights reserved.</p>
+                <a href="privacy-policy.html" class="site-footer__bottom-link">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+    (function () {
+        'use strict';
+
+        // Category catalogue: prefix + count + display label
+        var CATEGORIES = {
+            restaurant: { label: 'Restaurant',      prefix: 'cc', count: 8 },
+            pianobar:   { label: 'Piano Bar',       prefix: 'pb', count: 8 },
+            pool:       { label: 'Pool',            prefix: 'pw', count: 8 },
+            garden:     { label: 'Garden',          prefix: 'gd', count: 4 },
+            conference: { label: 'Conference Hall', prefix: 'co', count: 8 },
+            terrace:    { label: 'Terrace',         prefix: 'tr', count: 8 },
+            gym:        { label: 'Gym',             prefix: 'gm', count: 8 },
+            games:      { label: 'Games Lounge',    prefix: 'ga', count: 8 }
+        };
+        var ORDER = ['restaurant','pianobar','pool','garden','conference','terrace','gym','games'];
+
+        // Build the master list of items
+        var ITEMS = [];
+        ORDER.forEach(function (key) {
+            var c = CATEGORIES[key];
+            for (var i = 1; i <= c.count; i++) {
+                ITEMS.push({
+                    category: key,
+                    label: c.label,
+                    thumbSrc: 'assets/images/' + c.prefix + i + '.webp',
+                    fullSrc: 'assets/images/' + c.prefix + i + '.png'
+                });
+            }
+        });
+        var ALL_ORDER = [];
+        var maxCategoryCount = ORDER.reduce(function (max, key) {
+            return Math.max(max, CATEGORIES[key].count);
+        }, 0);
+        for (var n = 1; n <= maxCategoryCount; n++) {
+            ORDER.forEach(function (key) {
+                var idx = ITEMS.findIndex(function (item) {
+                    return item.category === key && item.fullSrc === 'assets/images/' + CATEGORIES[key].prefix + n + '.png';
+                });
+                if (idx !== -1) ALL_ORDER.push(idx);
+            });
+        }
+        var MOBILE_ALL_ORDER = ALL_ORDER.slice().sort(function (a, b) {
+            return ((a * 7) % ITEMS.length) - ((b * 7) % ITEMS.length);
+        });
+
+        var grid = document.getElementById('gallery-grid');
+        var emptyEl = document.getElementById('gallery-empty');
+        var countEl = document.getElementById('gallery-count');
+        var chips = document.querySelectorAll('.gallery-filter__chip');
+        var mobileFilter = document.getElementById('gallery-filter-mobile');
+
+        // Render all tiles once; filtering toggles visibility via class
+        function renderTiles() {
+            var frag = document.createDocumentFragment();
+            ITEMS.forEach(function (item, idx) {
+                var tile = document.createElement('button');
+                tile.type = 'button';
+                tile.className = 'gallery-tile';
+                tile.setAttribute('data-category', item.category);
+                tile.setAttribute('data-index', idx);
+                tile.setAttribute('aria-label', 'Open ' + item.label + ' image');
+
+                var img = document.createElement('img');
+                img.className = 'gallery-tile__img';
+                img.src = item.thumbSrc;
+                img.alt = item.label + ' at Bzommar Palace';
+                img.loading = 'lazy';
+                img.decoding = 'async';
+
+                var overlay = document.createElement('span');
+                overlay.className = 'gallery-tile__overlay';
+                overlay.innerHTML = '<span class="gallery-tile__tag">' + item.label + '</span>'
+                    + '<span class="gallery-tile__icon" aria-hidden="true">'
+                    + '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'
+                    + '<polyline points="15 3 21 3 21 9"></polyline>'
+                    + '<polyline points="9 21 3 21 3 15"></polyline>'
+                    + '<line x1="21" y1="3" x2="14" y2="10"></line>'
+                    + '<line x1="3" y1="21" x2="10" y2="14"></line>'
+                    + '</svg></span>';
+
+                tile.appendChild(img);
+                tile.appendChild(overlay);
+                frag.appendChild(tile);
+            });
+            grid.appendChild(frag);
+        }
+
+        function applyFilter(filter) {
+            var visible = 0;
+            var tiles = grid.querySelectorAll('.gallery-tile');
+            var orderedTiles = [];
+
+            if (filter === 'all') {
+                var allOrder = window.innerWidth <= 600 ? MOBILE_ALL_ORDER : ALL_ORDER;
+                orderedTiles = allOrder.map(function (idx) {
+                    return grid.querySelector('.gallery-tile[data-index="' + idx + '"]');
+                }).filter(Boolean);
+            } else {
+                orderedTiles = Array.prototype.slice.call(tiles);
+            }
+
+            orderedTiles.forEach(function (tile) {
+                grid.appendChild(tile);
+            });
+            tiles = grid.querySelectorAll('.gallery-tile');
+
+            tiles.forEach(function (tile) {
+                var match = (filter === 'all') || (tile.getAttribute('data-category') === filter);
+                if (match) {
+                    tile.classList.remove('gallery-tile--hidden');
+                    visible++;
+                } else {
+                    tile.classList.add('gallery-tile--hidden');
+                }
+            });
+            chips.forEach(function (chip) {
+                var active = chip.getAttribute('data-filter') === filter;
+                chip.classList.toggle('gallery-filter__chip--active', active);
+                chip.setAttribute('aria-selected', active ? 'true' : 'false');
+            });
+            if (mobileFilter) mobileFilter.value = filter;
+            countEl.textContent = visible + (visible === 1 ? ' photo' : ' photos');
+            emptyEl.hidden = visible !== 0;
+        }
+
+        function getFilterFromURL() {
+            var params = new URLSearchParams(window.location.search);
+            var f = (params.get('filter') || 'all').toLowerCase();
+            if (f !== 'all' && !CATEGORIES[f]) return 'all';
+            return f;
+        }
+
+        function updateFilterURL(filter) {
+            var url = new URL(window.location.href);
+            if (filter === 'all') url.searchParams.delete('filter');
+            else url.searchParams.set('filter', filter);
+            window.history.replaceState({}, '', url);
+        }
+
+        function scrollToMobileTop() {
+            if (window.innerWidth > 768) return;
+            var gridSection = document.querySelector('.gallery-page__grid-section');
+            if (!gridSection) return;
+            var filterOffset = document.querySelector('.gallery-page__filter-section');
+            var offset = (filterOffset ? filterOffset.offsetHeight : 0) + 72;
+            var top = window.pageYOffset + gridSection.getBoundingClientRect().top - offset;
+            window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+        }
+
+        if (mobileFilter) {
+            mobileFilter.addEventListener('change', function () {
+                applyFilter(mobileFilter.value);
+                updateFilterURL(mobileFilter.value);
+                scrollToMobileTop();
+            });
+        }
+
+        window.addEventListener('resize', function () {
+            var active = mobileFilter ? mobileFilter.value : getFilterFromURL();
+            if (active === 'all') applyFilter('all');
+        });
+
+        // Lightbox
+        var lightbox = document.getElementById('lightbox');
+        var lbImg = document.getElementById('lightbox-img');
+        var lbCat = document.getElementById('lightbox-category');
+        var lbCounter = document.getElementById('lightbox-counter');
+        var lbClose = document.getElementById('lightbox-close');
+        var lbPrev = document.getElementById('lightbox-prev');
+        var lbNext = document.getElementById('lightbox-next');
+        var lbList = [];
+        var lbIndex = 0;
+
+        function openLightbox(startIdx) {
+            // Build list from currently-visible tiles to keep navigation in-sync with filter
+            var visibleTiles = Array.prototype.slice.call(
+                grid.querySelectorAll('.gallery-tile:not(.gallery-tile--hidden)')
+            );
+            lbList = visibleTiles.map(function (t) {
+                var idx = parseInt(t.getAttribute('data-index'), 10);
+                return ITEMS[idx];
+            });
+            // Find clicked item position within visible list
+            var clickedItem = ITEMS[startIdx];
+            lbIndex = Math.max(0, lbList.indexOf(clickedItem));
+            showLightbox();
+        }
+
+        function showLightbox() {
+            if (!lbList.length) return;
+            var item = lbList[lbIndex];
+            lbImg.src = item.fullSrc;
+            lbImg.alt = item.label;
+            lbCat.textContent = item.label;
+            lbCounter.textContent = (lbIndex + 1) + ' / ' + lbList.length;
+            lightbox.hidden = false;
+            document.body.classList.add('no-scroll');
+        }
+
+        function closeLightbox() {
+            lightbox.hidden = true;
+            document.body.classList.remove('no-scroll');
+            lbImg.src = '';
+        }
+
+        function nextLightbox() {
+            if (!lbList.length) return;
+            lbIndex = (lbIndex + 1) % lbList.length;
+            showLightbox();
+        }
+
+        function prevLightbox() {
+            if (!lbList.length) return;
+            lbIndex = (lbIndex - 1 + lbList.length) % lbList.length;
+            showLightbox();
+        }
+
+        // Wire events
+        chips.forEach(function (chip) {
+            chip.addEventListener('click', function () {
+                var f = chip.getAttribute('data-filter');
+                applyFilter(f);
+                updateFilterURL(f);
+            });
+        });
+
+        grid.addEventListener('click', function (e) {
+            var tile = e.target.closest('.gallery-tile');
+            if (!tile) return;
+            openLightbox(parseInt(tile.getAttribute('data-index'), 10));
+        });
+
+        lbClose.addEventListener('click', closeLightbox);
+        lbNext.addEventListener('click', nextLightbox);
+        lbPrev.addEventListener('click', prevLightbox);
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (lightbox.hidden) return;
+            if (e.key === 'Escape') closeLightbox();
+            else if (e.key === 'ArrowRight') nextLightbox();
+            else if (e.key === 'ArrowLeft') prevLightbox();
+        });
+
+        // Init
+        renderTiles();
+        applyFilter(getFilterFromURL());
+    })();
+    </script>
+</body>
+</html>

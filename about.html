@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Bzommar Palace Hotel, a mountain retreat in Mount Lebanon welcoming guests since 1956.">
+    <title>About Us | Bzommar Palace Hotel</title>
+    <link rel="icon" type="image/png" href="assets/images/bzommaricon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <canvas id="golden-droplets"></canvas>
+
+    <header class="header">
+        <nav class="nav" aria-label="Primary navigation">
+            <div class="container">
+                <div class="nav__brand">
+                    <a href="index.html" class="nav__logo">
+                        <span class="nav__logo-text">BZOMMAR<span class="nav__logo-sub">PALACE HOTEL</span></span>
+                    </a>
+                </div>
+
+                <button type="button"
+                        class="nav__toggle"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                        aria-controls="nav-menu">
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                </button>
+
+                <div class="nav__backdrop"></div>
+                <div class="nav__menu" id="nav-menu">
+                    <div class="nav__menu-header">
+                        <a href="index.html" class="nav__menu-logo">
+                            <span class="nav__logo-text">BZOMMAR<span class="nav__logo-sub">PALACE HOTEL</span></span>
+                        </a>
+                        <button type="button" class="nav__close" aria-label="Close navigation menu">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <ul class="nav__menu-links">
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link nav__link--active">
+                                <span class="nav__link-label">ABOUT</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="about.html" class="nav__dropdown-item">Heritage</a></li>
+                                <li><a href="gallery.html" class="nav__dropdown-item">Gallery</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">ROOMS</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="rooms.html#twin-room" class="nav__dropdown-item">Twin Room</a></li>
+                                <li><a href="rooms.html#studio" class="nav__dropdown-item">Studio</a></li>
+                                <li><a href="rooms.html#family-room" class="nav__dropdown-item">Family Room</a></li>
+                                <li><a href="rooms.html#junior-suite" class="nav__dropdown-item">Junior Suite</a></li>
+                                <li><a href="rooms.html#executive-suite" class="nav__dropdown-item">Executive Suite</a></li>
+                                <li><a href="rooms.html#deluxe-sea-view" class="nav__dropdown-item">Deluxe Room-Sea View</a></li>
+                                <li><a href="rooms.html#standard-mountain-view" class="nav__dropdown-item">Standard Room-Mountain View</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">PACKAGES</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="wedding-packages.html" class="nav__dropdown-item">Weddings</a></li>
+                                <li><a href="event-packages.html#corporate" class="nav__dropdown-item">Corporate</a></li>
+                                <li><a href="event-packages.html#birthdays-galas" class="nav__dropdown-item">Birthdays &amp; Galas</a></li>
+                                <li><a href="event-packages.html#wellness-retreats" class="nav__dropdown-item">Wellness Retreats</a></li>
+                                <li><a href="event-packages.html#live-performance" class="nav__dropdown-item">Live Performance</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">SERVICES</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="tilalbzommar.html" class="nav__dropdown-item">Tilal Bzommar</a></li>
+                                <li><a href="pianobar.html" class="nav__dropdown-item">Piano Bar</a></li>
+                                <li><a href="pool.html" class="nav__dropdown-item">Pool</a></li>
+                                <li><a href="garden.html" class="nav__dropdown-item">Garden</a></li>
+                                <li><a href="conference-hall.html" class="nav__dropdown-item">Conference Hall</a></li>
+                                <li><a href="terrace.html" class="nav__dropdown-item">Terrace</a></li>
+                                <li><a href="gym.html" class="nav__dropdown-item">Gym</a></li>
+                                <li><a href="games-lounge.html" class="nav__dropdown-item">Games Lounge</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="contact.html" class="nav__link">
+                                <span class="nav__link-label">CONTACT</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <span class="star-border star-border--nav">
+                        <a href="booking.html" class="nav__cta btn btn--primary">BOOK NOW</a>
+                    </span>
+
+                    <div class="nav__menu-contact">
+                        <a href="tel:+9619240640" class="nav__menu-contact-item">
+                            <i data-lucide="phone" class="nav__menu-contact-icon"></i>
+                            +961 9 240 640
+                        </a>
+                        <a href="mailto:info@bzommarpalacehotel.com" class="nav__menu-contact-item">
+                            <i data-lucide="mail" class="nav__menu-contact-icon"></i>
+                            info@bzommarpalacehotel.com
+                        </a>
+                        <a href="https://maps.app.goo.gl/69iL68mLTKK5ZNaXA" target="_blank" rel="noopener noreferrer" class="nav__menu-contact-item">
+                            <i data-lucide="map-pin" class="nav__menu-contact-icon"></i>
+                            Bzommar, Mount Lebanon, Lebanon
+                        </a>
+                        <div class="nav__menu-socials" aria-label="Social links">
+                            <a href="https://www.instagram.com/bzommarpalacehotel?igsh=MW5tNDhrZGN5Z3oybQ==" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.facebook.com/share/1EsDgShjzD/" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="Facebook">
+                                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://wa.me/9619240640" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="WhatsApp">
+                                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero hero--about" aria-labelledby="about-page-title">
+            <div class="hero__background">
+                <img class="hero__video" src="assets/images/heritagehero.webp" alt="" aria-hidden="true">
+                <div class="hero__overlay"></div>
+                <div class="hero__gradient-overlay"></div>
+            </div>
+
+            <div class="container">
+                <div class="hero__content">
+                    <div class="hero__eyebrow">Est. 1956 &middot; MOUNT LEBANON</div>
+                    <h1 class="hero__title" id="about-page-title">About Us</h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="tilal-dining tilal-dining--centered tilal-dining--about-showcase" aria-labelledby="about-showcase-title">
+            <div class="container">
+                <div class="tilal-dining__grid">
+                    <div class="tilal-dining__text tilal-dining__text--centered">
+                        <span class="tilal-dining__eyebrow">BZOMMAR PALACE</span>
+                        <h2 class="tilal-dining__heading" id="about-showcase-title">A Showcase of<br><em>Mountain Heritage</em></h2>
+                        <p class="tilal-dining__body">The Bzommar Palace Hotel is a tribute to the country&rsquo;s enduring natural beauty. Through a visionary multi-million dollar restoration, we have transformed this landmark into a premier four-star destination that seamlessly bridges the gap between history and innovation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tilal-dining tilal-dining--about-modern" aria-labelledby="about-modern-title">
+            <div class="container">
+                <div class="tilal-dining__grid">
+                    <div class="tilal-dining__text">
+                        <span class="tilal-dining__eyebrow">ABOUT BZOMMAR PALACE</span>
+                        <h2 class="tilal-dining__heading" id="about-modern-title">A Modern Escape In<br>A Historic Setting</h2>
+                        <p class="tilal-dining__body">We believe that luxury shouldn&rsquo;t come at the cost of the environment. By integrating modern architecture and the latest hospitality technologies into our historical site, we&rsquo;ve created a space that is as ecologically conscious as it is comfortable.</p>
+                    </div>
+
+                    <div class="tilal-dining__images tilal-dining__images--frame">
+                        <div class="tilal-dining__media-frame">
+                            <img src="assets/images/aboutintro.webp" alt="Modern architecture at Bzommar Palace Hotel" class="tilal-dining__media-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tilal-dining tilal-dining--about-modern tilal-dining--about-story" aria-labelledby="about-story-title">
+            <div class="container">
+                <div class="tilal-dining__grid">
+                    <div class="tilal-dining__images tilal-dining__images--frame">
+                        <div class="tilal-dining__media-frame">
+                            <img src="assets/images/aboutintro.webp" alt="Bzommar Palace Hotel overlooking the Bay of Jounieh" class="tilal-dining__media-image">
+                        </div>
+                    </div>
+
+                    <div class="tilal-dining__text">
+                        <span class="tilal-dining__eyebrow">OUR STORY</span>
+                        <h2 class="tilal-dining__heading" id="about-story-title">A History Of Mountain Hospitality</h2>
+                        <p class="tilal-dining__body">Perched above the Bay of Jounieh, Bzommar Palace was built in 1956 as a sanctuary of stone, light, and silence. Decades later, it remains what it has always been, a place apart.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-panorama" aria-label="Panoramic still image of Bzommar Palace Hotel">
+            <div class="about-panorama__sticky">
+                <div class="about-panorama__viewport">
+                    <img src="assets/images/abouttext.jpg" alt="Panoramic terrace view at Bzommar Palace Hotel" class="about-panorama__image">
+                    <div class="about-panorama__content">
+                        <p class="about-panorama__eyebrow">A LETTER FROM THE FAMILY</p>
+                        <blockquote class="about-panorama__quote">"We do not manage a hotel so much as tend to a house that has always known how to welcome."</blockquote>
+                        <p class="about-panorama__author">&mdash; THE STEWARDS OF BZOMMAR</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-history" aria-labelledby="about-history-title">
+            <div class="container">
+                <div class="about-history__intro">
+                    <span class="about-history__eyebrow">A Timeline</span>
+                    <h2 class="about-history__title" id="about-history-title">Moments That <em>Shaped Us</em></h2>
+                </div>
+
+                <div class="about-history__timeline">
+                    <article class="about-history__item">
+                        <div class="about-history__year-group">
+                            <span class="about-history__label">Foundation</span>
+                            <p class="about-history__year">1956</p>
+                        </div>
+                        <div class="about-history__marker" aria-hidden="true"></div>
+                        <div class="about-history__copy">
+                            <p>Established in 1956, the hotel was built to mirror the grandeur of the nearby Armenian Patriarchate. It featured the classic stone craftsmanship that defined the era&rsquo;s elite mountain retreats.</p>
+                        </div>
+                    </article>
+
+                    <article class="about-history__item about-history__item--reverse">
+                        <div class="about-history__year-group">
+                            <span class="about-history__label">Paris Of The Middle East</span>
+                            <p class="about-history__year">1960</p>
+                        </div>
+                        <div class="about-history__marker" aria-hidden="true"></div>
+                        <div class="about-history__copy">
+                            <p>The hotel was a central part of Lebanon&rsquo;s booming tourism sector. It hosted international dignitaries and intellectuals who were drawn to its proximity to Harissa and the Jeita Grotto.</p>
+                        </div>
+                    </article>
+
+                    <article class="about-history__item">
+                        <div class="about-history__year-group">
+                            <span class="about-history__label">Transition &amp; Resilience</span>
+                            <p class="about-history__year">1975</p>
+                        </div>
+                        <div class="about-history__marker" aria-hidden="true"></div>
+                        <div class="about-history__copy">
+                            <p>While the tourism industry faced immense pressure during the Lebanese Civil War (1975-1990), the hotel remained a symbol of stability in the Keserwan region, maintaining its vintage charm and ecological integrity while many other landmarks fell into disrepair.</p>
+                        </div>
+                    </article>
+
+                    <article class="about-history__item about-history__item--reverse">
+                        <div class="about-history__year-group">
+                            <span class="about-history__label">Initial Modernization</span>
+                            <p class="about-history__year">1996</p>
+                        </div>
+                        <div class="about-history__marker" aria-hidden="true"></div>
+                        <div class="about-history__copy">
+                            <p>The late 90s saw the first phases of upgrading the hotel&rsquo;s infrastructure to meet evolving international safety and service standards while carefully protecting the ancient pine groves.</p>
+                        </div>
+                    </article>
+
+                    <article class="about-history__item">
+                        <div class="about-history__year-group">
+                            <span class="about-history__label">Legacy For The Future</span>
+                            <p class="about-history__year">2026</p>
+                        </div>
+                        <div class="about-history__marker" aria-hidden="true"></div>
+                        <div class="about-history__copy">
+                            <p>By 2026, the hotel has fully embraced the Modern Heritage aesthetic. This includes the integration of the latest technologies such as a digital concierge system, responsive guest interfaces, and ecologically sound energy solutions.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-map" aria-labelledby="about-map-title">
+            <div class="container">
+                <div class="about-map__intro">
+                    <span class="about-map__eyebrow">Here &amp; Nearby</span>
+                    <h2 class="about-map__title" id="about-map-title">The <em>Neighborhood</em></h2>
+                </div>
+            </div>
+
+            <div class="about-map__frame">
+                <div class="about-map__canvas" id="about-map-canvas" data-lat="33.9880556" data-lng="35.6802778" data-zoom="14.2" data-name="Bzommar Palace Hotel" aria-label="Interactive map showing the location of Bzommar Palace Hotel">
+                    <p class="about-map__fallback">Interactive map preview loading&hellip;</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-nearby" aria-labelledby="about-nearby-title">
+            <div class="container">
+                <div class="about-nearby__intro">
+                    <span class="about-nearby__eyebrow">Worth the walk</span>
+                    <h2 class="about-nearby__title" id="about-nearby-title"><em>Curated</em> nearby experiences</h2>
+                </div>
+
+                <div class="about-nearby__viewport">
+                    <div class="about-nearby__grid">
+                        <a class="about-nearby__card" href="https://www.google.com/maps/dir/?api=1&amp;destination=33.98450645676165,35.684518381304635" target="_blank" rel="noopener noreferrer">
+                        <div class="about-nearby__media">
+                            <img src="assets/images/abouttext.jpg" alt="Hilltop monastery silhouette in Bzommar at sunset">
+                        </div>
+                        <p class="about-nearby__meta">2 min walk</p>
+                        <h3 class="about-nearby__card-title">The Convent</h3>
+                        <p class="about-nearby__text">18th-century Armenian Catholic monastery and museum of sacred art.</p>
+                        </a>
+
+                        <a class="about-nearby__card" href="https://www.google.com/maps/dir/?api=1&amp;destination=Harissa%2C%20Lebanon" target="_blank" rel="noopener noreferrer">
+                        <div class="about-nearby__media">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jounieh_from_Harissa,%20Lebanon.jpg" alt="View over Jounieh Bay from Harissa">
+                        </div>
+                        <p class="about-nearby__meta">8 min drive</p>
+                        <h3 class="about-nearby__card-title">Harissa</h3>
+                        <p class="about-nearby__text">The teleferique and Our Lady of Lebanon with iconic views over the bay.</p>
+                        </a>
+
+                        <a class="about-nearby__card" href="https://www.google.com/maps/dir/?api=1&amp;destination=Jeita%20Grotto%2C%20Lebanon" target="_blank" rel="noopener noreferrer">
+                        <div class="about-nearby__media">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Upper%20Grotto.JPG" alt="Illuminated chamber inside Jeita Grotto">
+                        </div>
+                        <p class="about-nearby__meta">15 min drive</p>
+                        <h3 class="about-nearby__card-title">Jeita Grotto</h3>
+                        <p class="about-nearby__text">Limestone caverns carved by the Nahr el-Kalb over countless millennia.</p>
+                        </a>
+
+                        <a class="about-nearby__card" href="https://www.google.com/maps/dir/?api=1&amp;destination=Byblos%2C%20Lebanon" target="_blank" rel="noopener noreferrer">
+                        <div class="about-nearby__media">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Byblos_historic_quarter,_Byblos,_Lebanon.jpg" alt="Historic quarter and stone streets in Byblos">
+                        </div>
+                        <p class="about-nearby__meta">20 min drive</p>
+                        <h3 class="about-nearby__card-title">Byblos</h3>
+                        <p class="about-nearby__text">One of the oldest continuously inhabited cities in the world.</p>
+                        </a>
+
+                        <a class="about-nearby__card" href="https://www.google.com/maps/dir/?api=1&amp;destination=Beirut%20Souks%2C%20Beirut%2C%20Lebanon" target="_blank" rel="noopener noreferrer">
+                        <div class="about-nearby__media">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Beirut_Souks_Downtown.jpg" alt="Entrance to Beirut Souks in downtown Beirut">
+                        </div>
+                        <p class="about-nearby__meta">30 min drive</p>
+                        <h3 class="about-nearby__card-title">Beirut Souks</h3>
+                        <p class="about-nearby__text">Downtown Beirut&rsquo;s restored heritage district of shops, cafes, and promenades.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="about-nearby__pagination" aria-label="Nearby experiences pagination"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer site-footer--contact" role="contentinfo">
+        <div class="container">
+            <div class="footer-newsletter">
+                <div class="footer-newsletter__inner">
+                    <div class="footer-newsletter__content">
+                        <h3 class="footer-newsletter__heading">Sign up for our Newsletter</h3>
+                        <p class="footer-newsletter__text">Sign up to be the first to receive special news and event updates from us.</p>
+                    </div>
+                    <form class="footer-newsletter__form" action="#" method="post">
+                        <div class="footer-newsletter__input-row">
+                            <input type="email" class="footer-newsletter__input" placeholder="Your Email Address" required>
+                            <button type="submit" class="footer-newsletter__btn" aria-label="Subscribe">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </button>
+                        </div>
+                        <label class="footer-newsletter__checkbox">
+                            <input type="checkbox" required>
+                            <span>I agree to the <a href="privacy-policy.html" class="footer-newsletter__link">Privacy Policy</a></span>
+                        </label>
+                    </form>
+                </div>
+            </div>
+
+            <div class="site-footer__grid">
+                <div class="site-footer__col site-footer__col--brand">
+                    <h3 class="site-footer__logo">Bzommar</h3>
+                    <span class="site-footer__tagline">Palace Hotel</span>
+                    <p class="site-footer__brand-text">
+                        Set against the breathtaking backdrop of Bzommar's peaks, our hotel combines thoughtful design with warm hospitality.
+                    </p>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Quick Links</h4>
+                    <ul class="site-footer__list">
+                        <li><a href="about.html" class="site-footer__link">About</a></li>
+                        <li><a href="rooms.html" class="site-footer__link">Rooms</a></li>
+                        <li><a href="event-packages.html" class="site-footer__link">Events</a></li>
+                        <li><a href="contact.html" class="site-footer__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Experiences</h4>
+                    <ul class="site-footer__list">
+                        <li><a href="tilalbzommar.html" class="site-footer__link">Tilal Bzommar</a></li>
+                        <li><a href="pianobar.html" class="site-footer__link">Piano Bar</a></li>
+                        <li><a href="pool.html" class="site-footer__link">Pool &amp; Terrace</a></li>
+                        <li><a href="wedding-packages.html" class="site-footer__link">Wedding Venue</a></li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Opening Hours</h4>
+                    <ul class="site-footer__hours">
+                        <li>Mon - Thu: 12pm to 9pm</li>
+                        <li>Fri: 12pm to 10pm</li>
+                        <li>Sat: 11:30am to 10pm</li>
+                        <li>Sun: 11:30am to 8:30pm</li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Contact</h4>
+                    <address class="site-footer__address">
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="map-pin" class="site-footer__icon"></i>
+                            <a href="https://maps.app.goo.gl/69iL68mLTKK5ZNaXA" target="_blank" rel="noopener noreferrer" class="site-footer__link">Bzommar, Lebanon</a>
+                        </p>
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="phone" class="site-footer__icon"></i>
+                            <a href="tel:+9619240640" class="site-footer__link">+961 9 240 640</a>
+                        </p>
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="mail" class="site-footer__icon"></i>
+                            <a href="mailto:info@bzommar.com" class="site-footer__link">info@bzommar.com</a>
+                        </p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="site-footer__bottom">
+                <p>&copy; 2026 Bzommar Palace Hotel. All rights reserved.</p>
+                <a href="privacy-policy.html" class="site-footer__bottom-link">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

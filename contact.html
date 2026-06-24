@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Bzommar Palace Hotel for reservations, directions, and private events.">
+    <title>Contact | Bzommar Palace Hotel</title>
+    <link rel="icon" type="image/png" href="assets/images/bzommaricon.png">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="contact-page-body">
+    <canvas id="golden-droplets"></canvas>
+
+    <header class="header">
+        <nav class="nav" aria-label="Primary navigation">
+            <div class="container">
+                <div class="nav__brand">
+                    <a href="index.html" class="nav__logo">
+                        <span class="nav__logo-text">BZOMMAR<span class="nav__logo-sub">PALACE HOTEL</span></span>
+                    </a>
+                </div>
+
+                <button type="button"
+                        class="nav__toggle"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                        aria-controls="nav-menu">
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                </button>
+
+                <div class="nav__backdrop"></div>
+                <div class="nav__menu" id="nav-menu">
+                    <div class="nav__menu-header">
+                        <a href="index.html" class="nav__menu-logo">
+                            <span class="nav__logo-text">BZOMMAR<span class="nav__logo-sub">PALACE HOTEL</span></span>
+                        </a>
+                        <button type="button" class="nav__close" aria-label="Close navigation menu">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <ul class="nav__menu-links">
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">ABOUT</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="about.html" class="nav__dropdown-item">Heritage</a></li>
+                                <li><a href="gallery.html" class="nav__dropdown-item">Gallery</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">ROOMS</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="rooms.html#twin-room" class="nav__dropdown-item">Twin Room</a></li>
+                                <li><a href="rooms.html#studio" class="nav__dropdown-item">Studio</a></li>
+                                <li><a href="rooms.html#family-room" class="nav__dropdown-item">Family Room</a></li>
+                                <li><a href="rooms.html#junior-suite" class="nav__dropdown-item">Junior Suite</a></li>
+                                <li><a href="rooms.html#executive-suite" class="nav__dropdown-item">Executive Suite</a></li>
+                                <li><a href="rooms.html#deluxe-sea-view" class="nav__dropdown-item">Deluxe Room-Sea View</a></li>
+                                <li><a href="rooms.html#standard-mountain-view" class="nav__dropdown-item">Standard Room-Mountain View</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">PACKAGES</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="wedding-packages.html" class="nav__dropdown-item">Weddings</a></li>
+                                <li><a href="event-packages.html#corporate" class="nav__dropdown-item">Corporate</a></li>
+                                <li><a href="event-packages.html#birthdays-galas" class="nav__dropdown-item">Birthdays &amp; Galas</a></li>
+                                <li><a href="event-packages.html#wellness-retreats" class="nav__dropdown-item">Wellness Retreats</a></li>
+                                <li><a href="event-packages.html#live-performance" class="nav__dropdown-item">Live Performance</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">SERVICES</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="tilalbzommar.html" class="nav__dropdown-item">Tilal Bzommar</a></li>
+                                <li><a href="pianobar.html" class="nav__dropdown-item">Piano Bar</a></li>
+                                <li><a href="pool.html" class="nav__dropdown-item">Pool</a></li>
+                                <li><a href="garden.html" class="nav__dropdown-item">Garden</a></li>
+                                <li><a href="conference-hall.html" class="nav__dropdown-item">Conference Hall</a></li>
+                                <li><a href="terrace.html" class="nav__dropdown-item">Terrace</a></li>
+                                <li><a href="gym.html" class="nav__dropdown-item">Gym</a></li>
+                                <li><a href="games-lounge.html" class="nav__dropdown-item">Games Lounge</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="contact.html" class="nav__link nav__link--active" aria-current="page">
+                                <span class="nav__link-label">CONTACT</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <span class="star-border star-border--nav">
+                        <a href="booking.html" class="nav__cta btn btn--primary">BOOK NOW</a>
+                    </span>
+
+                    <div class="nav__menu-contact">
+                        <a href="tel:+9619240640" class="nav__menu-contact-item">
+                            <i data-lucide="phone" class="nav__menu-contact-icon"></i>
+                            +961 9 240 640
+                        </a>
+                        <a href="mailto:info@bzommarpalacehotel.com" class="nav__menu-contact-item">
+                            <i data-lucide="mail" class="nav__menu-contact-icon"></i>
+                            info@bzommarpalacehotel.com
+                        </a>
+                        <a href="https://maps.app.goo.gl/69iL68mLTKK5ZNaXA" target="_blank" rel="noopener noreferrer" class="nav__menu-contact-item">
+                            <i data-lucide="map-pin" class="nav__menu-contact-icon"></i>
+                            Bzommar, Mount Lebanon, Lebanon
+                        </a>
+                        <div class="nav__menu-socials" aria-label="Social links">
+                            <a href="https://www.instagram.com/bzommarpalacehotel?igsh=MW5tNDhrZGN5Z3oybQ==" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.facebook.com/share/1EsDgShjzD/" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="Facebook">
+                                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://wa.me/9619240640" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="WhatsApp">
+                                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contact-page">
+        <section class="contact-page__intro" aria-labelledby="contact-page-title">
+            <div class="container contact-page__intro-grid">
+                <div class="contact-page__intro-copy">
+                    <span class="contact-page__eyebrow">Find Us</span>
+                    <h1 class="contact-page__title" id="contact-page-title">
+                        <em>Bzommar,</em>
+                        <span>Mount Lebanon</span>
+                    </h1>
+
+                    <div class="contact-page__facts">
+                        <article class="contact-page__fact">
+                            <span class="contact-page__fact-label">Coordinates</span>
+                            <p class="contact-page__fact-value">33&deg;56'42&quot;N<br>35&deg;41'38&quot;E</p>
+                        </article>
+                        <article class="contact-page__fact">
+                            <span class="contact-page__fact-label">Elevation</span>
+                            <p class="contact-page__fact-value">1,150 m<br>above sea level</p>
+                        </article>
+                        <article class="contact-page__fact">
+                            <span class="contact-page__fact-label">Telephone</span>
+                            <p class="contact-page__fact-value"><a href="tel:+9619240640">+961 9 240 640</a></p>
+                        </article>
+                        <article class="contact-page__fact">
+                            <span class="contact-page__fact-label">Email</span>
+                            <p class="contact-page__fact-value"><a href="mailto:info@bzommar.com">info@bzommar.com</a></p>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="contact-page__direction">
+                    <div class="contact-page__compass-shell">
+                        <img src="assets/images/compass.svg" alt="" class="contact-page__compass" aria-hidden="true">
+                    </div>
+
+                    <p class="contact-page__travel-time">30 minutes from Beirut</p>
+                    <p class="contact-page__travel-route">Via the coastal road to Jounieh</p>
+
+                    <nav class="contact-page__socials" aria-label="Social links">
+                        <a href="https://www.instagram.com/bzommarpalacehotel?igsh=MW5tNDhrZGN5Z3oybQ==" target="_blank" rel="noopener noreferrer" class="contact-page__social-link" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/1EsDgShjzD/" target="_blank" rel="noopener noreferrer" class="contact-page__social-link" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://wa.me/9619240640" target="_blank" rel="noopener noreferrer" class="contact-page__social-link" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-reserve" aria-labelledby="contact-reserve-title">
+            <div class="container contact-reserve__grid">
+                <div class="contact-reserve__content">
+                    <h2 class="contact-reserve__title" id="contact-reserve-title">Begin a <em>conversation</em></h2>
+
+                    <form class="contact-reserve__form" action="https://formspree.io/f/mykqybrg" method="post">
+                        <div class="contact-reserve__row contact-reserve__row--three">
+                            <label class="contact-reserve__field contact-reserve__field--select">
+                                <select name="party-size" aria-label="Party size" required>
+                                    <option>1 Person</option>
+                                    <option>2 People</option>
+                                    <option>3 People</option>
+                                    <option>4 People</option>
+                                    <option>5+ People</option>
+                                </select>
+                            </label>
+                            <label class="contact-reserve__field">
+                                <input type="text" name="date" placeholder="mm/dd/yyyy" aria-label="Preferred date" required>
+                            </label>
+                            <label class="contact-reserve__field contact-reserve__field--select">
+                                <select name="time" aria-label="Preferred time" required>
+                                    <option>8:00 PM</option>
+                                    <option>6:30 PM</option>
+                                    <option>7:00 PM</option>
+                                    <option>7:30 PM</option>
+                                    <option>8:30 PM</option>
+                                    <option>9:00 PM</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <div class="contact-reserve__row contact-reserve__row--three">
+                            <label class="contact-reserve__field">
+                                <input type="text" name="name" placeholder="Your Name" aria-label="Your name" required>
+                            </label>
+                            <label class="contact-reserve__field">
+                                <input type="email" name="email" placeholder="Email" aria-label="Email" required>
+                            </label>
+                            <label class="contact-reserve__field">
+                                <input type="tel" name="phone" placeholder="Phone" aria-label="Phone" inputmode="numeric" pattern="[0-9]*" required>
+                            </label>
+                        </div>
+
+                        <label class="contact-reserve__field contact-reserve__field--full">
+                            <input type="text" name="special-requests" placeholder="Special Requests" aria-label="Special requests">
+                        </label>
+
+                        <div class="contact-reserve__submit-row">
+                            <span class="contact-reserve__submit-line" aria-hidden="true"></span>
+                            <button type="submit" class="contact-reserve__submit">Make a Reservation</button>
+                        </div>
+                        <p class="contact-reserve__message" aria-live="polite"></p>
+                    </form>
+                </div>
+
+                <div class="contact-reserve__visual">
+                    <img src="assets/images/contactus.webp" alt="Elegant guest room interior at Bzommar Palace Hotel" class="contact-reserve__image">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer site-footer--contact" role="contentinfo">
+        <div class="container">
+            <div class="footer-newsletter">
+                <div class="footer-newsletter__inner">
+                    <div class="footer-newsletter__content">
+                        <h3 class="footer-newsletter__heading">Sign up for our Newsletter</h3>
+                        <p class="footer-newsletter__text">Sign up to be the first to receive special news and event updates from us.</p>
+                    </div>
+                    <form class="footer-newsletter__form" action="#" method="post">
+                        <div class="footer-newsletter__input-row">
+                            <input type="email" class="footer-newsletter__input" placeholder="Your Email Address" required>
+                            <button type="submit" class="footer-newsletter__btn" aria-label="Subscribe">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </button>
+                        </div>
+                        <label class="footer-newsletter__checkbox">
+                            <input type="checkbox" required>
+                            <span>I agree to the <a href="privacy-policy.html" class="footer-newsletter__link">Privacy Policy</a></span>
+                        </label>
+                    </form>
+                </div>
+            </div>
+
+            <div class="site-footer__grid">
+                <div class="site-footer__col site-footer__col--brand">
+                    <h3 class="site-footer__logo">Bzommar</h3>
+                    <span class="site-footer__tagline">Palace Hotel</span>
+                    <p class="site-footer__brand-text">
+                        Set against the breathtaking backdrop of Bzommar's peaks, our hotel combines thoughtful design with warm hospitality.
+                    </p>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Quick Links</h4>
+                    <ul class="site-footer__list">
+                        <li><a href="rooms.html" class="site-footer__link">Rooms</a></li>
+                        <li><a href="event-packages.html" class="site-footer__link">Events</a></li>
+                        <li><a href="gallery.html" class="site-footer__link">Gallery</a></li>
+                        <li><a href="contact.html" class="site-footer__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Experiences</h4>
+                    <ul class="site-footer__list">
+                        <li><a href="tilalbzommar.html" class="site-footer__link">Tilal Bzommar</a></li>
+                        <li><a href="pianobar.html" class="site-footer__link">Piano Bar</a></li>
+                        <li><a href="pool.html" class="site-footer__link">Pool &amp; Terrace</a></li>
+                        <li><a href="wedding-packages.html" class="site-footer__link">Wedding Venue</a></li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Opening Hours</h4>
+                    <ul class="site-footer__hours">
+                        <li>Mon - Thu: 12pm to 9pm</li>
+                        <li>Fri: 12pm to 10pm</li>
+                        <li>Sat: 11:30am to 10pm</li>
+                        <li>Sun: 11:30am to 8:30pm</li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Contact</h4>
+                    <address class="site-footer__address">
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="map-pin" class="site-footer__icon"></i>
+                            <a href="https://maps.app.goo.gl/69iL68mLTKK5ZNaXA" target="_blank" rel="noopener noreferrer" class="site-footer__link">Bzommar, Lebanon</a>
+                        </p>
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="phone" class="site-footer__icon"></i>
+                            <a href="tel:+9619240640" class="site-footer__link">+961 9 240 640</a>
+                        </p>
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="mail" class="site-footer__icon"></i>
+                            <a href="mailto:info@bzommar.com" class="site-footer__link">info@bzommar.com</a>
+                        </p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="site-footer__bottom">
+                <p>&copy; 2026 Bzommar Palace Hotel. All rights reserved.</p>
+                <a href="privacy-policy.html" class="site-footer__bottom-link">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Event Packages at Bzommar Palace Hotel — Corporate, Birthdays & Galas, Wellness Retreats, Live Performance">
+    <title>Event Packages | Bzommar Palace Hotel</title>
+    <link rel="icon" type="image/png" href="assets/images/bzommaricon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="page-events-packages">
+    <canvas id="golden-droplets"></canvas>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav" aria-label="Primary navigation">
+            <div class="container">
+                <div class="nav__brand">
+                    <a href="index.html" class="nav__logo">
+                        <span class="nav__logo-text">BZOMMAR<span class="nav__logo-sub">PALACE HOTEL</span></span>
+                    </a>
+                </div>
+
+                <button type="button"
+                        class="nav__toggle"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                        aria-controls="nav-menu">
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                </button>
+
+                <div class="nav__backdrop"></div>
+                <div class="nav__menu" id="nav-menu">
+                    <div class="nav__menu-header">
+                        <a href="index.html" class="nav__menu-logo">
+                            <span class="nav__logo-text">BZOMMAR<span class="nav__logo-sub">PALACE HOTEL</span></span>
+                        </a>
+                        <button type="button" class="nav__close" aria-label="Close navigation menu">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <ul class="nav__menu-links">
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">ABOUT</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="about.html" class="nav__dropdown-item">Heritage</a></li>
+                                <li><a href="gallery.html" class="nav__dropdown-item">Gallery</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">ROOMS</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="rooms.html#twin-room" class="nav__dropdown-item">Twin Room</a></li>
+                                <li><a href="rooms.html#studio" class="nav__dropdown-item">Studio</a></li>
+                                <li><a href="rooms.html#family-room" class="nav__dropdown-item">Family Room</a></li>
+                                <li><a href="rooms.html#junior-suite" class="nav__dropdown-item">Junior Suite</a></li>
+                                <li><a href="rooms.html#executive-suite" class="nav__dropdown-item">Executive Suite</a></li>
+                                <li><a href="rooms.html#deluxe-sea-view" class="nav__dropdown-item">Deluxe Room-Sea View</a></li>
+                                <li><a href="rooms.html#standard-mountain-view" class="nav__dropdown-item">Standard Room-Mountain View</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">PACKAGES</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="wedding-packages.html" class="nav__dropdown-item">Weddings</a></li>
+                                <li><a href="event-packages.html#corporate" class="nav__dropdown-item">Corporate</a></li>
+                                <li><a href="event-packages.html#birthdays-galas" class="nav__dropdown-item">Birthdays &amp; Galas</a></li>
+                                <li><a href="event-packages.html#wellness-retreats" class="nav__dropdown-item">Wellness Retreats</a></li>
+                                <li><a href="event-packages.html#live-performance" class="nav__dropdown-item">Live Performance</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">SERVICES</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="tilalbzommar.html" class="nav__dropdown-item">Tilal Bzommar</a></li>
+                                <li><a href="pianobar.html" class="nav__dropdown-item">Piano Bar</a></li>
+                                <li><a href="pool.html" class="nav__dropdown-item">Pool</a></li>
+                                <li><a href="garden.html" class="nav__dropdown-item">Garden</a></li>
+                                <li><a href="conference-hall.html" class="nav__dropdown-item">Conference Hall</a></li>
+                                <li><a href="terrace.html" class="nav__dropdown-item">Terrace</a></li>
+                                <li><a href="gym.html" class="nav__dropdown-item">Gym</a></li>
+                                <li><a href="games-lounge.html" class="nav__dropdown-item">Games Lounge</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="contact.html" class="nav__link">
+                                <span class="nav__link-label">CONTACT</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <span class="star-border star-border--nav">
+                        <a href="booking.html" class="nav__cta btn btn--primary">BOOK NOW</a>
+                    </span>
+
+                    <div class="nav__menu-contact">
+                        <a href="tel:+9619240640" class="nav__menu-contact-item">
+                            <i data-lucide="phone" class="nav__menu-contact-icon"></i>
+                            +961 9 240 640
+                        </a>
+                        <a href="mailto:info@bzommarpalacehotel.com" class="nav__menu-contact-item">
+                            <i data-lucide="mail" class="nav__menu-contact-icon"></i>
+                            info@bzommarpalacehotel.com
+                        </a>
+                        <a href="https://maps.app.goo.gl/69iL68mLTKK5ZNaXA" target="_blank" rel="noopener noreferrer" class="nav__menu-contact-item">
+                            <i data-lucide="map-pin" class="nav__menu-contact-icon"></i>
+                            Bzommar, Mount Lebanon, Lebanon
+                        </a>
+                        <div class="nav__menu-socials" aria-label="Social links">
+                            <a href="https://www.instagram.com/bzommarpalacehotel?igsh=MW5tNDhrZGN5Z3oybQ==" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.facebook.com/share/1EsDgShjzD/" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="Facebook">
+                                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://wa.me/9619240640" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="WhatsApp">
+                                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero hero--events">
+            <div class="hero__background">
+                <img src="assets/images/eventshero.png" alt="Bzommar Palace event packages" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.6);">
+                <div class="hero__overlay"></div>
+                <div class="hero__gradient-overlay"></div>
+            </div>
+
+            <div class="container">
+                <div class="hero__content">
+                    <div class="hero__eyebrow">Curated Experiences</div>
+                    <h1 class="hero__title">Event Packages</h1>
+                </div>
+            </div>
+
+            <div class="hero__scroll-button">
+                <div class="scroll-down">
+                    <div class="circle">
+                        <svg class="animated-arrow" width="20" height="50" viewBox="0 0 20 50" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="10" y1="0" x2="10" y2="44"></line>
+                            <polyline points="3 37 10 44 17 37"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Packages Listing -->
+        <section class="rooms-list events-list" aria-label="Event packages">
+            <div class="container">
+                <ul class="rooms-list__items" id="rooms-accordion">
+
+                    <!-- CORPORATE -->
+                    <li class="rooms-list__item is-active" data-room="corporate">
+                        <button type="button" class="rooms-list__header" aria-expanded="true">
+                            <span class="rooms-list__marker" aria-hidden="true"></span>
+                            <span class="rooms-list__name">Corporate</span>
+                        </button>
+                        <div class="rooms-list__panel">
+                            <div class="rooms-list__layout">
+                                <div class="rooms-list__main">
+                                    <div class="pkg-grid">
+                                        <article class="pkg-card">
+                                            <div class="pkg-card__eyebrow">Foundation</div>
+                                            <h3 class="pkg-card__name">Essentials</h3>
+                                            <p class="pkg-card__desc">Everything you need for a focused, productive meeting day.</p>
+                                            <ul class="pkg-card__list">
+                                                <li>Conference Hall (8 hours)</li>
+                                                <li>Coffee &amp; Pastry Breaks</li>
+                                                <li>Working Lunch Buffet</li>
+                                                <li>On-Site Coordinator</li>
+                                                <li>Basic AV Package</li>
+                                            </ul>
+                                            <div class="pkg-card__price"><span class="pkg-card__price-amount">$200</span><span class="pkg-card__price-suffix">per day</span></div>
+                                        </article>
+
+                                        <article class="pkg-card">
+                                            <div class="pkg-card__eyebrow">Signature</div>
+                                            <h3 class="pkg-card__name">Premium</h3>
+                                            <p class="pkg-card__desc">The complete corporate experience with elevated hospitality.</p>
+                                            <ul class="pkg-card__list">
+                                                <li>Choice of venue + break out rooms</li>
+                                                <li>Premium AV with live-stream</li>
+                                                <li>Full catering program</li>
+                                                <li>Welcome &amp; closing cocktails</li>
+                                                <li>Branded materials &amp; signage</li>
+                                            </ul>
+                                            <div class="pkg-card__price"><span class="pkg-card__price-amount">$400</span><span class="pkg-card__price-suffix">per day</span></div>
+                                        </article>
+
+                                        <article class="pkg-card">
+                                            <div class="pkg-card__eyebrow">Foundation</div>
+                                            <h3 class="pkg-card__name">Presidential</h3>
+                                            <p class="pkg-card__desc">An unmatched experience for boards, summits, and high-stakes gatherings.</p>
+                                            <ul class="pkg-card__list">
+                                                <li>Exclusive full-property access</li>
+                                                <li>Executive AV suite + interpreter booths</li>
+                                                <li>Chef's table dining</li>
+                                                <li>Overnight suites for all attendees</li>
+                                                <li>Professional photography &amp; videography</li>
+                                            </ul>
+                                            <div class="pkg-card__price"><span class="pkg-card__price-amount">$800</span><span class="pkg-card__price-suffix">per day</span></div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- BIRTHDAYS & GALAS -->
+                    <li class="rooms-list__item" data-room="birthdays-galas">
+                        <button type="button" class="rooms-list__header" aria-expanded="false">
+                            <span class="rooms-list__marker" aria-hidden="true"></span>
+                            <span class="rooms-list__name">Birthdays &amp; Galas</span>
+                        </button>
+                        <div class="rooms-list__panel">
+                            <div class="rooms-list__layout">
+                                <div class="rooms-list__main">
+                                    <div class="pkg-grid">
+                                        <article class="pkg-card">
+                                            <div class="pkg-card__eyebrow">Intimate</div>
+                                            <h3 class="pkg-card__name">The Gathering</h3>
+                                            <p class="pkg-card__desc">An intimate celebration in a curated setting, perfect for close friends and family.</p>
+                                            <ul class="pkg-card__list">
+                                                <li>Private terrace or garden</li>
+                                                <li>3-course seated dinner</li>
+                                                <li>Signature cocktail bar</li>
+                                                <li>Floral centerpieces</li>
+                                                <li>Background music curation</li>
+                                            </ul>
+                                        </article>
+
+                                        <article class="pkg-card">
+                                            <div class="pkg-card__eyebrow">Signature</div>
+                                            <h3 class="pkg-card__name">The Affair</h3>
+                                            <p class="pkg-card__desc">A fully produced celebration with every detail designed to impress.</p>
+                                            <ul class="pkg-card__list">
+                                                <li>Choice of venue with custom layout</li>
+                                                <li>5-course dinner + catering stations</li>
+                                                <li>Open bar with premium selection</li>
+                                                <li>Live entertainment package</li>
+                                                <li>Event designer + day-of coordinator</li>
+                                                <li>Custom lighting &amp; décor</li>
+                                            </ul>
+                                        </article>
+
+                                        <article class="pkg-card">
+                                            <div class="pkg-card__eyebrow">Grand</div>
+                                            <h3 class="pkg-card__name">The Spectacle</h3>
+                                            <p class="pkg-card__desc">A landmark event with full-scale production and exclusive property access.</p>
+                                            <ul class="pkg-card__list">
+                                                <li>Full property exclusivity</li>
+                                                <li>Bespoke multi-course menu</li>
+                                                <li>Premium entertainment roster</li>
+                                                <li>Luxury floral installation</li>
+                                                <li>Valet &amp; VIP arrivals</li>
+                                                <li>Professional photo + video team</li>
+                                                <li>Post-event keepsake package</li>
+                                            </ul>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- WELLNESS RETREATS -->
+                    <li class="rooms-list__item" data-room="wellness-retreats">
+                        <button type="button" class="rooms-list__header" aria-expanded="false">
+                            <span class="rooms-list__marker" aria-hidden="true"></span>
+                            <span class="rooms-list__name">Wellness Retreats</span>
+                        </button>
+                        <div class="rooms-list__panel">
+                            <div class="rooms-list__layout">
+                                <div class="rooms-list__main">
+                                    <div class="pkg-grid">
+                                        <article class="pkg-card">
+                                            <div class="pkg-card__eyebrow">Introductory</div>
+                                            <h3 class="pkg-card__name">Day Retreat</h3>
+                                            <p class="pkg-card__desc">A single-day immersion for those seeking a reset without the commitment of an overnight stay.</p>
+                                            <ul class="pkg-card__list">
+                                                <li>6-hour guided program</li>
+                                                <li>Sound healing session</li>
+                                                <li>Plant-based lunch</li>
+                                                <li>Mountain meditation walk</li>
+                                                <li>Take-home wellness guide</li>
+                                            </ul>
+                                        </article>
+
+                                        <article class="pkg-card">
+                                            <div class="pkg-card__eyebrow">Signature</div>
+                                            <h3 class="pkg-card__name">3-Day Immersion</h3>
+                                            <p class="pkg-card__desc">Our cornerstone retreat experience, designed for deep nervous system restoration.</p>
+                                            <ul class="pkg-card__list">
+                                                <li>2 nights in wellness suite</li>
+                                                <li>Full retreat program</li>
+                                                <li>All meals &amp; elixirs</li>
+                                                <li>Private breathwork session</li>
+                                                <li>Cold plunge &amp; sauna access</li>
+                                                <li>Personal wellness blueprint</li>
+                                            </ul>
+                                        </article>
+
+                                        <article class="pkg-card">
+                                            <div class="pkg-card__eyebrow">Transformative</div>
+                                            <h3 class="pkg-card__name">7-Day Journey</h3>
+                                            <p class="pkg-card__desc">An extended container for profound personal transformation and lasting habit change.</p>
+                                            <ul class="pkg-card__list">
+                                                <li>6 nights in premium suite</li>
+                                                <li>Expanded daily programming</li>
+                                                <li>1:1 practitioner sessions</li>
+                                                <li>Bodywork &amp; massage treatments</li>
+                                                <li>Nutrition consultation</li>
+                                                <li>3-month follow-up support</li>
+                                            </ul>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- LIVE PERFORMANCE -->
+                    <li class="rooms-list__item" data-room="live-performance">
+                        <button type="button" class="rooms-list__header" aria-expanded="false">
+                            <span class="rooms-list__marker" aria-hidden="true"></span>
+                            <span class="rooms-list__name">Live Performance</span>
+                        </button>
+                        <div class="rooms-list__panel">
+                            <div class="rooms-list__layout">
+                                <div class="rooms-list__main">
+                                    <div class="pkg-grid">
+                                        <article class="pkg-card pkg-card--price-top">
+                                            <h3 class="pkg-card__name">General</h3>
+                                            <div class="pkg-card__price pkg-card__price--top"><span class="pkg-card__price-amount">$45</span><span class="pkg-card__price-suffix">per person</span></div>
+                                            <ul class="pkg-card__list">
+                                                <li>Garden standing</li>
+                                                <li>1 welcome drink</li>
+                                            </ul>
+                                        </article>
+
+                                        <article class="pkg-card pkg-card--price-top">
+                                            <h3 class="pkg-card__name">Premium</h3>
+                                            <div class="pkg-card__price pkg-card__price--top"><span class="pkg-card__price-amount">$120</span><span class="pkg-card__price-suffix">per person</span></div>
+                                            <ul class="pkg-card__list">
+                                                <li>Reserved seating</li>
+                                                <li>Open bar</li>
+                                                <li>Appetizer plate</li>
+                                            </ul>
+                                        </article>
+
+                                        <article class="pkg-card pkg-card--price-top">
+                                            <h3 class="pkg-card__name">VIP Table</h3>
+                                            <div class="pkg-card__price pkg-card__price--top"><span class="pkg-card__price-amount">$350</span><span class="pkg-card__price-suffix">per person</span></div>
+                                            <ul class="pkg-card__list">
+                                                <li>Private table (4 guests)</li>
+                                                <li>Bottle service</li>
+                                                <li>Backstage meet &amp; greet</li>
+                                                <li>Complimentary parking</li>
+                                            </ul>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-newsletter">
+                <div class="footer-newsletter__inner">
+                    <div class="footer-newsletter__content">
+                        <h3 class="footer-newsletter__heading">Sign up for our Newsletter</h3>
+                        <p class="footer-newsletter__text">Sign up to be the first to receive special news and event updates from us.</p>
+                    </div>
+                    <form class="footer-newsletter__form" action="#" method="post">
+                        <div class="footer-newsletter__input-row">
+                            <input type="email" class="footer-newsletter__input" placeholder="Your Email Address" required>
+                            <button type="submit" class="footer-newsletter__btn" aria-label="Subscribe">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </button>
+                        </div>
+                        <label class="footer-newsletter__checkbox">
+                            <input type="checkbox" required>
+                            <span>I agree to the <a href="privacy-policy.html" class="footer-newsletter__link">Privacy Policy</a></span>
+                        </label>
+                    </form>
+                </div>
+            </div>
+
+            <div class="site-footer__grid">
+                <div class="site-footer__col site-footer__col--brand">
+                    <h3 class="site-footer__logo">Bzommar</h3>
+                    <span class="site-footer__tagline">Palace Hotel</span>
+                    <p class="site-footer__brand-text">
+                        Set against the breathtaking backdrop of Bzommar's peaks, our hotel
+                        combines thoughtful design with warm hospitality.
+                    </p>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Quick Links</h4>
+                    <ul class="site-footer__list">
+                        <li><a href="rooms.html" class="site-footer__link">Rooms</a></li>
+                        <li><a href="events.html" class="site-footer__link">Events</a></li>
+                        <li><a href="about.html" class="site-footer__link">About</a></li>
+                        <li><a href="contact.html" class="site-footer__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Experiences</h4>
+                    <ul class="site-footer__list">
+                        <li><a href="tilalbzommar.html" class="site-footer__link">Tilal Bzommar</a></li>
+                        <li><a href="pianobar.html" class="site-footer__link">Piano Bar</a></li>
+                        <li><a href="pool.html" class="site-footer__link">Pool &amp; Terrace</a></li>
+                        <li><a href="#" class="site-footer__link">Wedding Venue</a></li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Contact</h4>
+                    <address class="site-footer__address">
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="map-pin" class="site-footer__icon"></i>
+                            <a href="https://maps.app.goo.gl/69iL68mLTKK5ZNaXA" target="_blank" rel="noopener noreferrer" class="site-footer__link">Bzommar, Lebanon</a>
+                        </p>
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="phone" class="site-footer__icon"></i>
+                            <a href="tel:+96112345678" class="site-footer__link">+961 1 234 5678</a>
+                        </p>
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="mail" class="site-footer__icon"></i>
+                            <a href="mailto:info@bzommar.com" class="site-footer__link">info@bzommar.com</a>
+                        </p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="site-footer__bottom">
+                <p>&copy; 2026 Bzommar Palace Hotel. All rights reserved.</p>
+                <a href="privacy-policy.html" class="site-footer__bottom-link">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

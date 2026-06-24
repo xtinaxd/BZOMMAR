@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bzommar Palace — Template Showcase</title>
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Google Fonts: Cormorant Garamond (display) + Jost (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cream: #f5f1e8;
+    --ivory: #faf7f0;
+    --paper: #efe9db;
+    --ink: #1c1917;
+    --ink-soft: #2a2724;
+    --gray: #57534e;
+    --gray-soft: #8a8278;
+    --stone: #d6cfc0;
+    --gold: #a68a5b;
+    --gold-dark: #8a6f47;
+    --line: rgba(28, 25, 23, 0.14);
+    --line-soft: rgba(28, 25, 23, 0.08);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', -apple-system, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .font-display { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; }
+  .font-display-italic { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 300; }
+  .font-body { font-family: 'Jost', sans-serif; }
+
+  /* Eyebrow / small-caps labels */
+  .eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+  }
+  .eyebrow-ink { color: var(--ink); }
+  .eyebrow-cream { color: var(--cream); }
+
+  /* Hairline separator */
+  .hairline {
+    display: inline-block;
+    width: 48px;
+    height: 1px;
+    background: var(--gold);
+    vertical-align: middle;
+  }
+  .hairline-long { width: 96px; }
+
+  /* Gold underline link */
+  .link-gold {
+    display: inline-block;
+    position: relative;
+    color: var(--ink);
+    padding-bottom: 4px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 11px;
+  }
+  .link-gold::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    height: 1px; width: 100%;
+    background: var(--gold);
+    transform-origin: right;
+    transition: transform 0.6s cubic-bezier(.2,.8,.2,1);
+  }
+  .link-gold:hover::after {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  /* Ornamental diamond */
+  .diamond {
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    margin: 0 14px;
+    vertical-align: middle;
+  }
+
+  /* Number plate */
+  .num-plate {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--gold);
+  }
+
+  /* ---------- Scroll reveal ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 1.2s cubic-bezier(.2,.8,.2,1), transform 1.2s cubic-bezier(.2,.8,.2,1);
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.12s; }
+  .reveal-delay-2 { transition-delay: 0.24s; }
+  .reveal-delay-3 { transition-delay: 0.36s; }
+  .reveal-delay-4 { transition-delay: 0.48s; }
+
+  /* ---------- Nav pill ---------- */
+  .nav-pill {
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background: rgba(245, 241, 232, 0.82);
+    border: 1px solid var(--line-soft);
+  }
+  .nav-link {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gray);
+    padding: 6px 14px;
+    border-radius: 999px;
+    transition: all .4s ease;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .nav-link:hover, .nav-link.active {
+    color: var(--ink);
+    background: var(--ivory);
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: var(--ink);
+    color: var(--cream);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    transition: all .4s ease;
+    border: 1px solid var(--ink);
+  }
+  .btn-primary:hover { background: var(--gold-dark); border-color: var(--gold-dark); color: var(--ivory); }
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: transparent;
+    color: var(--ink);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    border: 1px solid var(--ink);
+    transition: all .4s ease;
+  }
+  .btn-outline:hover { background: var(--ink); color: var(--cream); }
+
+  .arrow-right::after {
+    content: '→';
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    transition: transform .4s ease;
+  }
+  .arrow-right:hover::after { transform: translateX(4px); }
+
+  /* ---------- Image treatments ---------- */
+  .img-frame {
+    position: relative;
+    overflow: hidden;
+  }
+  .img-frame img {
+    transition: transform 1.4s cubic-bezier(.2,.8,.2,1);
+  }
+  .img-frame:hover img { transform: scale(1.05); }
+
+  .img-border::before {
+    content: '';
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(245, 241, 232, 0.55);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .ken-burns img {
+    animation: kenBurns 18s ease-in-out infinite alternate;
+  }
+  @keyframes kenBurns {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.12) translate(-2%, -2%); }
+  }
+
+  /* ---------- Page separator ---------- */
+  .page-sep {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 120px 0 80px;
+  }
+  .page-sep-line {
+    flex: 1;
+    max-width: 180px;
+    height: 1px;
+    background: var(--line);
+  }
+
+  /* ---------- Timeline ---------- */
+  .timeline {
+    position: relative;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, transparent 0%, var(--gold) 12%, var(--gold) 88%, transparent 100%);
+    transform: translateX(-50%);
+  }
+  .timeline-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 120px 1fr;
+    align-items: start;
+    padding: 56px 0;
+  }
+  .timeline-dot {
+    grid-column: 2;
+    justify-self: center;
+    position: relative;
+    margin-top: 8px;
+  }
+  .timeline-dot::before {
+    content: '';
+    display: block;
+    width: 10px; height: 10px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+  .timeline-dot::after {
+    content: '';
+    position: absolute;
+    inset: -14px;
+    border: 1px solid var(--gold);
+    transform: rotate(45deg);
+    opacity: .4;
+  }
+  .timeline-left { grid-column: 1; text-align: right; padding-right: 40px; }
+  .timeline-right { grid-column: 3; padding-left: 40px; }
+  @media (max-width: 768px) {
+    .timeline::before { left: 18px; }
+    .timeline-item { grid-template-columns: 36px 1fr; gap: 20px; padding: 40px 0; }
+    .timeline-dot { grid-column: 1; justify-self: start; }
+    .timeline-left, .timeline-right { grid-column: 2; text-align: left; padding: 0; }
+  }
+
+  /* ---------- Leadership cards ---------- */
+  .leader-card { position: relative; overflow: hidden; cursor: pointer; }
+  .leader-card .leader-img { aspect-ratio: 3/4; position: relative; overflow: hidden; }
+  .leader-card .leader-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s ease, filter .8s ease; filter: grayscale(40%) contrast(1.02); }
+  .leader-card:hover .leader-img img { transform: scale(1.06); filter: grayscale(0%) contrast(1); }
+  .leader-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(28,25,23,0.88) 0%, rgba(28,25,23,0.1) 50%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 28px;
+    opacity: 0;
+    transition: opacity .6s ease;
+  }
+  .leader-card:hover .leader-overlay { opacity: 1; }
+
+  /* ---------- Gallery filters ---------- */
+  .filter-btn {
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    padding: 10px 22px;
+    color: var(--gray);
+    border: 1px solid transparent;
+    transition: all .4s ease;
+    cursor: pointer;
+    background: transparent;
+  }
+  .filter-btn.active, .filter-btn:hover {
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+
+  /* ---------- Masonry ---------- */
+  .masonry {
+    column-count: 3;
+    column-gap: 18px;
+  }
+  @media (max-width: 1024px) { .masonry { column-count: 2; } }
+  @media (max-width: 640px) { .masonry { column-count: 1; } }
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .masonry-item img { width: 100%; display: block; transition: transform 1.2s ease, filter .6s ease; }
+  .masonry-item:hover img { transform: scale(1.04); }
+  .masonry-item .mask {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(28,25,23,0.72), transparent 60%);
+    opacity: 0;
+    transition: opacity .5s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 18px;
+    color: var(--cream);
+  }
+  .masonry-item:hover .mask { opacity: 1; }
+
+  /* ---------- Invitation cards ---------- */
+  .invitation {
+    position: relative;
+    background: var(--ivory);
+    padding: 48px 36px;
+    border: 1px solid var(--line);
+    transition: all .6s cubic-bezier(.2,.8,.2,1);
+  }
+  .invitation::before, .invitation::after {
+    content: '';
+    position: absolute;
+    width: 28px; height: 28px;
+    border-color: var(--gold);
+    border-style: solid;
+  }
+  .invitation::before {
+    top: 14px; left: 14px;
+    border-width: 1px 0 0 1px;
+  }
+  .invitation::after {
+    bottom: 14px; right: 14px;
+    border-width: 0 1px 1px 0;
+  }
+  .invitation:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px -20px rgba(28,25,23,0.15);
+  }
+
+  /* ---------- Accordion ---------- */
+  .accordion-item {
+    border-bottom: 1px solid var(--line);
+  }
+  .accordion-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 28px 0;
+    text-align: left;
+    background: transparent;
+    cursor: pointer;
+    transition: color .3s ease;
+  }
+  .accordion-trigger:hover { color: var(--gold-dark); }
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .6s cubic-bezier(.2,.8,.2,1);
+  }
+  .accordion-item.open .accordion-content {
+    max-height: 400px;
+  }
+  .accordion-item.open .accordion-icon {
+    transform: rotate(45deg);
+  }
+  .accordion-icon {
+    transition: transform .4s ease;
+    width: 14px; height: 14px;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .accordion-icon::before,
+  .accordion-icon::after {
+    content: '';
+    position: absolute;
+    background: var(--ink);
+    left: 50%; top: 50%;
+  }
+  .accordion-icon::before { width: 14px; height: 1px; transform: translate(-50%, -50%); }
+  .accordion-icon::after { width: 1px; height: 14px; transform: translate(-50%, -50%); }
+
+  /* ---------- Sticky sidebar ---------- */
+  .side-link {
+    display: block;
+    padding: 12px 0 12px 20px;
+    border-left: 1px solid var(--line);
+    color: var(--gray);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: all .3s ease;
+  }
+  .side-link:hover, .side-link.active {
+    color: var(--ink);
+    border-color: var(--gold);
+  }
+
+  /* ---------- Map treatment ---------- */
+  .map-stylized {
+    position: relative;
+    background:
+      radial-gradient(circle at 30% 40%, rgba(166, 138, 91, 0.12) 0%, transparent 40%),
+      radial-gradient(circle at 70% 70%, rgba(166, 138, 91, 0.08) 0%, transparent 35%),
+      linear-gradient(135deg, #e8e0cd 0%, #d6cfc0 100%);
+    overflow: hidden;
+  }
+  .map-stylized::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.6;
+  }
+  .map-pin {
+    position: absolute;
+    width: 14px; height: 14px;
+    background: var(--gold-dark);
+    transform: rotate(45deg);
+    border: 2px solid var(--ivory);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .map-pin.main {
+    width: 22px; height: 22px;
+    background: var(--ink);
+    animation: pulse 2s ease-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(166, 138, 91, 0.6); }
+    50% { box-shadow: 0 0 0 14px rgba(166, 138, 91, 0); }
+  }
+
+  /* ---------- Blog magazine ---------- */
+  .mag-card img { transition: transform 1.2s ease; }
+  .mag-card:hover img { transform: scale(1.04); }
+  .mag-card .mag-title {
+    transition: color .4s ease;
+  }
+  .mag-card:hover .mag-title { color: var(--gold-dark); }
+
+  /* ---------- Form ---------- */
+  .form-input {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 14px 0;
+    width: 100%;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    transition: border-color .3s ease;
+  }
+  .form-input:focus {
+    outline: none;
+    border-color: var(--gold-dark);
+  }
+  .form-label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 4px;
+  }
+
+  /* ---------- Noise overlay ---------- */
+  .noise::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: multiply;
+  }
+
+  /* Hero cinematic overlay */
+  .cinematic-grain {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.4) 100%),
+      linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.5) 100%);
+  }
+
+  /* Selection */
+  ::selection { background: var(--gold); color: var(--cream); }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: var(--cream); }
+  ::-webkit-scrollbar-thumb { background: var(--stone); }
+  ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+  /* Parallax band */
+  .parallax-band {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+  @media (max-width: 768px) { .parallax-band { background-attachment: scroll; } }
+
+  /* Utility section wrapper */
+  .section-wrap {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  @media (max-width: 768px) { .section-wrap { padding-left: 20px; padding-right: 20px; } }
+</style>
+</head>
+<body>
+
+<!-- ============================= STICKY NAV ============================= -->
+<nav class="fixed top-5 left-1/2 -translate-x-1/2 z-50 nav-pill rounded-full px-2 py-1.5 hidden md:flex items-center gap-1 shadow-sm">
+  <a href="#intro" class="nav-link px-4">Bzommar</a>
+  <span class="diamond"></span>
+  <a href="#about" class="nav-link">About</a>
+  <a href="#contact" class="nav-link">Contact</a>
+  <a href="#gallery" class="nav-link">Gallery</a>
+  <a href="#offers" class="nav-link">Offers</a>
+  <a href="#location" class="nav-link">Location</a>
+  <a href="#faq" class="nav-link">FAQ</a>
+  <a href="#policies" class="nav-link">Policies</a>
+  <a href="#journal" class="nav-link">Journal</a>
+</nav>
+
+<!-- Mobile nav -->
+<nav class="md:hidden fixed top-0 left-0 right-0 z-50 nav-pill py-3 px-5 flex items-center justify-between">
+  <a href="#intro" class="font-display text-lg tracking-wider">Bzommar</a>
+  <button id="mobileMenuBtn" class="eyebrow">Menu +</button>
+</nav>
+<div id="mobileMenu" class="md:hidden fixed inset-0 z-40 bg-[var(--cream)] transform translate-y-full transition-transform duration-500 pt-20 px-8">
+  <div class="flex flex-col gap-5">
+    <a href="#about" class="font-display text-3xl mobile-nav-link">About Us</a>
+    <a href="#contact" class="font-display text-3xl mobile-nav-link">Contact</a>
+    <a href="#gallery" class="font-display text-3xl mobile-nav-link">Gallery</a>
+    <a href="#offers" class="font-display text-3xl mobile-nav-link">Offers</a>
+    <a href="#location" class="font-display text-3xl mobile-nav-link">Location</a>
+    <a href="#faq" class="font-display text-3xl mobile-nav-link">FAQ</a>
+    <a href="#policies" class="font-display text-3xl mobile-nav-link">Policies</a>
+    <a href="#journal" class="font-display text-3xl mobile-nav-link">Journal</a>
+  </div>
+</div>
+
+<!-- ============================= INTRO ============================= -->
+<section id="intro" class="relative min-h-screen flex items-center overflow-hidden">
+  <div class="absolute inset-0 ken-burns">
+    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=2000&q=80" alt="" class="w-full h-full object-cover"/>
+    <div class="cinematic-grain"></div>
+  </div>
+
+  <div class="relative z-10 section-wrap w-full text-[var(--cream)]">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-8 reveal">
+        <span class="hairline" style="background: var(--gold);"></span>
+        <span class="eyebrow" style="color: #d6b77e;">Est. 1749 · Mount Lebanon</span>
+      </div>
+      <h1 class="font-display text-6xl md:text-8xl lg:text-[9rem] leading-[0.95] tracking-tight reveal reveal-delay-1">
+        A Showcase of<br/>
+        <em class="font-display-italic text-[#d6b77e]">Modern Heritage</em>
+      </h1>
+      <p class="mt-10 max-w-lg text-[15px] leading-relaxed text-[#e8dfc9] reveal reveal-delay-2">
+        Eight essential pages for Bzommar Palace — designed to blend classical architectural elegance with
+        a quietly confident, contemporary interface. Scroll to explore each creative layout.
+      </p>
+      <div class="mt-12 flex flex-wrap gap-4 reveal reveal-delay-3">
+        <a href="#about" class="btn-primary arrow-right" style="background: var(--cream); color: var(--ink); border-color: var(--cream);">
+          Begin the Tour
+        </a>
+        <a href="#journal" class="link-gold" style="color: #e8dfc9;">Editorial</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Corner marks -->
+  <div class="absolute top-6 right-6 text-right text-[var(--cream)] z-10 hidden lg:block">
+    <div class="eyebrow" style="color: #d6b77e;">N 33°56'42" · E 35°41'18"</div>
+    <div class="font-display-italic text-sm mt-2 text-[#e8dfc9]">Mount Lebanon</div>
+  </div>
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--cream)] z-10 flex flex-col items-center gap-3">
+    <div class="eyebrow" style="color: #d6b77e;">Scroll</div>
+    <div class="w-px h-12 bg-[#d6b77e]/60"></div>
+  </div>
+</section>
+
+
+<!-- =================================================================== -->
+<!-- ===================== 01 · ABOUT US =============================== -->
+<!-- =================================================================== -->
+<section id="about" class="py-28 md:py-40 bg-[var(--cream)]">
+
+  <!-- Page header -->
+  <div class="section-wrap">
+    <div class="grid grid-cols-12 gap-6 items-end mb-20 reveal">
+      <div class="col-span-12 md:col-span-3">
+        <div class="num-plate text-5xl">01</div>
+        <div class="eyebrow mt-2">Our Story</div>
+      </div>
+      <div class="col-span-12 md:col-span-9">
+        <h2 class="font-display text-5xl md:text-7xl leading-[1.05] text-[var(--ink)]">
+          Two centuries of<br/>
+          <em class="font-display-italic" style="color: var(--gold-dark);">mountain hospitality</em>
+        </h2>
+      </div>
+    </div>
+
+    <!-- Intro split -->
+    <div class="grid grid-cols-12 gap-8 md:gap-16 mb-32">
+      <div class="col-span-12 lg:col-span-5 reveal">
+        <div class="img-frame img-border aspect-[3/4]">
+          <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=900&q=80" alt="Bzommar Palace façade" class="w-full h-full object-cover"/>
+        </div>
+        <div class="mt-4 flex items-center justify-between text-xs text-[var(--gray)]">
+          <span class="font-display-italic text-base">The Palace, c. 1749</span>
+          <span class="eyebrow">Plate 01</span>
+        </div>
+      </div>
+
+      <div class="col-span-12 lg:col-span-7 lg:pt-16 reveal reveal-delay-2">
+        <p class="font-display text-2xl md:text-3xl leading-[1.4] text-[var(--ink-soft)]">
+          Perched above the Bay of Jounieh, Bzommar Palace was built in 1749 as a sanctuary of stone,
+          light, and silence. Nearly three centuries later, it remains what it has always been —
+          <em class="font-display-italic" style="color: var(--gold-dark);">a place apart.</em>
+        </p>
+        <div class="mt-10 grid grid-cols-2 gap-10">
+          <div>
+            <div class="num-plate text-4xl">275</div>
+            <div class="eyebrow mt-1">Years of heritage</div>
+          </div>
+          <div>
+            <div class="num-plate text-4xl">1,150m</div>
+            <div class="eyebrow mt-1">Above sea level</div>
+          </div>
+          <div>
+            <div class="num-plate text-4xl">48</div>
+            <div class="eyebrow mt-1">Rooms & suites</div>
+          </div>
+          <div>
+            <div class="num-plate text-4xl">14ha</div>
+            <div class="eyebrow mt-1">Private gardens</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Parallax band -->
+  <div class="parallax-band h-[50vh] relative flex items-center justify-center my-16"
+       style="background-image: url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=2000&q=80');">
+    <div class="absolute inset-0 bg-[var(--ink)]/40"></div>
+    <div class="relative z-10 text-center text-[var(--cream)] px-6 reveal">
+      <div class="eyebrow mb-4" style="color: #d6b77e;">A Letter from the Family</div>
+      <p class="font-display-italic text-2xl md:text-4xl max-w-3xl mx-auto leading-snug">
+        "We do not manage a hotel so much as tend to a house that has always known how to welcome."
+      </p>
+      <div class="mt-6 eyebrow" style="color: #d6b77e;">— The Stewards of Bzommar</div>
+    </div>
+  </div>
+
+  <!-- HISTORY TIMELINE -->
+  <div class="section-wrap mt-28">
+    <div class="text-center mb-20 reveal">
+      <div class="eyebrow mb-4">A Timeline</div>
+      <h3 class="font-display text-4xl md:text-6xl">Moments that <em class="font-display-italic">shaped us</em></h3>
+    </div>
+
+    <div class="timeline max-w-5xl mx-auto">
+
+      <div class="timeline-item reveal">
+        <div class="timeline-left">
+          <div class="num-plate text-5xl">1749</div>
+          <div class="eyebrow mt-2">Foundation</div>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-right">
+          <p class="text-[var(--gray)] leading-relaxed max-w-sm">
+            Commissioned by the Boutros family, the palace is raised from local limestone —
+            its archways hand-carved by master masons from Deir el Qamar.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-left">
+          <p class="text-[var(--gray)] leading-relaxed max-w-sm ml-auto">
+            The east wing is expanded to host visiting dignitaries. The cedar library —
+            still intact — is added, housing over 4,000 volumes.
+          </p>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-right">
+          <div class="num-plate text-5xl">1881</div>
+          <div class="eyebrow mt-2">The Eastern Wing</div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-left">
+          <div class="num-plate text-5xl">1923</div>
+          <div class="eyebrow mt-2">The Gardens</div>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-right">
+          <p class="text-[var(--gray)] leading-relaxed max-w-sm">
+            French landscape architect Édouard Redont designs the formal terraces,
+            olive groves, and the rose walk that still frames the afternoon light.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-left">
+          <p class="text-[var(--gray)] leading-relaxed max-w-sm ml-auto">
+            After decades as a private residence, the palace opens its doors to guests
+            for the first time — with twelve rooms and a single restaurant.
+          </p>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-right">
+          <div class="num-plate text-5xl">1987</div>
+          <div class="eyebrow mt-2">A House Becomes a Home</div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-left">
+          <div class="num-plate text-5xl">2024</div>
+          <div class="eyebrow mt-2">The Renewal</div>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-right">
+          <p class="text-[var(--gray)] leading-relaxed max-w-sm">
+            A three-year restoration returns the palace to its original proportions —
+            with every stone preserved, and every comfort quietly modernized.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MISSION & VALUES -->
+  <div class="section-wrap mt-40">
+    <div class="grid grid-cols-12 gap-8 mb-20">
+      <div class="col-span-12 md:col-span-4 reveal">
+        <div class="eyebrow mb-4">Our Principles</div>
+        <h3 class="font-display text-4xl md:text-5xl leading-tight">
+          What we hold<br/>
+          <em class="font-display-italic" style="color: var(--gold-dark);">dear</em>
+        </h3>
+      </div>
+      <div class="col-span-12 md:col-span-7 md:col-start-6 flex items-end reveal reveal-delay-2">
+        <p class="text-[var(--gray)] text-lg leading-relaxed">
+          Four quiet commitments that have guided Bzommar since its first guests crossed the threshold.
+          They appear nowhere in a brochure, and yet shape every detail of your stay.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[var(--line)]">
+
+      <div class="bg-[var(--cream)] p-10 reveal">
+        <!-- icon -->
+        <svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1" style="color: var(--gold-dark);">
+          <circle cx="24" cy="24" r="20"/>
+          <path d="M14 24 L22 32 L34 18"/>
+        </svg>
+        <div class="num-plate text-sm mt-6">I.</div>
+        <h4 class="font-display text-2xl mt-2">Quiet Craft</h4>
+        <p class="text-sm text-[var(--gray)] mt-3 leading-relaxed">
+          Excellence that asks for no attention. The folded corner of a napkin. The second cup of coffee that arrives unbidden.
+        </p>
+      </div>
+
+      <div class="bg-[var(--cream)] p-10 reveal reveal-delay-1">
+        <svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1" style="color: var(--gold-dark);">
+          <path d="M24 6 L42 18 L36 42 L12 42 L6 18 Z"/>
+          <circle cx="24" cy="24" r="6"/>
+        </svg>
+        <div class="num-plate text-sm mt-6">II.</div>
+        <h4 class="font-display text-2xl mt-2">Living Heritage</h4>
+        <p class="text-sm text-[var(--gray)] mt-3 leading-relaxed">
+          A palace is not a monument. We restore, we inhabit, we pass it on — lightly, so others may do the same.
+        </p>
+      </div>
+
+      <div class="bg-[var(--cream)] p-10 reveal reveal-delay-2">
+        <svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1" style="color: var(--gold-dark);">
+          <path d="M6 42 C18 30 30 30 42 42"/>
+          <path d="M12 30 L12 14 L24 8 L36 14 L36 30"/>
+          <circle cx="24" cy="22" r="3"/>
+        </svg>
+        <div class="num-plate text-sm mt-6">III.</div>
+        <h4 class="font-display text-2xl mt-2">Of this Land</h4>
+        <p class="text-sm text-[var(--gray)] mt-3 leading-relaxed">
+          Stone from nearby quarries. Olive oil from our own groves. Every guest leaves with a taste of Mount Lebanon.
+        </p>
+      </div>
+
+      <div class="bg-[var(--cream)] p-10 reveal reveal-delay-3">
+        <svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1" style="color: var(--gold-dark);">
+          <circle cx="24" cy="24" r="18"/>
+          <path d="M24 6 L24 24 L36 30"/>
+        </svg>
+        <div class="num-plate text-sm mt-6">IV.</div>
+        <h4 class="font-display text-2xl mt-2">Unhurried Time</h4>
+        <p class="text-sm text-[var(--gray)] mt-3 leading-relaxed">
+          The most generous thing a hotel can offer is space in the hour. We do not crowd your day.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LEADERSHIP -->
+  <div class="section-wrap mt-40">
+    <div class="grid grid-cols-12 gap-6 items-end mb-16 reveal">
+      <div class="col-span-12 md:col-span-8">
+        <div class="eyebrow mb-4">Our Stewards</div>
+        <h3 class="font-display text-4xl md:text-5xl">
+          The people behind<br/><em class="font-display-italic">the palace</em>
+        </h3>
+      </div>
+      <div class="col-span-12 md:col-span-4 md:text-right">
+        <a href="#" class="link-gold arrow-right">Meet the full team</a>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+      <div class="leader-card reveal">
+        <div class="leader-img">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80" alt=""/>
+          <div class="leader-overlay">
+            <div>
+              <div class="eyebrow" style="color: #d6b77e;">Reach out</div>
+              <p class="text-[var(--cream)] text-sm mt-2">karim@bzommar.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <h4 class="font-display text-xl">Karim Boutros</h4>
+          <div class="eyebrow text-[var(--gray)] mt-1">General Director</div>
+        </div>
+      </div>
+
+      <div class="leader-card reveal reveal-delay-1">
+        <div class="leader-img">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80" alt=""/>
+          <div class="leader-overlay">
+            <div>
+              <div class="eyebrow" style="color: #d6b77e;">Reach out</div>
+              <p class="text-[var(--cream)] text-sm mt-2">layla@bzommar.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <h4 class="font-display text-xl">Layla Haddad</h4>
+          <div class="eyebrow text-[var(--gray)] mt-1">Head of Guest Experience</div>
+        </div>
+      </div>
+
+      <div class="leader-card reveal reveal-delay-2">
+        <div class="leader-img">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt=""/>
+          <div class="leader-overlay">
+            <div>
+              <div class="eyebrow" style="color: #d6b77e;">Reach out</div>
+              <p class="text-[var(--cream)] text-sm mt-2">chef@bzommar.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <h4 class="font-display text-xl">Chef Maroun Khalil</h4>
+          <div class="eyebrow text-[var(--gray)] mt-1">Executive Chef</div>
+        </div>
+      </div>
+
+      <div class="leader-card reveal reveal-delay-3">
+        <div class="leader-img">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt=""/>
+          <div class="leader-overlay">
+            <div>
+              <div class="eyebrow" style="color: #d6b77e;">Reach out</div>
+              <p class="text-[var(--cream)] text-sm mt-2">nadia@bzommar.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <h4 class="font-display text-xl">Nadia Sassine</h4>
+          <div class="eyebrow text-[var(--gray)] mt-1">Head of Heritage & Events</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+<!-- =================================================================== -->
+<!-- ===================== 02 · CONTACT US ============================= -->
+<!-- =================================================================== -->
+<section id="contact" class="relative bg-[var(--ink)] text-[var(--cream)]">
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[100vh]">
+
+    <!-- LEFT — Form -->
+    <div class="p-10 md:p-16 lg:p-24 flex flex-col justify-center">
+      <div class="max-w-md reveal">
+        <div class="num-plate text-5xl" style="color: #d6b77e;">02</div>
+        <div class="eyebrow mt-2" style="color: #d6b77e;">Correspondence</div>
+        <h2 class="font-display text-5xl md:text-6xl mt-8 leading-[1.05]">
+          Begin a<br/>
+          <em class="font-display-italic" style="color: #d6b77e;">conversation</em>
+        </h2>
+        <p class="mt-6 text-sm leading-relaxed text-[#c9bfae] max-w-sm">
+          For reservations, private events, or simply to ask a question —
+          we reply to every note within the day.
+        </p>
+      </div>
+
+      <form class="mt-12 max-w-md space-y-7 reveal reveal-delay-2">
+        <div>
+          <label class="form-label" style="color: #8a8278;">First Name</label>
+          <input type="text" class="form-input" style="border-color: rgba(245,241,232,0.2); color: var(--cream);" placeholder="Your name"/>
+        </div>
+        <div>
+          <label class="form-label" style="color: #8a8278;">Email</label>
+          <input type="email" class="form-input" style="border-color: rgba(245,241,232,0.2); color: var(--cream);" placeholder="you@example.com"/>
+        </div>
+        <div>
+          <label class="form-label" style="color: #8a8278;">Subject</label>
+          <select class="form-input bg-[var(--ink)]" style="border-color: rgba(245,241,232,0.2); color: var(--cream);">
+            <option>Reservation enquiry</option>
+            <option>Private event</option>
+            <option>Dining</option>
+            <option>Press & media</option>
+            <option>General</option>
+          </select>
+        </div>
+        <div>
+          <label class="form-label" style="color: #8a8278;">Message</label>
+          <textarea rows="3" class="form-input resize-none" style="border-color: rgba(245,241,232,0.2); color: var(--cream);" placeholder="How can we help?"></textarea>
+        </div>
+        <div class="pt-6">
+          <button type="button" class="btn-primary arrow-right" style="background: #d6b77e; border-color: #d6b77e; color: var(--ink);">
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- RIGHT — Find Us -->
+    <div class="relative border-t lg:border-t-0 lg:border-l border-[var(--cream)]/10 p-10 md:p-16 lg:p-24 flex flex-col justify-between"
+         style="background: linear-gradient(180deg, var(--ink) 0%, #25211d 100%);">
+
+      <!-- Decorative coordinates -->
+      <div class="reveal">
+        <div class="eyebrow" style="color: #d6b77e;">Find Us</div>
+        <h3 class="font-display text-4xl md:text-5xl mt-6 leading-[1.05]">
+          <em class="font-display-italic">Bzommar</em>,<br/>Mount Lebanon
+        </h3>
+
+        <div class="mt-12 border-t border-[var(--cream)]/15 pt-8 grid grid-cols-2 gap-y-8 gap-x-4 max-w-md">
+          <div>
+            <div class="eyebrow" style="color: #8a8278;">Coordinates</div>
+            <div class="font-display text-lg mt-2">33°56'42"N<br/>35°41'18"E</div>
+          </div>
+          <div>
+            <div class="eyebrow" style="color: #8a8278;">Elevation</div>
+            <div class="font-display text-lg mt-2">1,150 m<br/>above sea level</div>
+          </div>
+          <div>
+            <div class="eyebrow" style="color: #8a8278;">Telephone</div>
+            <div class="font-display text-lg mt-2">+961 9 240 640</div>
+          </div>
+          <div>
+            <div class="eyebrow" style="color: #8a8278;">Email</div>
+            <div class="font-display text-lg mt-2">info@<br/>bzommarpalace.com</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative compass / artistic motif -->
+      <div class="mt-16 lg:mt-0 reveal reveal-delay-2">
+        <div class="relative w-full aspect-square max-w-sm mx-auto">
+          <svg viewBox="0 0 300 300" class="w-full h-full" style="color: #d6b77e;" fill="none" stroke="currentColor" stroke-width="0.6">
+            <circle cx="150" cy="150" r="140" opacity="0.3"/>
+            <circle cx="150" cy="150" r="110" opacity="0.5"/>
+            <circle cx="150" cy="150" r="80" opacity="0.8"/>
+            <!-- Compass points -->
+            <line x1="150" y1="10" x2="150" y2="290"/>
+            <line x1="10" y1="150" x2="290" y2="150"/>
+            <line x1="51" y1="51" x2="249" y2="249" opacity="0.4"/>
+            <line x1="249" y1="51" x2="51" y2="249" opacity="0.4"/>
+            <!-- Star -->
+            <polygon points="150,60 160,150 150,240 140,150" fill="currentColor"/>
+            <polygon points="60,150 150,140 240,150 150,160" fill="currentColor"/>
+            <!-- Labels -->
+            <text x="150" y="30" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="currentColor" font-style="italic">N</text>
+            <text x="150" y="285" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="currentColor" font-style="italic">S</text>
+            <text x="285" y="155" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="currentColor" font-style="italic">E</text>
+            <text x="15" y="155" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="currentColor" font-style="italic">W</text>
+            <!-- Center detail -->
+            <circle cx="150" cy="150" r="4" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <div class="mt-8 text-center">
+          <div class="font-display-italic text-lg text-[#d6b77e]">30 minutes from Beirut</div>
+          <div class="eyebrow mt-2" style="color: #8a8278;">via the coastal road to Jounieh</div>
+        </div>
+
+        <div class="mt-10 flex items-center justify-center gap-6">
+          <a href="#" class="link-gold" style="color: #d6b77e;">Instagram</a>
+          <span style="color: #4a453e;">·</span>
+          <a href="#" class="link-gold" style="color: #d6b77e;">Facebook</a>
+          <span style="color: #4a453e;">·</span>
+          <a href="#" class="link-gold" style="color: #d6b77e;">WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =================================================================== -->
+<!-- ===================== 03 · GALLERY ================================ -->
+<!-- =================================================================== -->
+<section id="gallery" class="bg-[var(--cream)]">
+
+  <!-- Cinematic Hero -->
+  <div class="relative h-[85vh] overflow-hidden ken-burns">
+    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=2000&q=80" alt="" class="w-full h-full object-cover"/>
+    <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(28,25,23,0.1) 0%, rgba(28,25,23,0.3) 50%, rgba(28,25,23,0.75) 100%);"></div>
+
+    <div class="absolute inset-0 flex items-end">
+      <div class="section-wrap w-full pb-20 text-[var(--cream)]">
+        <div class="flex items-end justify-between gap-6 flex-wrap">
+          <div class="reveal">
+            <div class="num-plate text-5xl" style="color: #d6b77e;">03</div>
+            <div class="eyebrow mt-2" style="color: #d6b77e;">A Curated Collection</div>
+            <h2 class="font-display text-6xl md:text-8xl mt-6 leading-[0.95]">
+              The <em class="font-display-italic">gallery</em>
+            </h2>
+          </div>
+          <div class="reveal reveal-delay-2 max-w-sm text-sm leading-relaxed text-[#e8dfc9]">
+            Photographed over the seasons — each image chosen for what it reveals, and what it leaves
+            for you to discover in person.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Play overlay (cinematic cue) -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 reveal">
+      <button class="group flex flex-col items-center gap-4">
+        <div class="w-20 h-20 rounded-full border border-[#d6b77e]/60 flex items-center justify-center backdrop-blur-sm transition-all duration-500 group-hover:border-[#d6b77e] group-hover:scale-110">
+          <svg width="20" height="24" viewBox="0 0 20 24" fill="#d6b77e"><path d="M0 0 L20 12 L0 24 Z"/></svg>
+        </div>
+        <div class="eyebrow text-[#d6b77e]">Watch the Film · 02:18</div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="section-wrap py-16">
+    <div class="flex flex-wrap items-center justify-center gap-2 md:gap-6 reveal">
+      <button class="filter-btn active" data-filter="all">All · 24</button>
+      <span class="diamond hidden md:inline-block"></span>
+      <button class="filter-btn" data-filter="rooms">Rooms</button>
+      <span class="diamond hidden md:inline-block"></span>
+      <button class="filter-btn" data-filter="events">Events</button>
+      <span class="diamond hidden md:inline-block"></span>
+      <button class="filter-btn" data-filter="exterior">Exterior</button>
+      <span class="diamond hidden md:inline-block"></span>
+      <button class="filter-btn" data-filter="dining">Dining</button>
+    </div>
+
+    <!-- Masonry -->
+    <div class="masonry mt-16">
+      <div class="masonry-item" data-cat="rooms">
+        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&q=80" alt=""/>
+        <div class="mask"><div><div class="eyebrow" style="color: #d6b77e;">Rooms</div><div class="font-display-italic text-xl mt-1">Executive Suite</div></div></div>
+      </div>
+      <div class="masonry-item" data-cat="exterior">
+        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80" alt=""/>
+        <div class="mask"><div><div class="eyebrow" style="color: #d6b77e;">Exterior</div><div class="font-display-italic text-xl mt-1">South façade at dusk</div></div></div>
+      </div>
+      <div class="masonry-item" data-cat="dining">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt=""/>
+        <div class="mask"><div><div class="eyebrow" style="color: #d6b77e;">Dining</div><div class="font-display-italic text-xl mt-1">Tilal Bzommar</div></div></div>
+      </div>
+      <div class="masonry-item" data-cat="events">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80" alt=""/>
+        <div class="mask"><div><div class="eyebrow" style="color: #d6b77e;">Events</div><div class="font-display-italic text-xl mt-1">The Grand Ballroom</div></div></div>
+      </div>
+      <div class="masonry-item" data-cat="rooms">
+        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80" alt=""/>
+        <div class="mask"><div><div class="eyebrow" style="color: #d6b77e;">Rooms</div><div class="font-display-italic text-xl mt-1">Deluxe, Sea view</div></div></div>
+      </div>
+      <div class="masonry-item" data-cat="exterior">
+        <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&q=80" alt=""/>
+        <div class="mask"><div><div class="eyebrow" style="color: #d6b77e;">Exterior</div><div class="font-display-italic text-xl mt-1">The formal gardens</div></div></div>
+      </div>
+      <div class="masonry-item" data-cat="dining">
+        <img src="https://images.unsplash.com/photo-1592861956120-e524fc739696?w=800&q=80" alt=""/>
+        <div class="mask"><div><div class="eyebrow" style="color: #d6b77e;">Dining</div><div class="font-display-italic text-xl mt-1">Terrace service</div></div></div>
+      </div>
+      <div class="masonry-item" data-cat="events">
+        <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80" alt=""/>
+        <div class="mask"><div><div class="eyebrow" style="color: #d6b77e;">Events</div><div class="font-display-italic text-xl mt-1">A garden wedding</div></div></div>
+      </div>
+      <div class="masonry-item" data-cat="rooms">
+        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80" alt=""/>
+        <div class="mask"><div><div class="eyebrow" style="color: #d6b77e;">Rooms</div><div class="font-display-italic text-xl mt-1">Junior suite detail</div></div></div>
+      </div>
+      <div class="masonry-item" data-cat="exterior">
+        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80" alt=""/>
+        <div class="mask"><div><div class="eyebrow" style="color: #d6b77e;">Exterior</div><div class="font-display-italic text-xl mt-1">The colonnade</div></div></div>
+      </div>
+      <div class="masonry-item" data-cat="dining">
+        <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?w=800&q=80" alt=""/>
+        <div class="mask"><div><div class="eyebrow" style="color: #d6b77e;">Dining</div><div class="font-display-italic text-xl mt-1">Seasonal tasting</div></div></div>
+      </div>
+      <div class="masonry-item" data-cat="events">
+        <img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=800&q=80" alt=""/>
+        <div class="mask"><div><div class="eyebrow" style="color: #d6b77e;">Events</div><div class="font-display-italic text-xl mt-1">Private gala</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =================================================================== -->
+<!-- ===================== 04 · OFFERS & PACKAGES ====================== -->
+<!-- =================================================================== -->
+<section id="offers" class="py-28 md:py-40 bg-[var(--paper)]">
+  <div class="section-wrap">
+
+    <div class="text-center mb-24 reveal">
+      <div class="num-plate text-5xl">04</div>
+      <div class="eyebrow mt-2">Exclusive Invitations</div>
+      <h2 class="font-display text-5xl md:text-7xl mt-6 leading-tight">
+        Offers &<br/><em class="font-display-italic" style="color: var(--gold-dark);">packages</em>
+      </h2>
+      <div class="mt-6 flex items-center justify-center gap-3">
+        <span class="hairline"></span>
+        <span class="font-display-italic text-[var(--gray)]">Three seasonal escapes</span>
+        <span class="hairline"></span>
+      </div>
+    </div>
+
+    <!-- Invitation cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+
+      <!-- Invitation 1 -->
+      <div class="invitation reveal">
+        <div class="relative aspect-[4/3] img-frame mb-8 -mx-3 -mt-5">
+          <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&q=80" alt="" class="w-full h-full object-cover"/>
+          <div class="absolute top-3 left-3 bg-[var(--ivory)] px-3 py-1">
+            <div class="eyebrow">Spring · 2026</div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <div class="font-display-italic text-base" style="color: var(--gold-dark);">An Invitation to</div>
+          <h3 class="font-display text-3xl md:text-4xl mt-2">The Rose Walk</h3>
+          <p class="eyebrow mt-3">3 Nights · From $980</p>
+        </div>
+
+        <div class="my-7 flex items-center justify-center">
+          <span class="hairline"></span>
+          <div class="diamond"></div>
+          <span class="hairline"></span>
+        </div>
+
+        <ul class="text-sm text-[var(--gray)] space-y-3 leading-relaxed">
+          <li class="flex gap-3"><span style="color: var(--gold-dark);">·</span>Three nights in a Deluxe mountain-view room</li>
+          <li class="flex gap-3"><span style="color: var(--gold-dark);">·</span>Private guided walk through the formal gardens</li>
+          <li class="flex gap-3"><span style="color: var(--gold-dark);">·</span>Five-course tasting at Tilal Bzommar</li>
+          <li class="flex gap-3"><span style="color: var(--gold-dark);">·</span>Hand-pressed botanical tea service</li>
+          <li class="flex gap-3"><span style="color: var(--gold-dark);">·</span>Late checkout until 4pm</li>
+        </ul>
+
+        <div class="mt-10 text-center">
+          <a href="#" class="btn-outline arrow-right">Reserve</a>
+        </div>
+      </div>
+
+      <!-- Invitation 2 (featured) -->
+      <div class="invitation reveal reveal-delay-1" style="background: var(--ink); color: var(--cream); border-color: var(--gold-dark);">
+        <div class="relative aspect-[4/3] img-frame mb-8 -mx-3 -mt-5">
+          <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80" alt="" class="w-full h-full object-cover"/>
+          <div class="absolute top-3 left-3 bg-[var(--gold-dark)] px-3 py-1">
+            <div class="eyebrow" style="color: var(--cream);">Signature</div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <div class="font-display-italic text-base" style="color: #d6b77e;">An Invitation to</div>
+          <h3 class="font-display text-3xl md:text-4xl mt-2">A Weekend Apart</h3>
+          <p class="eyebrow mt-3" style="color: #d6b77e;">2 Nights · From $1,450</p>
+        </div>
+
+        <div class="my-7 flex items-center justify-center">
+          <span class="hairline"></span>
+          <div class="diamond"></div>
+          <span class="hairline"></span>
+        </div>
+
+        <ul class="text-sm text-[#c9bfae] space-y-3 leading-relaxed">
+          <li class="flex gap-3"><span style="color: #d6b77e;">·</span>Two nights in the Junior Suite with private balcony</li>
+          <li class="flex gap-3"><span style="color: #d6b77e;">·</span>In-room arrival ritual with Lebanese wine</li>
+          <li class="flex gap-3"><span style="color: #d6b77e;">·</span>Private dinner on the terrace, two guests</li>
+          <li class="flex gap-3"><span style="color: #d6b77e;">·</span>Couples' hammam & massage experience</li>
+          <li class="flex gap-3"><span style="color: #d6b77e;">·</span>Complimentary airport transfer</li>
+        </ul>
+
+        <div class="mt-10 text-center">
+          <a href="#" class="btn-primary arrow-right" style="background: #d6b77e; border-color: #d6b77e; color: var(--ink);">Reserve</a>
+        </div>
+      </div>
+
+      <!-- Invitation 3 -->
+      <div class="invitation reveal reveal-delay-2">
+        <div class="relative aspect-[4/3] img-frame mb-8 -mx-3 -mt-5">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="" class="w-full h-full object-cover"/>
+          <div class="absolute top-3 left-3 bg-[var(--ivory)] px-3 py-1">
+            <div class="eyebrow">Culinary</div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <div class="font-display-italic text-base" style="color: var(--gold-dark);">An Invitation to</div>
+          <h3 class="font-display text-3xl md:text-4xl mt-2">At the Chef's Table</h3>
+          <p class="eyebrow mt-3">1 Night · From $640</p>
+        </div>
+
+        <div class="my-7 flex items-center justify-center">
+          <span class="hairline"></span>
+          <div class="diamond"></div>
+          <span class="hairline"></span>
+        </div>
+
+        <ul class="text-sm text-[var(--gray)] space-y-3 leading-relaxed">
+          <li class="flex gap-3"><span style="color: var(--gold-dark);">·</span>One night in a Standard mountain-view room</li>
+          <li class="flex gap-3"><span style="color: var(--gold-dark);">·</span>Seven-course tasting menu with Chef Maroun</li>
+          <li class="flex gap-3"><span style="color: var(--gold-dark);">·</span>Wine pairing from our cellar</li>
+          <li class="flex gap-3"><span style="color: var(--gold-dark);">·</span>Olive-grove breakfast the following morning</li>
+          <li class="flex gap-3"><span style="color: var(--gold-dark);">·</span>A small keepsake from the kitchen</li>
+        </ul>
+
+        <div class="mt-10 text-center">
+          <a href="#" class="btn-outline arrow-right">Reserve</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Small print -->
+    <p class="text-center text-xs text-[var(--gray-soft)] mt-16 max-w-2xl mx-auto eyebrow" style="letter-spacing: 0.18em;">
+      All packages are subject to availability · Minimum 30-day advance booking · 
+      Not combinable with other offers
+    </p>
+  </div>
+</section>
+
+
+<!-- =================================================================== -->
+<!-- ===================== 05 · LOCATION =============================== -->
+<!-- =================================================================== -->
+<section id="location" class="py-28 md:py-40 bg-[var(--cream)]">
+
+  <div class="section-wrap">
+    <div class="grid grid-cols-12 gap-6 items-end mb-20 reveal">
+      <div class="col-span-12 md:col-span-4">
+        <div class="num-plate text-5xl">05</div>
+        <div class="eyebrow mt-2">Here & Nearby</div>
+      </div>
+      <div class="col-span-12 md:col-span-8">
+        <h2 class="font-display text-5xl md:text-7xl leading-[1.05]">
+          The <em class="font-display-italic" style="color: var(--gold-dark);">neighborhood</em>
+        </h2>
+      </div>
+    </div>
+
+    <!-- Map + Key -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-32">
+
+      <!-- Stylized map -->
+      <div class="lg:col-span-8 reveal">
+        <div class="map-stylized aspect-[4/3] relative">
+          <!-- Roads -->
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 800 600" fill="none" stroke="rgba(28,25,23,0.18)" stroke-width="1.5" stroke-linecap="round">
+            <path d="M 0 300 Q 200 250, 400 320 T 800 280" stroke-width="2"/>
+            <path d="M 100 0 Q 180 200, 400 320 T 520 600"/>
+            <path d="M 0 450 Q 300 400, 500 480 T 800 500"/>
+            <path d="M 600 50 Q 550 200, 480 360" stroke-dasharray="4 6"/>
+            <path d="M 300 0 Q 340 150, 400 320" stroke-dasharray="4 6"/>
+          </svg>
+
+          <!-- Labels -->
+          <div class="absolute top-8 left-8">
+            <div class="eyebrow" style="color: var(--gold-dark);">Mount Lebanon</div>
+            <div class="font-display-italic text-lg text-[var(--ink)]">Bzommar Region</div>
+          </div>
+
+          <div class="absolute bottom-8 right-8 text-right">
+            <div class="eyebrow" style="color: var(--gold-dark);">Scale</div>
+            <div class="flex items-center gap-2 mt-2 justify-end">
+              <div class="w-12 h-[3px] bg-[var(--ink)]"></div>
+              <span class="font-display-italic text-sm">1 km</span>
+            </div>
+          </div>
+
+          <!-- Pins -->
+          <div class="map-pin main" style="top: 45%; left: 50%;"></div>
+          <div class="map-pin" style="top: 30%; left: 28%;"></div>
+          <div class="map-pin" style="top: 62%; left: 38%;"></div>
+          <div class="map-pin" style="top: 28%; left: 70%;"></div>
+          <div class="map-pin" style="top: 70%; left: 65%;"></div>
+          <div class="map-pin" style="top: 48%; left: 82%;"></div>
+
+          <!-- Label for main pin -->
+          <div class="absolute" style="top: 42%; left: 53%;">
+            <div class="bg-[var(--ivory)] px-3 py-1.5 shadow-md">
+              <div class="eyebrow">The Palace</div>
+            </div>
+          </div>
+
+          <!-- Compass -->
+          <div class="absolute top-8 right-8">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" stroke="var(--gold-dark)" stroke-width="0.8">
+              <circle cx="30" cy="30" r="26" opacity="0.4"/>
+              <polygon points="30,8 34,30 30,52 26,30" fill="var(--gold-dark)"/>
+              <text x="30" y="6" text-anchor="middle" font-family="Cormorant Garamond" font-size="10" fill="var(--gold-dark)" font-style="italic">N</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key / directions -->
+      <div class="lg:col-span-4 reveal reveal-delay-2">
+        <div class="bg-[var(--ivory)] p-8 h-full border border-[var(--line)]">
+          <div class="eyebrow">Getting Here</div>
+          <h4 class="font-display text-2xl mt-4 leading-tight">From Beirut Rafic Hariri International Airport</h4>
+          <div class="mt-8 space-y-5 text-sm text-[var(--gray)] leading-relaxed">
+            <div class="flex gap-4">
+              <div class="num-plate text-xl flex-shrink-0">01</div>
+              <div>Take the coastal highway north toward Jounieh (25 min).</div>
+            </div>
+            <div class="flex gap-4">
+              <div class="num-plate text-xl flex-shrink-0">02</div>
+              <div>Exit at Jounieh and follow signs to Harissa–Bzommar.</div>
+            </div>
+            <div class="flex gap-4">
+              <div class="num-plate text-xl flex-shrink-0">03</div>
+              <div>Ascend the mountain road for 12 minutes. The palace is at the summit.</div>
+            </div>
+          </div>
+
+          <div class="mt-10 pt-8 border-t border-[var(--line)]">
+            <div class="eyebrow">Complimentary</div>
+            <p class="text-sm text-[var(--gray)] mt-2 leading-relaxed">
+              Airport transfers are offered to guests booking directly.
+            </p>
+            <a href="#" class="link-gold arrow-right mt-4">Arrange transfer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEIGHBORHOOD ATTRACTIONS -->
+    <div>
+      <div class="flex items-end justify-between gap-6 mb-12 reveal flex-wrap">
+        <div>
+          <div class="eyebrow mb-3">Worth the walk</div>
+          <h3 class="font-display text-4xl md:text-5xl">
+            <em class="font-display-italic">Five</em> curated nearby experiences
+          </h3>
+        </div>
+        <a href="#" class="link-gold arrow-right">View the full concierge guide</a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+
+        <div class="group cursor-pointer reveal">
+          <div class="img-frame aspect-[3/4] mb-4">
+            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=600&q=80" alt="" class="w-full h-full object-cover"/>
+          </div>
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <div class="eyebrow" style="color: var(--gold-dark);">2 min walk</div>
+              <h4 class="font-display text-xl mt-1.5">The Convent</h4>
+            </div>
+            <div class="num-plate text-2xl">I</div>
+          </div>
+          <p class="text-xs text-[var(--gray)] mt-2 leading-relaxed">18th-century Armenian Catholic monastery and museum of sacred art.</p>
+        </div>
+
+        <div class="group cursor-pointer reveal reveal-delay-1">
+          <div class="img-frame aspect-[3/4] mb-4">
+            <img src="https://images.unsplash.com/photo-1528543606781-2f6e6857f318?w=600&q=80" alt="" class="w-full h-full object-cover"/>
+          </div>
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <div class="eyebrow" style="color: var(--gold-dark);">8 min drive</div>
+              <h4 class="font-display text-xl mt-1.5">Harissa</h4>
+            </div>
+            <div class="num-plate text-2xl">II</div>
+          </div>
+          <p class="text-xs text-[var(--gray)] mt-2 leading-relaxed">The teleferique and Our Lady of Lebanon — an iconic view over the bay.</p>
+        </div>
+
+        <div class="group cursor-pointer reveal reveal-delay-2">
+          <div class="img-frame aspect-[3/4] mb-4">
+            <img src="https://images.unsplash.com/photo-1520637836862-4d197d17c55a?w=600&q=80" alt="" class="w-full h-full object-cover"/>
+          </div>
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <div class="eyebrow" style="color: var(--gold-dark);">15 min drive</div>
+              <h4 class="font-display text-xl mt-1.5">Jeita Grotto</h4>
+            </div>
+            <div class="num-plate text-2xl">III</div>
+          </div>
+          <p class="text-xs text-[var(--gray)] mt-2 leading-relaxed">Limestone caverns carved by the Nahr el-Kalb over millennia.</p>
+        </div>
+
+        <div class="group cursor-pointer reveal reveal-delay-3">
+          <div class="img-frame aspect-[3/4] mb-4">
+            <img src="https://images.unsplash.com/photo-1519074002996-a69e7ac46a42?w=600&q=80" alt="" class="w-full h-full object-cover"/>
+          </div>
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <div class="eyebrow" style="color: var(--gold-dark);">20 min drive</div>
+              <h4 class="font-display text-xl mt-1.5">Byblos</h4>
+            </div>
+            <div class="num-plate text-2xl">IV</div>
+          </div>
+          <p class="text-xs text-[var(--gray)] mt-2 leading-relaxed">One of the oldest continuously inhabited cities in the world.</p>
+        </div>
+
+        <div class="group cursor-pointer reveal reveal-delay-4">
+          <div class="img-frame aspect-[3/4] mb-4">
+            <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=600&q=80" alt="" class="w-full h-full object-cover"/>
+          </div>
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <div class="eyebrow" style="color: var(--gold-dark);">30 min drive</div>
+              <h4 class="font-display text-xl mt-1.5">Beirut Souks</h4>
+            </div>
+            <div class="num-plate text-2xl">V</div>
+          </div>
+          <p class="text-xs text-[var(--gray)] mt-2 leading-relaxed">Downtown Beirut's restored heritage district of shops and cafés.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =================================================================== -->
+<!-- ===================== 06 · FAQ ==================================== -->
+<!-- =================================================================== -->
+<section id="faq" class="py-28 md:py-40 bg-[var(--ivory)]">
+  <div class="section-wrap">
+
+    <div class="grid grid-cols-12 gap-8 mb-20">
+      <div class="col-span-12 md:col-span-5 reveal">
+        <div class="num-plate text-5xl">06</div>
+        <div class="eyebrow mt-2">Thoughtful Answers</div>
+        <h2 class="font-display text-5xl md:text-6xl mt-6 leading-[1.05]">
+          Frequently<br/>
+          <em class="font-display-italic" style="color: var(--gold-dark);">asked</em>
+        </h2>
+        <p class="mt-8 text-[var(--gray)] text-base leading-relaxed max-w-sm">
+          A short letter, rather than a long list. If what you're looking for
+          isn't here, please write to us directly.
+        </p>
+        <a href="#contact" class="link-gold arrow-right mt-6 inline-block">Ask a question</a>
+      </div>
+
+      <div class="col-span-12 md:col-span-7">
+
+        <!-- Category: Booking -->
+        <div class="mb-12 reveal">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="num-plate text-xl">i.</span>
+            <div class="eyebrow">Booking & Arrival</div>
+            <div class="flex-1 h-px bg-[var(--line)]"></div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span class="font-display text-xl md:text-2xl">When should I book to secure my preferred dates?</span>
+              <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content">
+              <p class="pb-7 text-[var(--gray)] leading-relaxed text-sm max-w-2xl">
+                For weekends and the summer months (June–September), we recommend booking three to six weeks ahead.
+                For private events and the festive season, twelve weeks is advisable.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span class="font-display text-xl md:text-2xl">Do you offer flexible cancellation?</span>
+              <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content">
+              <p class="pb-7 text-[var(--gray)] leading-relaxed text-sm max-w-2xl">
+                Bookings made directly with the hotel are fully refundable up to 72 hours before arrival.
+                Package stays and event reservations follow their own terms — please see our Policies.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span class="font-display text-xl md:text-2xl">Is airport transfer included?</span>
+              <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content">
+              <p class="pb-7 text-[var(--gray)] leading-relaxed text-sm max-w-2xl">
+                Complimentary private transfers to and from Beirut-Rafic Hariri International are offered on bookings
+                of two nights or more made directly through the hotel.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: Amenities -->
+        <div class="mb-12 reveal">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="num-plate text-xl">ii.</span>
+            <div class="eyebrow">Amenities & Experience</div>
+            <div class="flex-1 h-px bg-[var(--line)]"></div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span class="font-display text-xl md:text-2xl">Is the restaurant open to non-guests?</span>
+              <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content">
+              <p class="pb-7 text-[var(--gray)] leading-relaxed text-sm max-w-2xl">
+                Yes — Tilal Bzommar welcomes outside guests for dinner Wednesday through Sunday, and Sunday lunch.
+                Reservations are required; please call ahead.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span class="font-display text-xl md:text-2xl">Are pets welcome?</span>
+              <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content">
+              <p class="pb-7 text-[var(--gray)] leading-relaxed text-sm max-w-2xl">
+                Well-behaved small pets are welcome in select rooms for a nominal fee, subject to availability.
+                Please notify us at the time of booking.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: Events -->
+        <div class="reveal">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="num-plate text-xl">iii.</span>
+            <div class="eyebrow">Private Events</div>
+            <div class="flex-1 h-px bg-[var(--line)]"></div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span class="font-display text-xl md:text-2xl">Can the palace be booked exclusively?</span>
+              <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content">
+              <p class="pb-7 text-[var(--gray)] leading-relaxed text-sm max-w-2xl">
+                For weddings, family milestones, and private retreats, exclusive use of the palace is possible
+                with a minimum three-night stay. Our Head of Heritage & Events will guide you through every detail.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span class="font-display text-xl md:text-2xl">What is the capacity of the Grand Ballroom?</span>
+              <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content">
+              <p class="pb-7 text-[var(--gray)] leading-relaxed text-sm max-w-2xl">
+                The Grand Ballroom accommodates 300 guests seated for dinner and 450 for a cocktail reception.
+                The adjoining terrace and gardens add space for up to 500 guests combined.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =================================================================== -->
+<!-- ===================== 07 · POLICIES =============================== -->
+<!-- =================================================================== -->
+<section id="policies" class="py-28 md:py-40 bg-[var(--cream)]">
+  <div class="section-wrap">
+
+    <div class="reveal mb-16">
+      <div class="num-plate text-5xl">07</div>
+      <div class="eyebrow mt-2">House Rules</div>
+      <h2 class="font-display text-5xl md:text-6xl mt-6 leading-[1.05] max-w-3xl">
+        Our <em class="font-display-italic" style="color: var(--gold-dark);">policies</em>, written plainly
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-12 gap-8 lg:gap-16">
+
+      <!-- Sticky sidebar -->
+      <aside class="col-span-12 lg:col-span-3">
+        <div class="lg:sticky lg:top-28 reveal">
+          <div class="eyebrow mb-5 pb-5 border-b border-[var(--line)]">Jump to</div>
+          <nav class="flex flex-col">
+            <a href="#policy-cancel" class="side-link active">Cancellation</a>
+            <a href="#policy-privacy" class="side-link">Privacy</a>
+            <a href="#policy-terms" class="side-link">Terms of Stay</a>
+            <a href="#policy-accessibility" class="side-link">Accessibility</a>
+            <a href="#policy-sustainability" class="side-link">Sustainability</a>
+          </nav>
+
+          <div class="mt-10 p-6 bg-[var(--ivory)] border border-[var(--line)]">
+            <div class="eyebrow" style="color: var(--gold-dark);">Updated</div>
+            <div class="font-display text-xl mt-2">15 April 2026</div>
+            <p class="text-xs text-[var(--gray)] mt-2 leading-relaxed">
+              A summary, not legal counsel. For full terms, please see our reservation agreement.
+            </p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Content -->
+      <div class="col-span-12 lg:col-span-9 max-w-3xl space-y-20 reveal reveal-delay-2">
+
+        <article id="policy-cancel">
+          <div class="eyebrow mb-3" style="color: var(--gold-dark);">§ 01</div>
+          <h3 class="font-display text-3xl md:text-4xl mb-6">Cancellation</h3>
+          <p class="text-[var(--gray)] text-base leading-[1.85] mb-5">
+            Direct bookings may be cancelled without charge up to 72 hours before the arrival date. Within 72 hours,
+            the first night's stay is payable. Package reservations, non-refundable rates, and group bookings follow
+            individual terms disclosed at the time of booking.
+          </p>
+          <p class="text-[var(--gray)] text-base leading-[1.85]">
+            In the event of unforeseen circumstances — illness, travel disruption — please write to us. We handle
+            each case with discretion and good faith.
+          </p>
+        </article>
+
+        <article id="policy-privacy">
+          <div class="eyebrow mb-3" style="color: var(--gold-dark);">§ 02</div>
+          <h3 class="font-display text-3xl md:text-4xl mb-6">Privacy</h3>
+          <p class="text-[var(--gray)] text-base leading-[1.85] mb-5">
+            We collect only what is necessary to welcome you well: your name, contact details, and preferences you
+            choose to share. We do not sell, rent, or trade your information. Our newsletter is opt-in and
+            unsubscribing takes one click.
+          </p>
+          <p class="text-[var(--gray)] text-base leading-[1.85]">
+            Guest records are retained for seven years, in compliance with Lebanese hospitality regulations, and
+            then permanently deleted. Full details are available in our data-protection statement.
+          </p>
+        </article>
+
+        <article id="policy-terms">
+          <div class="eyebrow mb-3" style="color: var(--gold-dark);">§ 03</div>
+          <h3 class="font-display text-3xl md:text-4xl mb-6">Terms of Stay</h3>
+          <ul class="space-y-4 text-[var(--gray)] text-base leading-[1.85]">
+            <li class="flex gap-4"><span class="num-plate text-xl flex-shrink-0">i.</span><span>Check-in is from 3:00 pm. Check-out is by 12:00 noon. Late checkouts are offered subject to availability.</span></li>
+            <li class="flex gap-4"><span class="num-plate text-xl flex-shrink-0">ii.</span><span>The palace is a non-smoking property. Smoking is welcome on the outdoor terraces and within the gardens.</span></li>
+            <li class="flex gap-4"><span class="num-plate text-xl flex-shrink-0">iii.</span><span>We observe quiet hours from 10:00 pm to 7:00 am throughout the grounds.</span></li>
+            <li class="flex gap-4"><span class="num-plate text-xl flex-shrink-0">iv.</span><span>Guests are responsible for any damage to furnishings, artworks, and heritage fabric of the palace.</span></li>
+          </ul>
+        </article>
+
+        <article id="policy-accessibility">
+          <div class="eyebrow mb-3" style="color: var(--gold-dark);">§ 04</div>
+          <h3 class="font-display text-3xl md:text-4xl mb-6">Accessibility</h3>
+          <p class="text-[var(--gray)] text-base leading-[1.85]">
+            Six of our rooms are adapted for guests with reduced mobility, featuring step-free showers, widened
+            doorways, and accessible furnishings. The main public spaces — reception, ballroom, terrace, and
+            Tilal Bzommar — are all reachable by lift. Please mention any requirements at the time of booking so
+            we can prepare thoughtfully.
+          </p>
+        </article>
+
+        <article id="policy-sustainability">
+          <div class="eyebrow mb-3" style="color: var(--gold-dark);">§ 05</div>
+          <h3 class="font-display text-3xl md:text-4xl mb-6">Sustainability</h3>
+          <p class="text-[var(--gray)] text-base leading-[1.85]">
+            We are a small property in a fragile landscape. Our kitchen sources 80% of its produce from within
+            20 kilometers of the palace. We operate on 100% renewable electricity. Greywater irrigates our
+            gardens. Our amenities arrive in refillable ceramic, not single-use plastic. Small measures,
+            practiced consistently.
+          </p>
+        </article>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =================================================================== -->
+<!-- ===================== 08 · BLOG / JOURNAL ========================= -->
+<!-- =================================================================== -->
+<section id="journal" class="py-28 md:py-40 bg-[var(--ivory)]">
+
+  <div class="section-wrap">
+
+    <div class="grid grid-cols-12 gap-6 items-end mb-20 reveal">
+      <div class="col-span-12 md:col-span-8">
+        <div class="num-plate text-5xl">08</div>
+        <div class="eyebrow mt-2">Dispatches from the Mountain</div>
+        <h2 class="font-display text-5xl md:text-7xl mt-6 leading-[1.05]">
+          The <em class="font-display-italic" style="color: var(--gold-dark);">Journal</em>
+        </h2>
+      </div>
+      <div class="col-span-12 md:col-span-4 md:text-right">
+        <a href="#" class="link-gold arrow-right">All dispatches</a>
+      </div>
+    </div>
+
+    <!-- Featured hero article -->
+    <article class="mag-card group cursor-pointer grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 mb-24 reveal">
+      <div class="lg:col-span-7">
+        <div class="img-frame aspect-[4/3]">
+          <img src="https://images.unsplash.com/photo-1519074002996-a69e7ac46a42?w=1400&q=80" alt="" class="w-full h-full object-cover"/>
+        </div>
+      </div>
+      <div class="lg:col-span-5 flex flex-col justify-center">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="eyebrow" style="color: var(--gold-dark);">Feature</div>
+          <span class="diamond"></span>
+          <div class="eyebrow">15 April 2026</div>
+          <span class="diamond"></span>
+          <div class="eyebrow">12 min read</div>
+        </div>
+        <h3 class="mag-title font-display text-4xl md:text-5xl leading-[1.1]">
+          The lost carvings of the <em class="font-display-italic">eastern wing</em>, recovered
+        </h3>
+        <p class="mt-6 text-[var(--gray)] text-base leading-relaxed max-w-lg">
+          A three-year restoration reveals nineteen panels of 18th-century hand-carved limestone —
+          hidden behind plaster since the Ottoman renovation of 1881. Our head of heritage, Nadia Sassine,
+          walks us through what was found, and what it means.
+        </p>
+        <div class="mt-8 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&q=80" alt="" class="w-full h-full object-cover"/>
+          </div>
+          <div>
+            <div class="font-display text-base">Nadia Sassine</div>
+            <div class="eyebrow text-[var(--gray)]" style="letter-spacing: 0.15em;">Head of Heritage</div>
+          </div>
+        </div>
+        <a href="#" class="link-gold arrow-right mt-8 self-start">Read the dispatch</a>
+      </div>
+    </article>
+
+    <!-- Grid of recent articles -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+
+      <article class="mag-card group cursor-pointer reveal">
+        <div class="img-frame aspect-[4/5] mb-6">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="" class="w-full h-full object-cover"/>
+        </div>
+        <div class="flex items-center gap-3 mb-3">
+          <div class="eyebrow" style="color: var(--gold-dark);">Culinary</div>
+          <span class="diamond"></span>
+          <div class="eyebrow">08 April</div>
+        </div>
+        <h3 class="mag-title font-display text-2xl md:text-3xl leading-tight">
+          Spring on the plate: a new seasonal menu from Chef Maroun
+        </h3>
+        <p class="mt-4 text-sm text-[var(--gray)] leading-relaxed">
+          Wild asparagus from the high terraces, fresh labneh, and a whole lamb cooked slowly over olive wood.
+        </p>
+      </article>
+
+      <article class="mag-card group cursor-pointer reveal reveal-delay-1">
+        <div class="img-frame aspect-[4/5] mb-6">
+          <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&q=80" alt="" class="w-full h-full object-cover"/>
+        </div>
+        <div class="flex items-center gap-3 mb-3">
+          <div class="eyebrow" style="color: var(--gold-dark);">Gardens</div>
+          <span class="diamond"></span>
+          <div class="eyebrow">28 March</div>
+        </div>
+        <h3 class="mag-title font-display text-2xl md:text-3xl leading-tight">
+          The rose walk in bloom — a short guide to our nineteen varietals
+        </h3>
+        <p class="mt-4 text-sm text-[var(--gray)] leading-relaxed">
+          Our head gardener, Elias, on the varieties that thrive in Mount Lebanon's thin alpine light.
+        </p>
+      </article>
+
+      <article class="mag-card group cursor-pointer reveal reveal-delay-2">
+        <div class="img-frame aspect-[4/5] mb-6">
+          <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80" alt="" class="w-full h-full object-cover"/>
+        </div>
+        <div class="flex items-center gap-3 mb-3">
+          <div class="eyebrow" style="color: var(--gold-dark);">Weddings</div>
+          <span class="diamond"></span>
+          <div class="eyebrow">14 March</div>
+        </div>
+        <h3 class="mag-title font-display text-2xl md:text-3xl leading-tight">
+          A wedding at dusk: Maria & Marc, photographed over a weekend
+        </h3>
+        <p class="mt-4 text-sm text-[var(--gray)] leading-relaxed">
+          A quiet celebration of fifty guests, the orchestra on the terrace, and golden-hour light.
+        </p>
+      </article>
+
+    </div>
+
+    <!-- Newsletter CTA -->
+    <div class="mt-28 py-16 px-8 md:px-16 bg-[var(--ink)] text-[var(--cream)] relative overflow-hidden reveal">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10">
+        <div>
+          <div class="eyebrow" style="color: #d6b77e;">The dispatch</div>
+          <h3 class="font-display text-4xl md:text-5xl mt-4 leading-tight">
+            A letter from the<br/><em class="font-display-italic" style="color: #d6b77e;">palace, each month</em>
+          </h3>
+          <p class="mt-4 text-sm text-[#c9bfae] max-w-md">
+            Quiet reflections, seasonal menus, heritage stories.
+            Never promotional, never frequent.
+          </p>
+        </div>
+        <form class="flex flex-col gap-4">
+          <div class="flex items-center gap-0 border-b border-[#c9bfae]/30 pb-3">
+            <input type="email" placeholder="Your email" class="flex-1 bg-transparent border-0 outline-none text-base placeholder:text-[#8a8278] text-[var(--cream)] py-2"/>
+            <button class="eyebrow hover:text-[#d6b77e] transition-colors" style="color: #d6b77e;">Subscribe →</button>
+          </div>
+          <p class="text-xs text-[#8a8278] eyebrow" style="letter-spacing: 0.15em;">We respect your inbox — unsubscribe at any time</p>
+        </form>
+      </div>
+      <!-- Decorative -->
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full" style="background: radial-gradient(circle, rgba(214, 183, 126, 0.08) 0%, transparent 70%);"></div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="bg-[var(--ink)] text-[var(--cream)] pt-24 pb-10">
+  <div class="section-wrap">
+
+    <div class="grid grid-cols-12 gap-10 mb-20">
+      <div class="col-span-12 md:col-span-5">
+        <h3 class="font-display text-4xl md:text-5xl leading-tight">
+          Bzommar <em class="font-display-italic" style="color: #d6b77e;">Palace</em>
+        </h3>
+        <p class="mt-4 text-sm text-[#c9bfae] max-w-sm leading-relaxed">
+          Est. 1749 · Mount Lebanon · A house that has always known how to welcome.
+        </p>
+        <p class="mt-10 eyebrow" style="color: #8a8278;">This is a template preview</p>
+      </div>
+
+      <div class="col-span-6 md:col-span-2">
+        <div class="eyebrow mb-5" style="color: #d6b77e;">Pages</div>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#about" class="hover:text-[#d6b77e] transition-colors">About</a></li>
+          <li><a href="#gallery" class="hover:text-[#d6b77e] transition-colors">Gallery</a></li>
+          <li><a href="#offers" class="hover:text-[#d6b77e] transition-colors">Offers</a></li>
+          <li><a href="#journal" class="hover:text-[#d6b77e] transition-colors">Journal</a></li>
+        </ul>
+      </div>
+
+      <div class="col-span-6 md:col-span-2">
+        <div class="eyebrow mb-5" style="color: #d6b77e;">Support</div>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#contact" class="hover:text-[#d6b77e] transition-colors">Contact</a></li>
+          <li><a href="#faq" class="hover:text-[#d6b77e] transition-colors">FAQ</a></li>
+          <li><a href="#policies" class="hover:text-[#d6b77e] transition-colors">Policies</a></li>
+          <li><a href="#location" class="hover:text-[#d6b77e] transition-colors">Location</a></li>
+        </ul>
+      </div>
+
+      <div class="col-span-12 md:col-span-3">
+        <div class="eyebrow mb-5" style="color: #d6b77e;">Reach us</div>
+        <ul class="space-y-3 text-sm text-[#c9bfae]">
+          <li>+961 9 240 640</li>
+          <li>info@bzommarpalace.com</li>
+          <li class="pt-3">Bzommar, Mount Lebanon<br/>Lebanon</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-[#c9bfae]/15 pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div class="eyebrow" style="color: #8a8278; letter-spacing: 0.2em;">© 2026 Bzommar Palace Hotel · All rights reserved</div>
+      <div class="flex gap-6">
+        <a href="#" class="eyebrow hover:text-[#d6b77e] transition-colors" style="color: #c9bfae;">Instagram</a>
+        <a href="#" class="eyebrow hover:text-[#d6b77e] transition-colors" style="color: #c9bfae;">Facebook</a>
+        <a href="#" class="eyebrow hover:text-[#d6b77e] transition-colors" style="color: #c9bfae;">Pinterest</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- ============================= SCRIPTS ============================= -->
+<script>
+  // Intersection Observer for reveal animations
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        revealObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // Accordion
+  document.querySelectorAll('.accordion-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const wasOpen = item.classList.contains('open');
+      // Close all siblings in the same category (optional — here we close all)
+      document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Gallery filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.masonry-item');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      items.forEach(it => {
+        if (f === 'all' || it.dataset.cat === f) {
+          it.style.display = '';
+          setTimeout(() => it.style.opacity = '1', 10);
+        } else {
+          it.style.opacity = '0';
+          setTimeout(() => it.style.display = 'none', 300);
+        }
+      });
+    });
+  });
+  items.forEach(it => { it.style.transition = 'opacity 0.5s ease'; it.style.opacity = '1'; });
+
+  // Nav active state
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        navLinks.forEach(l => {
+          l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  sections.forEach(s => navObserver.observe(s));
+
+  // Policies sidebar active
+  const policyLinks = document.querySelectorAll('.side-link');
+  const policyArticles = document.querySelectorAll('article[id^="policy-"]');
+  const policyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        policyLinks.forEach(l => {
+          l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
+        });
+      }
+    });
+  }, { threshold: 0.3, rootMargin: '-20% 0px -50% 0px' });
+  policyArticles.forEach(a => policyObserver.observe(a));
+
+  // Mobile menu
+  const mBtn = document.getElementById('mobileMenuBtn');
+  const mMenu = document.getElementById('mobileMenu');
+  let mOpen = false;
+  mBtn?.addEventListener('click', () => {
+    mOpen = !mOpen;
+    mMenu.style.transform = mOpen ? 'translateY(0)' : 'translateY(100%)';
+    mBtn.innerText = mOpen ? 'Close ×' : 'Menu +';
+  });
+  document.querySelectorAll('.mobile-nav-link').forEach(l => {
+    l.addEventListener('click', () => {
+      mOpen = false;
+      mMenu.style.transform = 'translateY(100%)';
+      mBtn.innerText = 'Menu +';
+    });
+  });
+</script>
+
+</body>
+</html>

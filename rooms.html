@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rooms & Suites at Bzommar Palace Hotel">
+    <title>Rooms & Suites | Bzommar Palace Hotel</title>
+    <link rel="icon" type="image/png" href="assets/images/bzommaricon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="page-rooms">
+    <canvas id="golden-droplets"></canvas>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav" aria-label="Primary navigation">
+            <div class="container">
+                <div class="nav__brand">
+                    <a href="index.html" class="nav__logo">
+                        <span class="nav__logo-text">BZOMMAR<span class="nav__logo-sub">PALACE HOTEL</span></span>
+                    </a>
+                </div>
+
+                <button type="button"
+                        class="nav__toggle"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                        aria-controls="nav-menu">
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                </button>
+
+                <div class="nav__backdrop"></div>
+                <div class="nav__menu" id="nav-menu">
+                    <div class="nav__menu-header">
+                        <a href="index.html" class="nav__menu-logo">
+                            <span class="nav__logo-text">BZOMMAR<span class="nav__logo-sub">PALACE HOTEL</span></span>
+                        </a>
+                        <button type="button" class="nav__close" aria-label="Close navigation menu">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <ul class="nav__menu-links">
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">ABOUT</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="about.html" class="nav__dropdown-item">Heritage</a></li>
+                                <li><a href="gallery.html" class="nav__dropdown-item">Gallery</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">ROOMS</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="rooms.html#twin-room" class="nav__dropdown-item">Twin Room</a></li>
+                                <li><a href="rooms.html#studio" class="nav__dropdown-item">Studio</a></li>
+                                <li><a href="rooms.html#family-room" class="nav__dropdown-item">Family Room</a></li>
+                                <li><a href="rooms.html#junior-suite" class="nav__dropdown-item">Junior Suite</a></li>
+                                <li><a href="rooms.html#executive-suite" class="nav__dropdown-item">Executive Suite</a></li>
+                                <li><a href="rooms.html#deluxe-sea-view" class="nav__dropdown-item">Deluxe Room-Sea View</a></li>
+                                <li><a href="rooms.html#standard-mountain-view" class="nav__dropdown-item">Standard Room-Mountain View</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">PACKAGES</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="wedding-packages.html" class="nav__dropdown-item">Weddings</a></li>
+                                <li><a href="event-packages.html#corporate" class="nav__dropdown-item">Corporate</a></li>
+                                <li><a href="event-packages.html#birthdays-galas" class="nav__dropdown-item">Birthdays &amp; Galas</a></li>
+                                <li><a href="event-packages.html#wellness-retreats" class="nav__dropdown-item">Wellness Retreats</a></li>
+                                <li><a href="event-packages.html#live-performance" class="nav__dropdown-item">Live Performance</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">SERVICES</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="tilalbzommar.html" class="nav__dropdown-item">Tilal Bzommar</a></li>
+                                <li><a href="pianobar.html" class="nav__dropdown-item">Piano Bar</a></li>
+                                <li><a href="pool.html" class="nav__dropdown-item">Pool</a></li>
+                                <li><a href="garden.html" class="nav__dropdown-item">Garden</a></li>
+                                <li><a href="conference-hall.html" class="nav__dropdown-item">Conference Hall</a></li>
+                                <li><a href="terrace.html" class="nav__dropdown-item">Terrace</a></li>
+                                <li><a href="gym.html" class="nav__dropdown-item">Gym</a></li>
+                                <li><a href="games-lounge.html" class="nav__dropdown-item">Games Lounge</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="contact.html" class="nav__link">
+                                <span class="nav__link-label">CONTACT</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <span class="star-border star-border--nav">
+                        <a href="booking.html" class="nav__cta btn btn--primary">BOOK NOW</a>
+                    </span>
+
+                    <div class="nav__menu-contact">
+                        <a href="tel:+9619240640" class="nav__menu-contact-item">
+                            <i data-lucide="phone" class="nav__menu-contact-icon"></i>
+                            +961 9 240 640
+                        </a>
+                        <a href="mailto:info@bzommarpalacehotel.com" class="nav__menu-contact-item">
+                            <i data-lucide="mail" class="nav__menu-contact-icon"></i>
+                            info@bzommarpalacehotel.com
+                        </a>
+                        <a href="https://maps.app.goo.gl/69iL68mLTKK5ZNaXA" target="_blank" rel="noopener noreferrer" class="nav__menu-contact-item">
+                            <i data-lucide="map-pin" class="nav__menu-contact-icon"></i>
+                            Bzommar, Mount Lebanon, Lebanon
+                        </a>
+                        <div class="nav__menu-socials" aria-label="Social links">
+                            <a href="https://www.instagram.com/bzommarpalacehotel?igsh=MW5tNDhrZGN5Z3oybQ==" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.facebook.com/share/1EsDgShjzD/" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="Facebook">
+                                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://wa.me/9619240640" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="WhatsApp">
+                                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero hero--rooms">
+            <div class="hero__background">
+                <img src="assets/images/roomshero.png" alt="Bzommar Palace rooms and suites" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.6);">
+                <div class="hero__overlay"></div>
+                <div class="hero__gradient-overlay"></div>
+            </div>
+
+            <div class="container">
+                <div class="hero__content">
+                    <div class="hero__eyebrow">Accommodations</div>
+                    <h1 class="hero__title">Rooms &amp; Suites</h1>
+                </div>
+            </div>
+
+            <div class="hero__scroll-button">
+                <div class="scroll-down">
+                    <div class="circle">
+                        <svg class="animated-arrow" width="20" height="50" viewBox="0 0 20 50" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="10" y1="0" x2="10" y2="44"></line>
+                            <polyline points="3 37 10 44 17 37"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rooms Listing -->
+        <section class="rooms-list" aria-label="Available rooms and suites">
+            <div class="container">
+                <ul class="rooms-list__items" id="rooms-accordion">
+
+                    <!-- Twin Room (active by default) -->
+                    <li class="rooms-list__item is-active" data-room="twin-room">
+                        <button type="button" class="rooms-list__header" aria-expanded="true">
+                            <span class="rooms-list__marker" aria-hidden="true"></span>
+                            <span class="rooms-list__name">Twin Room</span>
+                        </button>
+                        <div class="rooms-list__panel">
+                            <div class="rooms-list__layout">
+                                <div class="rooms-list__main">
+                                    <div class="rooms-list__media">
+                                        <img src="assets/images/bzommarrooms/room1.jpg" alt="Twin Room interior" loading="lazy">
+                                    </div>
+                                    <div class="rooms-list__details" data-details>
+                                        <h3 class="rooms-list__details-title">About accommodation</h3>
+                                        <ul class="rooms-list__meta">
+                                            <li><i data-lucide="maximize-2" class="rooms-list__meta-icon"></i><span>25m²</span></li>
+                                            <li><i data-lucide="user" class="rooms-list__meta-icon"></i><span>2 Adults</span></li>
+                                            <li><i data-lucide="tag" class="rooms-list__meta-icon"></i><span>$125/night</span></li>
+                                        </ul>
+                                        <p class="rooms-list__desc">A comfortable twin-bedded retreat with warm interiors and mountain-facing windows, ideal for friends or colleagues sharing a refined stay.</p>
+
+                                        <h4 class="rooms-list__sub">Room Amenities:</h4>
+                                        <ul class="rooms-list__amenities">
+                                            <li><i data-lucide="wifi"></i><span>Free Wifi</span></li>
+                                            <li><i data-lucide="tv"></i><span>TV</span></li>
+                                            <li><i data-lucide="phone"></i><span>Phone</span></li>
+                                            <li><i data-lucide="lock"></i><span>Safe</span></li>
+                                            <li><i data-lucide="refrigerator"></i><span>Mini Fridge</span></li>
+                                            <li><i data-lucide="thermometer"></i><span>Heater</span></li>
+                                            <li><i data-lucide="wind"></i><span>Air Conditioner</span></li>
+                                            <li><i data-lucide="ban"></i><span>Non-Smoking</span></li>
+                                            <li><i data-lucide="bath"></i><span>Towels</span></li>
+                                            <li><i data-lucide="droplet"></i><span>Shampoos</span></li>
+                                            <li><i data-lucide="wind"></i><span>Hair Dryer</span></li>
+                                        </ul>
+
+                                        <h4 class="rooms-list__sub">Hotel Rules:</h4>
+                                        <ul class="rooms-list__rules">
+                                            <li>Smoking not allowed</li>
+                                            <li>Pets not allowed</li>
+                                            <li>Pool Hours: 8.00am - 7.00pm</li>
+                                        </ul>
+
+                                        <div class="rooms-list__thumbs">
+                                            <img src="assets/images/bzommarrooms/room2.jpg" alt="Twin Room view 2" loading="lazy">
+                                            <img src="assets/images/bzommarrooms/room3.jpg" alt="Twin Room view 3" loading="lazy">
+                                            <img src="assets/images/bzommarrooms/room4.jpg" alt="Twin Room view 4" loading="lazy">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <aside class="rooms-list__booking">
+                                    <div class="room-booking">
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Check In</span>
+                                            <input type="date" class="room-booking__input">
+                                        </label>
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Check Out</span>
+                                            <input type="date" class="room-booking__input">
+                                        </label>
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Guests</span>
+                                            <input type="number" min="1" value="1" class="room-booking__input">
+                                        </label>
+                                        <button type="button" class="room-booking__cta">Check Availability</button>
+                                        <button type="button" class="rooms-list__toggle" data-toggle aria-expanded="false">
+                                            <span class="rooms-list__toggle-label">More Details</span>
+                                        </button>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Studio -->
+                    <li class="rooms-list__item" data-room="studio">
+                        <button type="button" class="rooms-list__header" aria-expanded="false">
+                            <span class="rooms-list__marker" aria-hidden="true"></span>
+                            <span class="rooms-list__name">Studio</span>
+                        </button>
+                        <div class="rooms-list__panel">
+                            <div class="rooms-list__layout">
+                                <div class="rooms-list__main">
+                                    <div class="rooms-list__media">
+                                        <img src="assets/images/bzommarrooms/room2.jpg" alt="Studio interior" loading="lazy">
+                                    </div>
+                                    <div class="rooms-list__details" data-details>
+                                        <h3 class="rooms-list__details-title">About accommodation</h3>
+                                        <ul class="rooms-list__meta">
+                                            <li><i data-lucide="maximize-2" class="rooms-list__meta-icon"></i><span>32m²</span></li>
+                                            <li><i data-lucide="user" class="rooms-list__meta-icon"></i><span>2 Adults</span></li>
+                                            <li><i data-lucide="tag" class="rooms-list__meta-icon"></i><span>$150/night</span></li>
+                                        </ul>
+                                        <p class="rooms-list__desc">An open-plan studio blending lounge and sleeping space, dressed in calm tones with a private balcony overlooking Bzommar's hills.</p>
+
+                                        <h4 class="rooms-list__sub">Room Amenities:</h4>
+                                        <ul class="rooms-list__amenities">
+                                            <li><i data-lucide="wifi"></i><span>Free Wifi</span></li>
+                                            <li><i data-lucide="tv"></i><span>TV</span></li>
+                                            <li><i data-lucide="phone"></i><span>Phone</span></li>
+                                            <li><i data-lucide="lock"></i><span>Safe</span></li>
+                                            <li><i data-lucide="refrigerator"></i><span>Mini Fridge</span></li>
+                                            <li><i data-lucide="thermometer"></i><span>Heater</span></li>
+                                            <li><i data-lucide="wind"></i><span>Air Conditioner</span></li>
+                                            <li><i data-lucide="ban"></i><span>Non-Smoking</span></li>
+                                            <li><i data-lucide="bath"></i><span>Towels</span></li>
+                                            <li><i data-lucide="droplet"></i><span>Shampoos</span></li>
+                                            <li><i data-lucide="wind"></i><span>Hair Dryer</span></li>
+                                        </ul>
+
+                                        <h4 class="rooms-list__sub">Hotel Rules:</h4>
+                                        <ul class="rooms-list__rules">
+                                            <li>Smoking not allowed</li>
+                                            <li>Pets not allowed</li>
+                                            <li>Pool Hours: 8.00am - 7.00pm</li>
+                                        </ul>
+
+                                        <div class="rooms-list__thumbs">
+                                            <img src="assets/images/bzommarrooms/room3.jpg" alt="Studio view 2" loading="lazy">
+                                            <img src="assets/images/bzommarrooms/room4.jpg" alt="Studio view 3" loading="lazy">
+                                            <img src="assets/images/bzommarrooms/room5.jpg" alt="Studio view 4" loading="lazy">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <aside class="rooms-list__booking">
+                                    <div class="room-booking">
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Check In</span>
+                                            <input type="date" class="room-booking__input">
+                                        </label>
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Check Out</span>
+                                            <input type="date" class="room-booking__input">
+                                        </label>
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Guests</span>
+                                            <input type="number" min="1" value="1" class="room-booking__input">
+                                        </label>
+                                        <button type="button" class="room-booking__cta">Check Availability</button>
+                                        <button type="button" class="rooms-list__toggle" data-toggle aria-expanded="false">
+                                            <span class="rooms-list__toggle-label">More Details</span>
+                                        </button>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Junior Suite -->
+                    <li class="rooms-list__item" data-room="junior-suite">
+                        <button type="button" class="rooms-list__header" aria-expanded="false">
+                            <span class="rooms-list__marker" aria-hidden="true"></span>
+                            <span class="rooms-list__name">Junior Suite</span>
+                        </button>
+                        <div class="rooms-list__panel">
+                            <div class="rooms-list__layout">
+                                <div class="rooms-list__main">
+                                    <div class="rooms-list__media">
+                                        <img src="assets/images/bzommarrooms/room3.jpg" alt="Junior Suite interior" loading="lazy">
+                                    </div>
+                                    <div class="rooms-list__details" data-details>
+                                        <h3 class="rooms-list__details-title">About accommodation</h3>
+                                        <ul class="rooms-list__meta">
+                                            <li><i data-lucide="maximize-2" class="rooms-list__meta-icon"></i><span>40m²</span></li>
+                                            <li><i data-lucide="user" class="rooms-list__meta-icon"></i><span>2 Adults</span></li>
+                                            <li><i data-lucide="tag" class="rooms-list__meta-icon"></i><span>$190/night</span></li>
+                                        </ul>
+                                        <p class="rooms-list__desc">A relaxed suite with a separate seating nook, plush king bedding, and a marble bath — softly lit for unhurried evenings.</p>
+
+                                        <h4 class="rooms-list__sub">Room Amenities:</h4>
+                                        <ul class="rooms-list__amenities">
+                                            <li><i data-lucide="wifi"></i><span>Free Wifi</span></li>
+                                            <li><i data-lucide="tv"></i><span>TV</span></li>
+                                            <li><i data-lucide="phone"></i><span>Phone</span></li>
+                                            <li><i data-lucide="lock"></i><span>Safe</span></li>
+                                            <li><i data-lucide="refrigerator"></i><span>Mini Fridge</span></li>
+                                            <li><i data-lucide="thermometer"></i><span>Heater</span></li>
+                                            <li><i data-lucide="wind"></i><span>Air Conditioner</span></li>
+                                            <li><i data-lucide="ban"></i><span>Non-Smoking</span></li>
+                                            <li><i data-lucide="bath"></i><span>Towels</span></li>
+                                            <li><i data-lucide="droplet"></i><span>Shampoos</span></li>
+                                            <li><i data-lucide="wind"></i><span>Hair Dryer</span></li>
+                                        </ul>
+
+                                        <h4 class="rooms-list__sub">Hotel Rules:</h4>
+                                        <ul class="rooms-list__rules">
+                                            <li>Smoking not allowed</li>
+                                            <li>Pets not allowed</li>
+                                            <li>Pool Hours: 8.00am - 7.00pm</li>
+                                        </ul>
+
+                                        <div class="rooms-list__thumbs">
+                                            <img src="assets/images/bzommarrooms/room4.jpg" alt="Junior Suite view 2" loading="lazy">
+                                            <img src="assets/images/bzommarrooms/room5.jpg" alt="Junior Suite view 3" loading="lazy">
+                                            <img src="assets/images/bzommarrooms/room6.jpg" alt="Junior Suite view 4" loading="lazy">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <aside class="rooms-list__booking">
+                                    <div class="room-booking">
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Check In</span>
+                                            <input type="date" class="room-booking__input">
+                                        </label>
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Check Out</span>
+                                            <input type="date" class="room-booking__input">
+                                        </label>
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Guests</span>
+                                            <input type="number" min="1" value="1" class="room-booking__input">
+                                        </label>
+                                        <button type="button" class="room-booking__cta">Check Availability</button>
+                                        <button type="button" class="rooms-list__toggle" data-toggle aria-expanded="false">
+                                            <span class="rooms-list__toggle-label">More Details</span>
+                                        </button>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Family Room -->
+                    <li class="rooms-list__item" data-room="family-room">
+                        <button type="button" class="rooms-list__header" aria-expanded="false">
+                            <span class="rooms-list__marker" aria-hidden="true"></span>
+                            <span class="rooms-list__name">Family Room</span>
+                        </button>
+                        <div class="rooms-list__panel">
+                            <div class="rooms-list__layout">
+                                <div class="rooms-list__main">
+                                    <div class="rooms-list__media">
+                                        <img src="assets/images/bzommarrooms/room4.jpg" alt="Family Room interior" loading="lazy">
+                                    </div>
+                                    <div class="rooms-list__details" data-details>
+                                        <h3 class="rooms-list__details-title">About accommodation</h3>
+                                        <ul class="rooms-list__meta">
+                                            <li><i data-lucide="maximize-2" class="rooms-list__meta-icon"></i><span>45m²</span></li>
+                                            <li><i data-lucide="user" class="rooms-list__meta-icon"></i><span>2 Adults · 2 Children</span></li>
+                                            <li><i data-lucide="tag" class="rooms-list__meta-icon"></i><span>$220/night</span></li>
+                                        </ul>
+                                        <p class="rooms-list__desc">A spacious layout with two interconnecting sleeping areas — designed for families who want comfort and privacy under one roof.</p>
+
+                                        <h4 class="rooms-list__sub">Room Amenities:</h4>
+                                        <ul class="rooms-list__amenities">
+                                            <li><i data-lucide="wifi"></i><span>Free Wifi</span></li>
+                                            <li><i data-lucide="tv"></i><span>TV</span></li>
+                                            <li><i data-lucide="phone"></i><span>Phone</span></li>
+                                            <li><i data-lucide="lock"></i><span>Safe</span></li>
+                                            <li><i data-lucide="refrigerator"></i><span>Mini Fridge</span></li>
+                                            <li><i data-lucide="thermometer"></i><span>Heater</span></li>
+                                            <li><i data-lucide="wind"></i><span>Air Conditioner</span></li>
+                                            <li><i data-lucide="ban"></i><span>Non-Smoking</span></li>
+                                            <li><i data-lucide="bath"></i><span>Towels</span></li>
+                                            <li><i data-lucide="droplet"></i><span>Shampoos</span></li>
+                                            <li><i data-lucide="wind"></i><span>Hair Dryer</span></li>
+                                        </ul>
+
+                                        <h4 class="rooms-list__sub">Hotel Rules:</h4>
+                                        <ul class="rooms-list__rules">
+                                            <li>Smoking not allowed</li>
+                                            <li>Pets not allowed</li>
+                                            <li>Pool Hours: 8.00am - 7.00pm</li>
+                                        </ul>
+
+                                        <div class="rooms-list__thumbs">
+                                            <img src="assets/images/bzommarrooms/room5.jpg" alt="Family Room view 2" loading="lazy">
+                                            <img src="assets/images/bzommarrooms/room6.jpg" alt="Family Room view 3" loading="lazy">
+                                            <img src="assets/images/bzommarrooms/room7.jpg" alt="Family Room view 4" loading="lazy">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <aside class="rooms-list__booking">
+                                    <div class="room-booking">
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Check In</span>
+                                            <input type="date" class="room-booking__input">
+                                        </label>
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Check Out</span>
+                                            <input type="date" class="room-booking__input">
+                                        </label>
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Guests</span>
+                                            <input type="number" min="1" value="1" class="room-booking__input">
+                                        </label>
+                                        <button type="button" class="room-booking__cta">Check Availability</button>
+                                        <button type="button" class="rooms-list__toggle" data-toggle aria-expanded="false">
+                                            <span class="rooms-list__toggle-label">More Details</span>
+                                        </button>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Executive Suite -->
+                    <li class="rooms-list__item" data-room="executive-suite">
+                        <button type="button" class="rooms-list__header" aria-expanded="false">
+                            <span class="rooms-list__marker" aria-hidden="true"></span>
+                            <span class="rooms-list__name">Executive Suite</span>
+                        </button>
+                        <div class="rooms-list__panel">
+                            <div class="rooms-list__layout">
+                                <div class="rooms-list__main">
+                                    <div class="rooms-list__media">
+                                        <img src="assets/images/bzommarrooms/room5.jpg" alt="Executive Suite interior" loading="lazy">
+                                    </div>
+                                    <div class="rooms-list__details" data-details>
+                                        <h3 class="rooms-list__details-title">About accommodation</h3>
+                                        <ul class="rooms-list__meta">
+                                            <li><i data-lucide="maximize-2" class="rooms-list__meta-icon"></i><span>55m²</span></li>
+                                            <li><i data-lucide="user" class="rooms-list__meta-icon"></i><span>2 Adults</span></li>
+                                            <li><i data-lucide="tag" class="rooms-list__meta-icon"></i><span>$280/night</span></li>
+                                        </ul>
+                                        <p class="rooms-list__desc">Our signature suite — a private living room, oversized bath, and curated furnishings finished in walnut, brass, and natural linen.</p>
+
+                                        <h4 class="rooms-list__sub">Room Amenities:</h4>
+                                        <ul class="rooms-list__amenities">
+                                            <li><i data-lucide="wifi"></i><span>Free Wifi</span></li>
+                                            <li><i data-lucide="tv"></i><span>TV</span></li>
+                                            <li><i data-lucide="phone"></i><span>Phone</span></li>
+                                            <li><i data-lucide="lock"></i><span>Safe</span></li>
+                                            <li><i data-lucide="refrigerator"></i><span>Mini Fridge</span></li>
+                                            <li><i data-lucide="thermometer"></i><span>Heater</span></li>
+                                            <li><i data-lucide="wind"></i><span>Air Conditioner</span></li>
+                                            <li><i data-lucide="ban"></i><span>Non-Smoking</span></li>
+                                            <li><i data-lucide="bath"></i><span>Towels</span></li>
+                                            <li><i data-lucide="droplet"></i><span>Shampoos</span></li>
+                                            <li><i data-lucide="wind"></i><span>Hair Dryer</span></li>
+                                        </ul>
+
+                                        <h4 class="rooms-list__sub">Hotel Rules:</h4>
+                                        <ul class="rooms-list__rules">
+                                            <li>Smoking not allowed</li>
+                                            <li>Pets not allowed</li>
+                                            <li>Pool Hours: 8.00am - 7.00pm</li>
+                                        </ul>
+
+                                        <div class="rooms-list__thumbs">
+                                            <img src="assets/images/bzommarrooms/room6.jpg" alt="Executive Suite view 2" loading="lazy">
+                                            <img src="assets/images/bzommarrooms/room7.jpg" alt="Executive Suite view 3" loading="lazy">
+                                            <img src="assets/images/bzommarrooms/room1.jpg" alt="Executive Suite view 4" loading="lazy">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <aside class="rooms-list__booking">
+                                    <div class="room-booking">
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Check In</span>
+                                            <input type="date" class="room-booking__input">
+                                        </label>
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Check Out</span>
+                                            <input type="date" class="room-booking__input">
+                                        </label>
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Guests</span>
+                                            <input type="number" min="1" value="1" class="room-booking__input">
+                                        </label>
+                                        <button type="button" class="room-booking__cta">Check Availability</button>
+                                        <button type="button" class="rooms-list__toggle" data-toggle aria-expanded="false">
+                                            <span class="rooms-list__toggle-label">More Details</span>
+                                        </button>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Deluxe Room - Sea View -->
+                    <li class="rooms-list__item" data-room="deluxe-sea-view">
+                        <button type="button" class="rooms-list__header" aria-expanded="false">
+                            <span class="rooms-list__marker" aria-hidden="true"></span>
+                            <span class="rooms-list__name">Deluxe Room - Sea View</span>
+                        </button>
+                        <div class="rooms-list__panel">
+                            <div class="rooms-list__layout">
+                                <div class="rooms-list__main">
+                                    <div class="rooms-list__media">
+                                        <img src="assets/images/bzommarrooms/room6.jpg" alt="Deluxe Room with sea view" loading="lazy">
+                                    </div>
+                                    <div class="rooms-list__details" data-details>
+                                        <h3 class="rooms-list__details-title">About accommodation</h3>
+                                        <ul class="rooms-list__meta">
+                                            <li><i data-lucide="maximize-2" class="rooms-list__meta-icon"></i><span>38m²</span></li>
+                                            <li><i data-lucide="user" class="rooms-list__meta-icon"></i><span>2 Adults</span></li>
+                                            <li><i data-lucide="tag" class="rooms-list__meta-icon"></i><span>$210/night</span></li>
+                                        </ul>
+                                        <p class="rooms-list__desc">Floor-to-ceiling windows frame the Mediterranean horizon, while warm wood and soft textiles set the tone for a restful stay.</p>
+
+                                        <h4 class="rooms-list__sub">Room Amenities:</h4>
+                                        <ul class="rooms-list__amenities">
+                                            <li><i data-lucide="wifi"></i><span>Free Wifi</span></li>
+                                            <li><i data-lucide="tv"></i><span>TV</span></li>
+                                            <li><i data-lucide="phone"></i><span>Phone</span></li>
+                                            <li><i data-lucide="lock"></i><span>Safe</span></li>
+                                            <li><i data-lucide="refrigerator"></i><span>Mini Fridge</span></li>
+                                            <li><i data-lucide="thermometer"></i><span>Heater</span></li>
+                                            <li><i data-lucide="wind"></i><span>Air Conditioner</span></li>
+                                            <li><i data-lucide="ban"></i><span>Non-Smoking</span></li>
+                                            <li><i data-lucide="bath"></i><span>Towels</span></li>
+                                            <li><i data-lucide="droplet"></i><span>Shampoos</span></li>
+                                            <li><i data-lucide="wind"></i><span>Hair Dryer</span></li>
+                                        </ul>
+
+                                        <h4 class="rooms-list__sub">Hotel Rules:</h4>
+                                        <ul class="rooms-list__rules">
+                                            <li>Smoking not allowed</li>
+                                            <li>Pets not allowed</li>
+                                            <li>Pool Hours: 8.00am - 7.00pm</li>
+                                        </ul>
+
+                                        <div class="rooms-list__thumbs">
+                                            <img src="assets/images/bzommarrooms/room7.jpg" alt="Deluxe Sea View view 2" loading="lazy">
+                                            <img src="assets/images/bzommarrooms/room1.jpg" alt="Deluxe Sea View view 3" loading="lazy">
+                                            <img src="assets/images/bzommarrooms/room2.jpg" alt="Deluxe Sea View view 4" loading="lazy">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <aside class="rooms-list__booking">
+                                    <div class="room-booking">
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Check In</span>
+                                            <input type="date" class="room-booking__input">
+                                        </label>
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Check Out</span>
+                                            <input type="date" class="room-booking__input">
+                                        </label>
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Guests</span>
+                                            <input type="number" min="1" value="1" class="room-booking__input">
+                                        </label>
+                                        <button type="button" class="room-booking__cta">Check Availability</button>
+                                        <button type="button" class="rooms-list__toggle" data-toggle aria-expanded="false">
+                                            <span class="rooms-list__toggle-label">More Details</span>
+                                        </button>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Standard Room - Mountain View -->
+                    <li class="rooms-list__item" data-room="standard-mountain-view">
+                        <button type="button" class="rooms-list__header" aria-expanded="false">
+                            <span class="rooms-list__marker" aria-hidden="true"></span>
+                            <span class="rooms-list__name">Standard Room - Mountain View</span>
+                        </button>
+                        <div class="rooms-list__panel">
+                            <div class="rooms-list__layout">
+                                <div class="rooms-list__main">
+                                    <div class="rooms-list__media">
+                                        <img src="assets/images/bzommarrooms/room7.jpg" alt="Standard Room with mountain view" loading="lazy">
+                                    </div>
+                                    <div class="rooms-list__details" data-details>
+                                        <h3 class="rooms-list__details-title">About accommodation</h3>
+                                        <ul class="rooms-list__meta">
+                                            <li><i data-lucide="maximize-2" class="rooms-list__meta-icon"></i><span>22m²</span></li>
+                                            <li><i data-lucide="user" class="rooms-list__meta-icon"></i><span>2 Adults</span></li>
+                                            <li><i data-lucide="tag" class="rooms-list__meta-icon"></i><span>$110/night</span></li>
+                                        </ul>
+                                        <p class="rooms-list__desc">An understated retreat with a window onto Bzommar's pine-clad slopes — quiet, comfortable, and effortless for a short escape.</p>
+
+                                        <h4 class="rooms-list__sub">Room Amenities:</h4>
+                                        <ul class="rooms-list__amenities">
+                                            <li><i data-lucide="wifi"></i><span>Free Wifi</span></li>
+                                            <li><i data-lucide="tv"></i><span>TV</span></li>
+                                            <li><i data-lucide="phone"></i><span>Phone</span></li>
+                                            <li><i data-lucide="lock"></i><span>Safe</span></li>
+                                            <li><i data-lucide="refrigerator"></i><span>Mini Fridge</span></li>
+                                            <li><i data-lucide="thermometer"></i><span>Heater</span></li>
+                                            <li><i data-lucide="wind"></i><span>Air Conditioner</span></li>
+                                            <li><i data-lucide="ban"></i><span>Non-Smoking</span></li>
+                                            <li><i data-lucide="bath"></i><span>Towels</span></li>
+                                            <li><i data-lucide="droplet"></i><span>Shampoos</span></li>
+                                            <li><i data-lucide="wind"></i><span>Hair Dryer</span></li>
+                                        </ul>
+
+                                        <h4 class="rooms-list__sub">Hotel Rules:</h4>
+                                        <ul class="rooms-list__rules">
+                                            <li>Smoking not allowed</li>
+                                            <li>Pets not allowed</li>
+                                            <li>Pool Hours: 8.00am - 7.00pm</li>
+                                        </ul>
+
+                                        <div class="rooms-list__thumbs">
+                                            <img src="assets/images/bzommarrooms/room1.jpg" alt="Standard Mountain View view 2" loading="lazy">
+                                            <img src="assets/images/bzommarrooms/room2.jpg" alt="Standard Mountain View view 3" loading="lazy">
+                                            <img src="assets/images/bzommarrooms/room3.jpg" alt="Standard Mountain View view 4" loading="lazy">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <aside class="rooms-list__booking">
+                                    <div class="room-booking">
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Check In</span>
+                                            <input type="date" class="room-booking__input">
+                                        </label>
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Check Out</span>
+                                            <input type="date" class="room-booking__input">
+                                        </label>
+                                        <label class="room-booking__field">
+                                            <span class="room-booking__label">Guests</span>
+                                            <input type="number" min="1" value="1" class="room-booking__input">
+                                        </label>
+                                        <button type="button" class="room-booking__cta">Check Availability</button>
+                                        <button type="button" class="rooms-list__toggle" data-toggle aria-expanded="false">
+                                            <span class="rooms-list__toggle-label">More Details</span>
+                                        </button>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-newsletter">
+                <div class="footer-newsletter__inner">
+                    <div class="footer-newsletter__content">
+                        <h3 class="footer-newsletter__heading">Sign up for our Newsletter</h3>
+                        <p class="footer-newsletter__text">Sign up to be the first to receive special news and event updates from us.</p>
+                    </div>
+                    <form class="footer-newsletter__form" action="#" method="post">
+                        <div class="footer-newsletter__input-row">
+                            <input type="email" class="footer-newsletter__input" placeholder="Your Email Address" required>
+                            <button type="submit" class="footer-newsletter__btn" aria-label="Subscribe">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </button>
+                        </div>
+                        <label class="footer-newsletter__checkbox">
+                            <input type="checkbox" required>
+                            <span>I agree to the <a href="privacy-policy.html" class="footer-newsletter__link">Privacy Policy</a></span>
+                        </label>
+                    </form>
+                </div>
+            </div>
+
+            <div class="site-footer__grid">
+                <div class="site-footer__col site-footer__col--brand">
+                    <h3 class="site-footer__logo">Bzommar</h3>
+                    <span class="site-footer__tagline">Palace Hotel</span>
+                    <p class="site-footer__brand-text">
+                        Set against the breathtaking backdrop of Bzommar's peaks, our hotel
+                        combines thoughtful design with warm hospitality.
+                    </p>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Quick Links</h4>
+                    <ul class="site-footer__list">
+                        <li><a href="rooms.html" class="site-footer__link">Rooms</a></li>
+                        <li><a href="events.html" class="site-footer__link">Events</a></li>
+                        <li><a href="about.html" class="site-footer__link">About</a></li>
+                        <li><a href="contact.html" class="site-footer__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Experiences</h4>
+                    <ul class="site-footer__list">
+                        <li><a href="tilalbzommar.html" class="site-footer__link">Tilal Bzommar</a></li>
+                        <li><a href="pianobar.html" class="site-footer__link">Piano Bar</a></li>
+                        <li><a href="pool.html" class="site-footer__link">Pool &amp; Terrace</a></li>
+                        <li><a href="#" class="site-footer__link">Wedding Venue</a></li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Contact</h4>
+                    <address class="site-footer__address">
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="map-pin" class="site-footer__icon"></i>
+                            <a href="https://maps.app.goo.gl/69iL68mLTKK5ZNaXA" target="_blank" rel="noopener noreferrer" class="site-footer__link">Bzommar, Lebanon</a>
+                        </p>
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="phone" class="site-footer__icon"></i>
+                            <a href="tel:+96112345678" class="site-footer__link">+961 1 234 5678</a>
+                        </p>
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="mail" class="site-footer__icon"></i>
+                            <a href="mailto:info@bzommar.com" class="site-footer__link">info@bzommar.com</a>
+                        </p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="site-footer__bottom">
+                <p>&copy; 2026 Bzommar Palace Hotel. All rights reserved.</p>
+                <a href="privacy-policy.html" class="site-footer__bottom-link">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

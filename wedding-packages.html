@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wedding Venues at Bzommar Palace Hotel — a timeless setting for unforgettable occasions.">
+    <title>Wedding Venues | Bzommar Palace Hotel</title>
+    <link rel="icon" type="image/png" href="assets/images/bzommaricon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <canvas id="golden-droplets"></canvas>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav" aria-label="Primary navigation">
+            <div class="container">
+                <div class="nav__brand">
+                    <a href="index.html" class="nav__logo">
+                        <span class="nav__logo-text">BZOMMAR<span class="nav__logo-sub">PALACE HOTEL</span></span>
+                    </a>
+                </div>
+
+                <button type="button"
+                        class="nav__toggle"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                        aria-controls="nav-menu">
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                </button>
+
+                <div class="nav__backdrop"></div>
+                <div class="nav__menu" id="nav-menu">
+                    <div class="nav__menu-header">
+                        <a href="index.html" class="nav__menu-logo">
+                            <span class="nav__logo-text">BZOMMAR<span class="nav__logo-sub">PALACE HOTEL</span></span>
+                        </a>
+                        <button type="button" class="nav__close" aria-label="Close navigation menu">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <ul class="nav__menu-links">
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">ABOUT</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="about.html" class="nav__dropdown-item">Heritage</a></li>
+                                <li><a href="gallery.html" class="nav__dropdown-item">Gallery</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">ROOMS</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="rooms.html#twin-room" class="nav__dropdown-item">Twin Room</a></li>
+                                <li><a href="rooms.html#studio" class="nav__dropdown-item">Studio</a></li>
+                                <li><a href="rooms.html#family-room" class="nav__dropdown-item">Family Room</a></li>
+                                <li><a href="rooms.html#junior-suite" class="nav__dropdown-item">Junior Suite</a></li>
+                                <li><a href="rooms.html#executive-suite" class="nav__dropdown-item">Executive Suite</a></li>
+                                <li><a href="rooms.html#deluxe-sea-view" class="nav__dropdown-item">Deluxe Room-Sea View</a></li>
+                                <li><a href="rooms.html#standard-mountain-view" class="nav__dropdown-item">Standard Room-Mountain View</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">PACKAGES</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="wedding-packages.html" class="nav__dropdown-item">Weddings</a></li>
+                                <li><a href="event-packages.html#corporate" class="nav__dropdown-item">Corporate</a></li>
+                                <li><a href="event-packages.html#birthdays-galas" class="nav__dropdown-item">Birthdays &amp; Galas</a></li>
+                                <li><a href="event-packages.html#wellness-retreats" class="nav__dropdown-item">Wellness Retreats</a></li>
+                                <li><a href="event-packages.html#live-performance" class="nav__dropdown-item">Live Performance</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">SERVICES</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="tilalbzommar.html" class="nav__dropdown-item">Tilal Bzommar</a></li>
+                                <li><a href="pianobar.html" class="nav__dropdown-item">Piano Bar</a></li>
+                                <li><a href="pool.html" class="nav__dropdown-item">Pool</a></li>
+                                <li><a href="garden.html" class="nav__dropdown-item">Garden</a></li>
+                                <li><a href="conference-hall.html" class="nav__dropdown-item">Conference Hall</a></li>
+                                <li><a href="terrace.html" class="nav__dropdown-item">Terrace</a></li>
+                                <li><a href="gym.html" class="nav__dropdown-item">Gym</a></li>
+                                <li><a href="games-lounge.html" class="nav__dropdown-item">Games Lounge</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="contact.html" class="nav__link">
+                                <span class="nav__link-label">CONTACT</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <span class="star-border star-border--nav">
+                        <a href="booking.html" class="nav__cta btn btn--primary">BOOK NOW</a>
+                    </span>
+
+                    <div class="nav__menu-contact">
+                        <a href="tel:+9619240640" class="nav__menu-contact-item">
+                            <i data-lucide="phone" class="nav__menu-contact-icon"></i>
+                            +961 9 240 640
+                        </a>
+                        <a href="mailto:info@bzommarpalacehotel.com" class="nav__menu-contact-item">
+                            <i data-lucide="mail" class="nav__menu-contact-icon"></i>
+                            info@bzommarpalacehotel.com
+                        </a>
+                        <a href="https://maps.app.goo.gl/69iL68mLTKK5ZNaXA" target="_blank" rel="noopener noreferrer" class="nav__menu-contact-item">
+                            <i data-lucide="map-pin" class="nav__menu-contact-icon"></i>
+                            Bzommar, Mount Lebanon, Lebanon
+                        </a>
+                        <div class="nav__menu-socials" aria-label="Social links">
+                            <a href="https://www.instagram.com/bzommarpalacehotel?igsh=MW5tNDhrZGN5Z3oybQ==" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.facebook.com/share/1EsDgShjzD/" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="Facebook">
+                                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://wa.me/9619240640" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="WhatsApp">
+                                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero hero--wedding">
+            <div class="hero__background">
+                <img src="assets/images/weddinghero.webp" alt="Bzommar Palace wedding venues" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.6);">
+                <div class="hero__overlay"></div>
+                <div class="hero__gradient-overlay"></div>
+            </div>
+
+            <div class="container">
+                <div class="hero__content">
+                    <div class="hero__eyebrow">CELEBRATION &amp; EVENTS</div>
+                    <h1 class="hero__title">Wedding Venues</h1>
+                    <p class="hero__description">A timeless setting for unforgettable occasions.</p>
+                </div>
+            </div>
+
+            <div class="hero__scroll-button">
+                <div class="scroll-down">
+                    <div class="circle">
+                        <svg class="animated-arrow" width="20" height="50" viewBox="0 0 20 50" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="10" y1="0" x2="10" y2="44"></line>
+                            <polyline points="3 37 10 44 17 37"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wedding Intro Section -->
+        <section class="tilal-dining tilal-dining--wedding-intro">
+            <div class="container">
+                <div class="tilal-dining__grid">
+                    <!-- Left: Text -->
+                    <div class="tilal-dining__text">
+                        <span class="tilal-dining__eyebrow">WEDDINGS AT BZOMMAR PALACE</span>
+                        <h2 class="tilal-dining__heading">Where Mountains Witness <em>Forever</em></h2>
+                        <p class="tilal-dining__body">Perched above the clouds of Mount Lebanon, your love story unfolds against nature's most breathtaking canvas. This is not simply a venue, it is the beginning of your legacy.</p>
+                        <div class="tilal-dining__actions">
+                            <a href="#the-promise" class="tilal-dining__btn tilal-dining__btn--primary" data-smooth-page-target="#the-promise">BEGIN YOUR JOURNEY</a>
+                            <a href="#wedding-spaces" class="tilal-dining__btn tilal-dining__btn--ghost" data-smooth-page-target="#wedding-spaces">VIEW OUR SPACES</a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Image with circle badge -->
+                    <div class="tilal-dining__images">
+                        <div class="tilal-dining__img-stack">
+                            <img src="assets/images/introimage.webp" alt="Wedding celebration at Bzommar Palace" class="tilal-dining__img-big">
+                            <div class="tilal-dining__circle" aria-hidden="true">
+                                <span class="tilal-dining__circle-number">100+</span>
+                                <span class="tilal-dining__circle-label">Wedding<br>Celebrations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real Celebrations / Testimonials Section -->
+        <section class="wedding-testimonials" id="real-celebrations">
+            <div class="container">
+                <div class="wedding-testimonials__head">
+                    <span class="wedding-testimonials__eyebrow">REAL CELEBRATIONS</span>
+                    <h2 class="wedding-testimonials__heading">Every Love Story Deserves<br>a Legendary Beginning</h2>
+                    <p class="wedding-testimonials__lead">From intimate garden ceremonies to grand ballroom receptions, discover how couples have transformed their dreams into unforgettable celebrations.</p>
+                </div>
+
+                <div class="wedding-testimonials__carousel" data-testimonials>
+                    <div class="wedding-testimonials__track" data-testimonials-track>
+                        <article class="wedding-testimonial" data-testimonial>
+                            <div class="wedding-testimonial__quote-row">
+                                <img src="assets/images/quotationmarks.svg" alt="" class="wedding-testimonial__quote-icon" aria-hidden="true">
+                                <blockquote class="wedding-testimonial__quote">
+ From the moment we arrived for our site visit, we knew. The mountains, the light, the warmth of the team. Bzommar didn't just host our wedding, they understood it.
+ </blockquote>
+                            </div>
+                            <div class="wedding-testimonial__author">
+                                <img src="https://i.pravatar.cc/150?img=47" alt="Lara &amp; Anthony M." class="wedding-testimonial__avatar">
+                                <div class="wedding-testimonial__author-info">
+                                    <span class="wedding-testimonial__name">Lara &amp; Anthony M.</span>
+                                    <span class="wedding-testimonial__meta">June 2024 &middot; 180 Guests</span>
+                                </div>
+                            </div>
+                            <a href="#" class="wedding-testimonial__link">VIEW THEIR GALLERY</a>
+                        </article>
+
+                        <article class="wedding-testimonial" data-testimonial>
+                            <div class="wedding-testimonial__quote-row">
+                                <img src="assets/images/quotationmarks.svg" alt="" class="wedding-testimonial__quote-icon" aria-hidden="true">
+                                <blockquote class="wedding-testimonial__quote">
+ Every detail was anticipated before we even thought to ask. Our guests still speak of the sunset over the valley and the seamless choreography of the entire evening.
+ </blockquote>
+                            </div>
+                            <div class="wedding-testimonial__author">
+                                <img src="https://i.pravatar.cc/150?img=32" alt="Maya &amp; Karim S." class="wedding-testimonial__avatar">
+                                <div class="wedding-testimonial__author-info">
+                                    <span class="wedding-testimonial__name">Maya &amp; Karim S.</span>
+                                    <span class="wedding-testimonial__meta">September 2024 &middot; 240 Guests</span>
+                                </div>
+                            </div>
+                            <a href="#" class="wedding-testimonial__link">VIEW THEIR GALLERY</a>
+                        </article>
+
+                        <article class="wedding-testimonial" data-testimonial>
+                            <div class="wedding-testimonial__quote-row">
+                                <img src="assets/images/quotationmarks.svg" alt="" class="wedding-testimonial__quote-icon" aria-hidden="true">
+                                <blockquote class="wedding-testimonial__quote">
+ We wanted intimate, timeless, unmistakably Lebanese. The garden ceremony at golden hour was beyond a vision. Bzommar gave our story a stage worthy of it.
+ </blockquote>
+                            </div>
+                            <div class="wedding-testimonial__author">
+                                <img src="https://i.pravatar.cc/150?img=26" alt="Nour &amp; Elie T." class="wedding-testimonial__avatar">
+                                <div class="wedding-testimonial__author-info">
+                                    <span class="wedding-testimonial__name">Nour &amp; Elie T.</span>
+                                    <span class="wedding-testimonial__meta">May 2025 &middot; 120 Guests</span>
+                                </div>
+                            </div>
+                            <a href="#" class="wedding-testimonial__link">VIEW THEIR GALLERY</a>
+                        </article>
+
+                        <article class="wedding-testimonial" data-testimonial>
+                            <div class="wedding-testimonial__quote-row">
+                                <img src="assets/images/quotationmarks.svg" alt="" class="wedding-testimonial__quote-icon" aria-hidden="true">
+                                <blockquote class="wedding-testimonial__quote">
+ A ballroom that felt like a palace, a team that felt like family. From the menu tasting to the last dance, everything was effortless and exquisitely considered.
+ </blockquote>
+                            </div>
+                            <div class="wedding-testimonial__author">
+                                <img src="https://i.pravatar.cc/150?img=15" alt="Rita &amp; Joseph H." class="wedding-testimonial__avatar">
+                                <div class="wedding-testimonial__author-info">
+                                    <span class="wedding-testimonial__name">Rita &amp; Joseph H.</span>
+                                    <span class="wedding-testimonial__meta">August 2025 &middot; 300 Guests</span>
+                                </div>
+                            </div>
+                            <a href="#" class="wedding-testimonial__link">VIEW THEIR GALLERY</a>
+                        </article>
+                    </div>
+
+                    <div class="wedding-testimonials__dots" role="tablist" aria-label="Testimonial pagination" data-testimonials-dots>
+                        <button type="button" class="wedding-testimonials__dot is-active" data-index="0" aria-label="Show testimonial 1"></button>
+                        <button type="button" class="wedding-testimonials__dot" data-index="1" aria-label="Show testimonial 2"></button>
+                        <button type="button" class="wedding-testimonials__dot" data-index="2" aria-label="Show testimonial 3"></button>
+                        <button type="button" class="wedding-testimonials__dot" data-index="3" aria-label="Show testimonial 4"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Bzommar Promise / Process Section -->
+        <section class="wedding-promise" id="the-promise">
+            <div class="container">
+                <div class="wedding-promise__head">
+                    <span class="wedding-promise__eyebrow">THE BZOMMAR PROMISE</span>
+                    <h2 class="wedding-promise__heading">From &lsquo;Yes&rsquo; to &lsquo;I Do&rsquo;<br>We Handle <em>Everything</em></h2>
+                    <p class="wedding-promise__lead">Our dedicated Special Events team orchestrates every detail with precision and grace.<br>You arrive. You celebrate. You remember forever.</p>
+                </div>
+
+                <div class="wedding-promise__timeline" data-promise-timeline>
+                    <div class="wedding-promise__line" aria-hidden="true">
+                        <div class="wedding-promise__line-progress" data-promise-progress></div>
+                    </div>
+
+                    <ol class="wedding-promise__steps">
+                        <li class="wedding-promise__step is-active" data-promise-step data-index="0">
+                            <span class="wedding-promise__icon">
+                                <img src="assets/images/firstconsultation.svg" alt="" aria-hidden="true">
+                            </span>
+                            <h3 class="wedding-promise__step-title">First Consultation</h3>
+                            <p class="wedding-promise__step-text">We listen to your vision over champagne and mountain views.</p>
+                        </li>
+                        <li class="wedding-promise__step" data-promise-step data-index="1">
+                            <span class="wedding-promise__icon">
+                                <img src="assets/images/designandcuration.svg" alt="" aria-hidden="true">
+                            </span>
+                            <h3 class="wedding-promise__step-title">Design &amp; Curation</h3>
+                            <p class="wedding-promise__step-text">Florals, d&eacute;cor, music, every element tailored to your story.</p>
+                        </li>
+                        <li class="wedding-promise__step" data-promise-step data-index="2">
+                            <span class="wedding-promise__icon">
+                                <img src="assets/images/vendororchestration.svg" alt="" aria-hidden="true">
+                            </span>
+                            <h3 class="wedding-promise__step-title">Vendor Orchestration</h3>
+                            <p class="wedding-promise__step-text">Our trusted network of artisans, photographers, and performers.</p>
+                        </li>
+                        <li class="wedding-promise__step" data-promise-step data-index="3">
+                            <span class="wedding-promise__icon">
+                                <img src="assets/images/rehearsalday.svg" alt="" aria-hidden="true">
+                            </span>
+                            <h3 class="wedding-promise__step-title">Rehearsal Day</h3>
+                            <p class="wedding-promise__step-text">A seamless walkthrough, perfected to the minute.</p>
+                        </li>
+                        <li class="wedding-promise__step" data-promise-step data-index="4">
+                            <span class="wedding-promise__icon">
+                                <img src="assets/images/yourcelebration.svg" alt="" aria-hidden="true">
+                            </span>
+                            <h3 class="wedding-promise__step-title">Your Celebration</h3>
+                            <p class="wedding-promise__step-text">We disappear into the background, you shine.</p>
+                        </li>
+                        <li class="wedding-promise__step" data-promise-step data-index="5">
+                            <span class="wedding-promise__icon">
+                                <img src="assets/images/farewellbrunch.svg" alt="" aria-hidden="true">
+                            </span>
+                            <h3 class="wedding-promise__step-title">Farewell Brunch</h3>
+                            <p class="wedding-promise__step-text">A final morning of memories as your guests depart.</p>
+                        </li>
+                    </ol>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Wedding Venues Section -->
+        <section class="wedding-venues" id="wedding-spaces">
+            <div class="container">
+                <div class="wedding-venues__head">
+                    <span class="wedding-venues__eyebrow">OUR VENUES</span>
+                    <h2 class="wedding-venues__heading">Three Extraordinary Settings<br>One <em>Unforgettable</em> Day</h2>
+                </div>
+
+                <div class="wedding-venues__tabs" role="tablist" data-venues-tabs>
+                    <button type="button" class="wedding-venues__tab is-active" data-venue-tab="terrace" role="tab" aria-selected="true">THE PANORAMIC TERRACE</button>
+                    <span class="wedding-venues__tab-sep" aria-hidden="true">&bull;</span>
+                    <button type="button" class="wedding-venues__tab" data-venue-tab="ballroom" role="tab" aria-selected="false">THE GRAND BALLROOM</button>
+                    <span class="wedding-venues__tab-sep" aria-hidden="true">&bull;</span>
+                    <button type="button" class="wedding-venues__tab" data-venue-tab="garden" role="tab" aria-selected="false">THE MOUNTAIN GARDEN</button>
+                </div>
+
+                <!-- Ballroom Panel -->
+                <div class="wedding-venues__panel" data-venue-panel="ballroom" role="tabpanel" hidden>
+                    <div class="wedding-venues__layout">
+                        <div class="wedding-venues__gallery" data-venue-gallery>
+                            <div class="wedding-venues__main">
+                                <img src="assets/images/wd1.png" alt="The Grand Ballroom" data-venue-main>
+                            </div>
+                            <div class="wedding-venues__thumbs">
+                                <button type="button" class="wedding-venues__thumb" data-venue-thumb><img src="assets/images/wd2.png" alt=""></button>
+                                <button type="button" class="wedding-venues__thumb" data-venue-thumb><img src="assets/images/wd3.png" alt=""></button>
+                                <button type="button" class="wedding-venues__thumb" data-venue-thumb><img src="assets/images/wd4.png" alt=""></button>
+                            </div>
+                        </div>
+
+                        <div class="wedding-venues__info">
+                            <div class="wedding-venues__details">
+                                <span class="wedding-venues__tag">WHERE GRANDEUR MEETS GRACE</span>
+                                <h3 class="wedding-venues__title">The Grand Ballroom</h3>
+                                <p class="wedding-venues__desc">Soaring ceilings adorned with crystal chandeliers. Walls that have witnessed generations of first dances. Our Grand Ballroom transforms into a canvas for your imagination, whether draped in cascading florals or illuminated by a thousand candles.</p>
+
+                                <ul class="wedding-venues__stats">
+                                    <li class="wedding-venues__stat">
+                                        <img src="assets/images/size.svg" alt="" class="wedding-venues__stat-icon">
+                                        <div class="wedding-venues__stat-text">
+                                            <strong>450m&sup2;</strong>
+                                            <span>Uninterrupted elegance</span>
+                                        </div>
+                                    </li>
+                                    <li class="wedding-venues__stat">
+                                        <img src="assets/images/guests.svg" alt="" class="wedding-venues__stat-icon">
+                                        <div class="wedding-venues__stat-text">
+                                            <strong>Up to 150+ seats</strong>
+                                            <span>200 for cocktail reception</span>
+                                        </div>
+                                    </li>
+                                    <li class="wedding-venues__stat">
+                                        <img src="assets/images/sound.svg" alt="" class="wedding-venues__stat-icon">
+                                        <div class="wedding-venues__stat-text">
+                                            <strong>Integrated Sound</strong>
+                                            <span>Professional AV &amp; stage</span>
+                                        </div>
+                                    </li>
+                                    <li class="wedding-venues__stat">
+                                        <img src="assets/images/light.svg" alt="" class="wedding-venues__stat-icon">
+                                        <div class="wedding-venues__stat-text">
+                                            <strong>Custom Lighting</strong>
+                                            <span>Programmable architecture</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                              <div style="">
+                                   <div class="wedding-venues__counter" data-venue-counter data-min="50" data-max="200" data-default="120">
+                                <span class="wedding-venues__counter-label">VISUALIZE YOUR GUEST COUNT</span>
+                                <div class="wedding-venues__slider-row">
+                                    <span class="wedding-venues__slider-edge">50 GUESTS</span>
+                                    <div class="wedding-venues__slider-wrap">
+                                        <input type="range" min="50" max="200" value="120" class="wedding-venues__slider" data-venue-slider aria-label="Guest count">
+                                    </div>
+                                    <span class="wedding-venues__slider-edge">200 GUESTS</span>
+                                </div>
+                                <div class="wedding-venues__dots" data-venue-dots>
+                                        <div class="wedding-venues__sweetheart" title="Bride & Groom"><span>&#9825;</span></div>
+                                        <div class="wedding-venues__dancefloor"><span>DANCE FLOOR</span></div>
+                                </div>
+                                <div class="wedding-venues__count">
+                                    <strong data-venue-count>120</strong>
+                                    <span>comfortably seated guests</span>
+                                </div>
+                            </div>
+                            <div class="wedding-venues__enquiry">
+                                <p class="wedding-venues__notice">Choose the venue and the guest count before clicking.</p>
+                                <span class="star-border star-border--nav">
+                                    <button type="button" class="nav__cta btn btn--primary wedding-venues__enquiry-btn" data-venue-enquire>GET STARTED</button>
+                                </span>
+                            </div>
+                        </div>
+                              </div>
+                         
+                            
+                    </div>
+                </div>
+
+                <!-- Garden Panel -->
+                <div class="wedding-venues__panel" data-venue-panel="garden" role="tabpanel" hidden>
+                    <div class="wedding-venues__layout">
+                        <div class="wedding-venues__gallery" data-venue-gallery>
+                            <div class="wedding-venues__main">
+                                <img src="assets/images/wdt2.png" alt="The Mountain Garden" data-venue-main>
+                            </div>
+                            <div class="wedding-venues__thumbs">
+                                <button type="button" class="wedding-venues__thumb" data-venue-thumb><img src="assets/images/wdt1.png" alt=""></button>
+                                <button type="button" class="wedding-venues__thumb" data-venue-thumb><img src="assets/images/wdt3.png" alt=""></button>
+                                <button type="button" class="wedding-venues__thumb" data-venue-thumb><img src="assets/images/wdt4.png" alt=""></button>
+                            </div>
+                        </div>
+
+                        <div class="wedding-venues__info">
+                            <div class="wedding-venues__details">
+                                <span class="wedding-venues__tag">NATURE’S CATHEDRAL</span>
+                                <h3 class="wedding-venues__title">The Mountain Garden</h3>
+                                <p class="wedding-venues__desc">Exchange vows beneath an open sky, with the peaks of Mount Lebanon as your witness. Our manicured gardens offer an enchanting outdoor setting where the golden hour light paints every photograph with natural magic.</p>
+
+                                <ul class="wedding-venues__stats">
+                                    <li class="wedding-venues__stat">
+                                        <img src="assets/images/size.svg" alt="" class="wedding-venues__stat-icon">
+                                        <div class="wedding-venues__stat-text">
+                                            <strong>1,200m&sup2;</strong>
+                                            <span>Landscaped grounds</span>
+                                        </div>
+                                    </li>
+                                    <li class="wedding-venues__stat">
+                                        <img src="assets/images/guests.svg" alt="" class="wedding-venues__stat-icon">
+                                        <div class="wedding-venues__stat-text">
+                                            <strong>Up to 150+ seats</strong>
+                                            <span>200 for cocktail reception</span>
+                                        </div>
+                                    </li>
+                                    <li class="wedding-venues__stat">
+                                        <img src="assets/images/sunset.svg" alt="" class="wedding-venues__stat-icon">
+                                        <div class="wedding-venues__stat-text">
+                                            <strong>Optimal Sunset</strong>
+                                            <span>West-facing orientation</span>
+                                        </div>
+                                    </li>
+                                    <li class="wedding-venues__stat">
+                                        <img src="assets/images/weather.svg" alt="" class="wedding-venues__stat-icon">
+                                        <div class="wedding-venues__stat-text">
+                                            <strong>Weather Backup</strong>
+                                            <span>Elegant canopy available</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="wedding-venues__counter" data-venue-counter data-min="50" data-max="200" data-default="140">
+                                <span class="wedding-venues__counter-label">VISUALIZE YOUR GUEST COUNT</span>
+                                <div class="wedding-venues__slider-row">
+                                    <span class="wedding-venues__slider-edge">50 GUESTS</span>
+                                    <div class="wedding-venues__slider-wrap">
+                                        <input type="range" min="50" max="200" value="140" class="wedding-venues__slider" data-venue-slider aria-label="Guest count">
+                                    </div>
+                                    <span class="wedding-venues__slider-edge">200 GUESTS</span>
+                                </div>
+                                <div class="wedding-venues__dots" data-venue-dots>
+                                    <div class="wedding-venues__sweetheart" title="Bride & Groom"><span>&#9825;</span></div>
+                                    <div class="wedding-venues__dancefloor"><span>DANCE FLOOR</span></div>
+                                </div>
+                                <div class="wedding-venues__count">
+                                    <strong data-venue-count>140</strong>
+                                    <span>comfortably seated guests</span>
+                                </div>
+                            </div>
+                            <div class="wedding-venues__enquiry">
+                                <p class="wedding-venues__notice" id="wedding-venues-notice">Choose the venue and the guest count before clicking.</p>
+                                <span class="star-border star-border--nav">
+                                    <button type="button" class="nav__cta btn btn--primary wedding-venues__enquiry-btn" data-venue-enquire>GET STARTED</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terrace Panel -->
+                <div class="wedding-venues__panel is-active" data-venue-panel="terrace" role="tabpanel">
+                    <div class="wedding-venues__layout">
+                        <div class="wedding-venues__gallery" data-venue-gallery>
+                            <div class="wedding-venues__main">
+                                <img src="assets/images/panoramic1.jpg" alt="The Panoramic Terrace overlooking the valley" data-venue-main>
+                            </div>
+                            <div class="wedding-venues__thumbs">
+                                <button type="button" class="wedding-venues__thumb" data-venue-thumb><img src="assets/images/panoramic2.jpg" alt=""></button>
+                                <button type="button" class="wedding-venues__thumb" data-venue-thumb><img src="assets/images/panoramic3.jpg" alt=""></button>
+                                <button type="button" class="wedding-venues__thumb" data-venue-thumb><img src="assets/images/panoramic4.jpg" alt=""></button>
+                            </div>
+                        </div>
+
+                        <div class="wedding-venues__info">
+                            <div class="wedding-venues__details">
+                                <span class="wedding-venues__tag">ELEVATED IN EVERY SENSE</span>
+                                <h3 class="wedding-venues__title">The Panoramic Terrace</h3>
+                                <p class="wedding-venues__desc">For those who desire the drama of the mountains at eye level. Our wraparound terrace offers 180-degree views of the valley below, perfect for sunset cocktail hours or intimate celebrations under a canopy of stars.</p>
+
+                                <ul class="wedding-venues__stats">
+                                    <li class="wedding-venues__stat">
+                                        <img src="assets/images/mountainpano.svg" alt="" class="wedding-venues__stat-icon">
+                                        <div class="wedding-venues__stat-text">
+                                            <strong>180&deg; Views</strong>
+                                            <span>Unobstructed panorama</span>
+                                        </div>
+                                    </li>
+                                    <li class="wedding-venues__stat">
+                                        <img src="assets/images/personspano.svg" alt="" class="wedding-venues__stat-icon">
+                                        <div class="wedding-venues__stat-text">
+                                            <strong>Up to 170 guests</strong>
+                                            <span>Flexible terrace setup</span>
+                                        </div>
+                                    </li>
+                                    <li class="wedding-venues__stat">
+                                        <img src="assets/images/cocktailpano.svg" alt="" class="wedding-venues__stat-icon">
+                                        <div class="wedding-venues__stat-text">
+                                            <strong>Dedicated Bar</strong>
+                                            <span>Full outdoor service</span>
+                                        </div>
+                                    </li>
+                                    <li class="wedding-venues__stat">
+                                        <img src="assets/images/stringlightpano.svg" alt="" class="wedding-venues__stat-icon">
+                                        <div class="wedding-venues__stat-text">
+                                            <strong>String Lights</strong>
+                                            <span>Canopy included</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                         <div class="wedding-venues__counter" id="wedding-venues-counter" data-venue-counter data-venue-layout="terrace" data-min="50" data-max="170" data-default="120">
+                                <span class="wedding-venues__counter-label">VISUALIZE YOUR GUEST COUNT</span>
+                                <div class="wedding-venues__slider-row">
+                                    <span class="wedding-venues__slider-edge">50 GUESTS</span>
+                                    <div class="wedding-venues__slider-wrap">
+                                        <input type="range" min="50" max="170" value="120" class="wedding-venues__slider" data-venue-slider aria-label="Guest count">
+                                    </div>
+                                    <span class="wedding-venues__slider-edge">170 GUESTS</span>
+                                </div>
+                                  <div class="wedding-venues__dots wedding-venues__dots--terrace-plan" data-venue-dots>
+                                        <div class="wedding-venues__greenery" aria-hidden="true"><span>GREENERY</span></div>
+                                        <div class="wedding-venues__pool" aria-hidden="true"><span>POOL</span></div>
+                                        <div class="wedding-venues__arch" aria-hidden="true">
+                                           
+                                            <i></i><i></i><i></i><i></i><i></i><i></i>
+                                        </div>
+                                        <div class="wedding-venues__stairs" aria-hidden="true"><span>STAIRS</span></div>
+                                        <div class="wedding-venues__bath-stairs" aria-hidden="true"><span>BATHROOM STAIRS</span></div>
+                                        <div class="wedding-venues__sweetheart" title="Bride &amp; Groom"><span>&#9825;</span></div>
+                                        <div class="wedding-venues__dancefloor"><span>DANCE FLOOR</span></div>
+                                </div>
+                                <div class="wedding-venues__count">
+                                    <strong data-venue-count>120</strong>
+                                    <span>guests</span>
+                                </div>
+                            </div>
+                            <div class="wedding-venues__enquiry">
+                                <p class="wedding-venues__notice">Choose the venue and the guest count before clicking.</p>
+                                <span class="star-border star-border--nav">
+                                    <button type="button" class="nav__cta btn btn--primary wedding-venues__enquiry-btn" data-venue-enquire>GET STARTED</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wedding-venues__modal" data-venue-modal hidden>
+                <div class="wedding-venues__modal-backdrop" data-venue-modal-close></div>
+                <div class="wedding-venues__modal-dialog" role="dialog" aria-modal="true" aria-labelledby="venue-enquiry-title">
+                    <p class="wedding-venues__modal-eyebrow">Confirm Enquiry</p>
+                    <h3 class="wedding-venues__modal-title" id="venue-enquiry-title">Wedding Venue Request</h3>
+                    <p class="wedding-venues__modal-text" data-venue-modal-text></p>
+                    <div class="wedding-venues__modal-actions">
+                        <button type="button" class="btn btn--primary wedding-venues__modal-btn" data-venue-modal-yes>Yes</button>
+                        <button type="button" class="btn btn--outline wedding-venues__modal-btn" data-venue-modal-close>Not yet</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wedding-cuisine" id="wedding-cuisine">
+            <div class="container">
+                <div class="wedding-cuisine__shell">
+                    <div class="wedding-cuisine__content">
+                        <span class="wedding-cuisine__eyebrow">BESPOKE CATERING</span>
+                        <h2 class="wedding-cuisine__heading">Cuisine <em>Crafted</em> for Celebration</h2>
+                        <p class="wedding-cuisine__lead">Our executive chef and culinary team design menus that honor Lebanese tradition while embracing global sophistication.</p>
+
+                        <blockquote class="wedding-cuisine__quote">
+                            We believe a wedding feast should be more than a meal, it should be a journey. Every bite is crafted with intention, locally sourced ingredients, and a deep respect for the art of gathering.
+                        </blockquote>
+
+                        <ul class="wedding-cuisine__list">
+                            <li class="wedding-cuisine__item">
+                                <img src="assets/images/checkmark.svg" alt="" class="wedding-cuisine__item-icon" aria-hidden="true">
+                                <div class="wedding-cuisine__item-text">
+                                    <strong>Lebanese Heritage</strong>
+                                    <span>Mezze spreads, slow-roasted lamb, orange blossom desserts</span>
+                                </div>
+                            </li>
+                            <li class="wedding-cuisine__item">
+                                <img src="assets/images/checkmark.svg" alt="" class="wedding-cuisine__item-icon" aria-hidden="true">
+                                <div class="wedding-cuisine__item-text">
+                                    <strong>Mediterranean Contemporary</strong>
+                                    <span>Grilled seafood, herb-crusted meats, citrus notes</span>
+                                </div>
+                            </li>
+                            <li class="wedding-cuisine__item">
+                                <img src="assets/images/checkmark.svg" alt="" class="wedding-cuisine__item-icon" aria-hidden="true">
+                                <div class="wedding-cuisine__item-text">
+                                    <strong>International Fusion</strong>
+                                    <span>Japanese-inspired appetizers, French technique, Middle Eastern soul</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="wedding-cuisine__actions">
+                            <a href="mailto:info@bzommarpalacehotel.com?subject=Wedding%20Menus" class="wedding-cuisine__btn wedding-cuisine__btn--ghost">VIEW OUR MENUS</a>
+                            <a href="#wedding-venues-counter" class="tilal-dining__btn tilal-dining__btn--primary" data-scroll-venue-enquiry>ARRANGE A PRIVATE TASTING</a>
+                        </div>
+                    </div>
+
+                    <div class="wedding-cuisine__visual" aria-label="Wedding cuisine gallery">
+                        <div class="wedding-cuisine__mosaic">
+                            <figure class="wedding-cuisine__card wedding-cuisine__card--tall">
+                                <img src="assets/images/cuisine1.jpg" alt="Signature wedding dishes and mezze spread at Bzommar Palace">
+                            </figure>
+                            <figure class="wedding-cuisine__card wedding-cuisine__card--top">
+                                <img src="assets/images/cuisine2.jpg" alt="Elegant plated wedding cuisine with glassware and salad">
+                            </figure>
+                            <figure class="wedding-cuisine__card wedding-cuisine__card--bottom">
+                                <img src="assets/images/cuisine3.jpg" alt="Artisanal dessert and fruit arrangement for wedding catering">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="wedding-tail">
+        <section class="wedding-prefooter" aria-label="Wedding consultation">
+            <div class="container">
+                <div class="wedding-prefooter__content">
+                    <img src="assets/images/weddingrings.svg" alt="" class="wedding-prefooter__icon" aria-hidden="true">
+                    <h2 class="wedding-prefooter__title">Let&rsquo;s Begin<br>Writing your<br>Journey</h2>
+                    <p class="wedding-prefooter__text">Schedule a private consultation with our wedding team. We&rsquo;ll listen to your vision, share our spaces, and answer every question, no commitment, just conversation over coffee and mountain views.</p>
+                    <a href="#wedding-venues-counter" class="tilal-dining__btn tilal-dining__btn--primary wedding-prefooter__btn" data-scroll-venue-enquiry>SCHEDULE A PRIVATE TOUR</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="site-footer site-footer--wedding" role="contentinfo">
+        <div class="container">
+            <div class="footer-newsletter">
+                <div class="footer-newsletter__inner">
+                    <div class="footer-newsletter__content">
+                        <h3 class="footer-newsletter__heading">Sign up for our Newsletter</h3>
+                        <p class="footer-newsletter__text">Sign up to be the first to receive special news and event updates from us.</p>
+                    </div>
+                    <form class="footer-newsletter__form" action="#" method="post">
+                        <div class="footer-newsletter__input-row">
+                            <input type="email" class="footer-newsletter__input" placeholder="Your Email Address" required>
+                            <button type="submit" class="footer-newsletter__btn" aria-label="Subscribe">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </button>
+                        </div>
+                        <label class="footer-newsletter__checkbox">
+                            <input type="checkbox" required>
+                            <span>I agree to the <a href="privacy-policy.html" class="footer-newsletter__link">Privacy Policy</a></span>
+                        </label>
+                    </form>
+                </div>
+            </div>
+
+            <div class="site-footer__grid">
+                <div class="site-footer__col site-footer__col--brand">
+                    <h3 class="site-footer__logo">Bzommar</h3>
+                    <span class="site-footer__tagline">Palace Hotel</span>
+                    <p class="site-footer__brand-text">
+                        Set against the breathtaking backdrop of Bzommar's peaks, our hotel
+                        combines thoughtful design with warm hospitality.
+                    </p>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Quick Links</h4>
+                    <ul class="site-footer__list">
+                        <li><a href="rooms.html" class="site-footer__link">Rooms</a></li>
+                        <li><a href="events.html" class="site-footer__link">Events</a></li>
+                        <li><a href="about.html" class="site-footer__link">About</a></li>
+                        <li><a href="contact.html" class="site-footer__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Experiences</h4>
+                    <ul class="site-footer__list">
+                        <li><a href="tilalbzommar.html" class="site-footer__link">Tilal Bzommar</a></li>
+                        <li><a href="pianobar.html" class="site-footer__link">Piano Bar</a></li>
+                        <li><a href="pool.html" class="site-footer__link">Pool &amp; Terrace</a></li>
+                        <li><a href="wedding-packages.html" class="site-footer__link">Wedding Venue</a></li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Contact</h4>
+                    <address class="site-footer__address">
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="map-pin" class="site-footer__icon"></i>
+                            <a href="https://maps.app.goo.gl/69iL68mLTKK5ZNaXA" target="_blank" rel="noopener noreferrer" class="site-footer__link">Bzommar, Lebanon</a>
+                        </p>
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="phone" class="site-footer__icon"></i>
+                            <a href="tel:+96112345678" class="site-footer__link">+961 1 234 5678</a>
+                        </p>
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="mail" class="site-footer__icon"></i>
+                            <a href="mailto:info@bzommar.com" class="site-footer__link">info@bzommar.com</a>
+                        </p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="site-footer__bottom">
+                <p>&copy; 2026 Bzommar Palace Hotel. All rights reserved.</p>
+                <a href="privacy-policy.html" class="site-footer__bottom-link">Privacy Policy</a>
+            </div>
+        </div>
+        </footer>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

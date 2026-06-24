@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bzommar Palace Hotel - Luxury mountain hospitality">
+    <title>Bzommar Palace Hotel | Mountain Luxury</title>
+    <link rel="icon" type="image/png" href="assets/images/bzommaricon.png">
+    <link rel="preload" href="assets/images/237336.mp4" as="video" type="video/mp4" fetchpriority="high">
+    <link rel="preload" href="assets/images/cloudloopcompressed.mp4" as="video" type="video/mp4">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="home-page">
+    <!-- Preloader -->
+    <div id="preloader" class="preloader" aria-hidden="true">
+        <img src="assets/images/bzommarbgart.png" class="preloader__logo" alt="Bzommar Palace Hotel">
+    </div>
+    <canvas id="golden-droplets"></canvas>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav" aria-label="Primary navigation">
+            <div class="container">
+                <div class="nav__brand">
+                    <a href="index.html" class="nav__logo">
+                        <span class="nav__logo-text">BZOMMAR<span class="nav__logo-sub">PALACE HOTEL</span></span>
+                    </a>
+                </div>
+                
+                <button type="button" 
+                        class="nav__toggle" 
+                        aria-label="Toggle navigation menu" 
+                        aria-expanded="false"
+                        aria-controls="nav-menu">
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                </button>
+                
+                <div class="nav__backdrop"></div>
+                <div class="nav__menu" id="nav-menu">
+                    <div class="nav__menu-header">
+                        <a href="index.html" class="nav__menu-logo">
+                            <span class="nav__logo-text">BZOMMAR<span class="nav__logo-sub">PALACE HOTEL</span></span>
+                        </a>
+                        <button type="button" class="nav__close" aria-label="Close navigation menu">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <ul class="nav__menu-links">
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">ABOUT</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="about.html" class="nav__dropdown-item">Heritage</a></li>
+                                <li><a href="gallery.html" class="nav__dropdown-item">Gallery</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">ROOMS</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="rooms.html#twin-room" class="nav__dropdown-item">Twin Room</a></li>
+                                <li><a href="rooms.html#studio" class="nav__dropdown-item">Studio</a></li>
+                                <li><a href="rooms.html#family-room" class="nav__dropdown-item">Family Room</a></li>
+                                <li><a href="rooms.html#junior-suite" class="nav__dropdown-item">Junior Suite</a></li>
+                                <li><a href="rooms.html#executive-suite" class="nav__dropdown-item">Executive Suite</a></li>
+                                <li><a href="rooms.html#deluxe-sea-view" class="nav__dropdown-item">Deluxe Room-Sea View</a></li>
+                                <li><a href="rooms.html#standard-mountain-view" class="nav__dropdown-item">Standard Room-Mountain View</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">PACKAGES</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="wedding-packages.html" class="nav__dropdown-item">Weddings</a></li>
+                                <li><a href="event-packages.html#corporate" class="nav__dropdown-item">Corporate</a></li>
+                                <li><a href="event-packages.html#birthdays-galas" class="nav__dropdown-item">Birthdays &amp; Galas</a></li>
+                                <li><a href="event-packages.html#wellness-retreats" class="nav__dropdown-item">Wellness Retreats</a></li>
+                                <li><a href="event-packages.html#live-performance" class="nav__dropdown-item">Live Performance</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item nav__item--dropdown">
+                            <span class="nav__link">
+                                <span class="nav__link-label">SERVICES</span>
+                                <img src="assets/images/gchevron.svg" alt="" class="nav__link-chevron" aria-hidden="true">
+                            </span>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="tilalbzommar.html" class="nav__dropdown-item">Tilal Bzommar</a></li>
+                                <li><a href="pianobar.html" class="nav__dropdown-item">Piano Bar</a></li>
+                                <li><a href="pool.html" class="nav__dropdown-item">Pool</a></li>
+                                <li><a href="garden.html" class="nav__dropdown-item">Garden</a></li>
+                                <li><a href="conference-hall.html" class="nav__dropdown-item">Conference Hall</a></li>
+                                <li><a href="terrace.html" class="nav__dropdown-item">Terrace</a></li>
+                                <li><a href="gym.html" class="nav__dropdown-item">Gym</a></li>
+                                <li><a href="games-lounge.html" class="nav__dropdown-item">Games Lounge</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="contact.html" class="nav__link">
+                                <span class="nav__link-label">CONTACT</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <span class="star-border star-border--nav">
+                        <a href="booking.html" class="nav__cta btn btn--primary">BOOK NOW</a>
+                    </span>
+
+                    <div class="nav__menu-contact">
+                        <a href="tel:+9619240640" class="nav__menu-contact-item">
+                            <i data-lucide="phone" class="nav__menu-contact-icon"></i>
+                            +961 9 240 640
+                        </a>
+                        <a href="mailto:info@bzommarpalacehotel.com" class="nav__menu-contact-item">
+                            <i data-lucide="mail" class="nav__menu-contact-icon"></i>
+                            info@bzommarpalacehotel.com
+                        </a>
+                        <a href="https://maps.app.goo.gl/69iL68mLTKK5ZNaXA" target="_blank" rel="noopener noreferrer" class="nav__menu-contact-item">
+                            <i data-lucide="map-pin" class="nav__menu-contact-icon"></i>
+                            Bzommar, Mount Lebanon, Lebanon
+                        </a>
+                        <div class="nav__menu-socials" aria-label="Social links">
+                            <a href="https://www.instagram.com/bzommarpalacehotel?igsh=MW5tNDhrZGN5Z3oybQ==" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.facebook.com/share/1EsDgShjzD/" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="Facebook">
+                                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://wa.me/9619240640" target="_blank" rel="noopener noreferrer" class="contact-page__social-link nav__menu-social-link" aria-label="WhatsApp">
+                                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero__background">
+                <video class="hero__video" autoplay muted loop playsinline webkit-playsinline preload="auto" aria-hidden="true">
+                    <source src="assets/images/237336.mp4" type="video/mp4">
+                </video>
+                <div class="hero__building-layer"></div>
+                <div class="hero__overlay"></div>
+                <div class="hero__gradient-overlay"></div>
+            </div>
+            
+            <div class="container">
+                <div class="hero__content">
+                    <div class="hero__eyebrow">Timeless Elegance & Luxury</div>
+                    
+                    <h1 class="hero__title">Bzommar Palace Hotel</h1>
+                </div>
+
+                <!-- Booking Widget -->
+                <div class="booking-widget" id="booking-widget">
+                    <!-- Step 1: Reservation Details -->
+                    <div class="booking-widget__step booking-widget__step--active" data-step="1">
+                        <div class="booking-widget__card">
+                            <div class="booking-widget__fields">
+                                <div class="booking-widget__field">
+                                    <label class="booking-widget__label" for="booking-checkin">Check In</label>
+                                    <input class="booking-widget__input" type="date" id="booking-checkin" name="check_in" required>
+                                </div>
+                                <div class="booking-widget__divider"></div>
+                                <div class="booking-widget__field">
+                                    <label class="booking-widget__label" for="booking-checkout">Check Out</label>
+                                    <input class="booking-widget__input" type="date" id="booking-checkout" name="check_out" required>
+                                </div>
+                                <div class="booking-widget__divider"></div>
+                                <div class="booking-widget__field">
+                                    <label class="booking-widget__label" for="booking-adults">Adults</label>
+                                    <select class="booking-widget__input" id="booking-adults" name="adults">
+                                        <option value="1">1</option>
+                                        <option value="2" selected>2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                                <div class="booking-widget__divider"></div>
+                                <div class="booking-widget__field">
+                                    <label class="booking-widget__label" for="booking-room">Room Type</label>
+                                    <select class="booking-widget__input" id="booking-room" name="room_type">
+                                        <option value="" disabled selected hidden>Select</option>
+                                        <option value="twin">Twin Room</option>
+                                        <option value="studio">Studio</option>
+                                        <option value="family">Family Room</option>
+                                        <option value="junior-suite">Junior Suite</option>
+                                        <option value="executive-suite">Executive Suite</option>
+                                        <option value="deluxe-sea-view">Deluxe Sea View</option>
+                                        <option value="standard-mountain">Standard Mountain View</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p class="booking-widget__error" id="booking-error"></p>
+                        </div>
+                        <button class="booking-widget__btn" id="booking-check-btn" type="button">Check Availability</button>
+                    </div>
+
+                    <!-- Step 2: Contact Details -->
+                    <div class="booking-widget__step" data-step="2">
+                        <div class="booking-widget__card">
+                            <div class="booking-widget__fields booking-widget__fields--contact">
+                                <button class="booking-widget__back" id="booking-back-btn" type="button" aria-label="Go back">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                                </button>
+                                <div class="booking-widget__field booking-widget__field--half">
+                                    <label class="booking-widget__label" for="booking-name">Full Name</label>
+                                    <input class="booking-widget__input" type="text" id="booking-name" name="full_name" placeholder="Your name" required>
+                                </div>
+                                <div class="booking-widget__field booking-widget__field--half">
+                                    <label class="booking-widget__label" for="booking-phone">Phone Number</label>
+                                    <input class="booking-widget__input" type="tel" id="booking-phone" name="phone" placeholder="+961 XX XXX XXX" required>
+                                </div>
+                            </div>
+                            <p class="booking-widget__error" id="booking-error-2"></p>
+                        </div>
+                        <button class="booking-widget__btn" id="booking-submit-btn" type="button">Submit Request</button>
+                    </div>
+
+                    <!-- Step 3: Confirmation -->
+                    <div class="booking-widget__step" data-step="3">
+                        <div class="booking-widget__card booking-widget__card--confirm">
+                            <svg class="booking-widget__check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            <p class="booking-widget__confirm-text">Thank you! We'll reach out shortly to confirm your reservation.</p>
+                        </div>
+                        <button class="booking-widget__btn" id="booking-new-btn" type="button">New Booking</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__scroll-button">
+                <div class="scroll-down">
+                    <div class="circle">
+                        <svg class="animated-arrow" width="20" height="50" viewBox="0 0 20 50" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="10" y1="0" x2="10" y2="44"></line>
+                            <polyline points="3 37 10 44 17 37"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rooms Intro Section -->
+        <section class="rooms-intro">
+            <div class="rooms-intro__container">
+                <div class="rooms-intro__content">
+                    <div class="rooms-intro__left">
+                        <div class="rooms-intro__left-inner">
+                            <span class="rooms-intro__eyebrow">What Makes Us Different</span>
+                            <h2 class="rooms-intro__heading">
+                                Providing Unique &<br>
+                                Priceless Experience
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="rooms-intro__center">
+                        <div class="rooms-intro__center-inner">
+                            <div class="rooms-intro__image-card">
+                                <video class="rooms-intro__video" autoplay muted loop playsinline webkit-playsinline preload="auto">
+                                    <source src="assets/images/cloudloopcompressed.mp4" type="video/mp4">
+                                </video>
+                                <img src="assets/images/introvid.webp" alt="" class="rooms-intro__overlay" aria-hidden="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rooms-intro__right">
+                        <div class="rooms-intro__right-inner">
+                            <p class="rooms-intro__paragraph">
+                                At Bzommar Palace Hotel, we turn hospitality into an art, creating luxurious experiences, timeless comfort, and unforgettable stays.
+                            </p>
+
+                            <div class="rooms-intro__arrow-wrap">
+                                <div class="scroll-down rooms-intro__scroll-down" aria-label="Scroll to next section">
+                                    <div class="circle">
+                                        <svg class="animated-arrow" width="20" height="50" viewBox="0 0 20 50" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="10" y1="0" x2="10" y2="44"></line>
+                                            <polyline points="3 37 10 44 17 37"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Rooms Available Section -->
+        <section class="rooms-available">
+            <div class="container">
+                <div class="rooms-available__header">
+                    <div class="rooms-available__eyebrow">Accommodations</div>
+                    <h2 class="rooms-available__title">Rooms & Suites</h2>
+                    <p class="rooms-available__description">
+                        Discover our carefully curated selection of rooms and suites, each designed to provide 
+                        exceptional comfort and stunning mountain views.
+                    </p>
+                </div>
+
+                <div class="rooms-available__grid">
+                    <!-- Row 1: 2 Horizontal Cards -->
+                    <div class="rooms-available__row rooms-available__row--horizontal">
+                        <!-- Twin Room -->
+                        <article class="room-card room-card--horizontal">
+                            <div class="room-card__image" style="background-image: url('assets/images/twinroom.webp');">
+                                <div class="room-card__details">
+                                    <p class="room-card__hover-desc">A comfortable twin-bedded retreat with warm interiors and mountain-facing windows, ideal for friends or colleagues sharing a refined stay.</p>
+                                    <a href="rooms.html#twin-room" class="btn btn--primary room-card__view-btn">Book Now</a>
+                                </div>
+                            </div>
+                            <div class="room-card__content">
+                                <div class="room-card__info room-card__info--visible">
+                                    <div class="room-card__info-item">
+                                        <i data-lucide="scan" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">25m²</span>
+                                    </div>
+                                    <div class="room-card__info-item">
+                                        <i data-lucide="user" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">2 Adults</span>
+                                    </div>
+                                    <div class="room-card__info-item room-card__info-item--price">
+                                        <i data-lucide="tag" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">$105/night</span>
+                                    </div>
+                                </div>
+                                <h3 class="room-card__title">Twin Room</h3>
+                            </div>
+                        </article>
+
+                        <!-- Studio -->
+                        <article class="room-card room-card--horizontal">
+                            <div class="room-card__image" style="background-image: url('assets/images/studioroom.png');">
+                                <div class="room-card__details">
+                                    <p class="room-card__hover-desc">A versatile open-plan space combining living and sleeping areas, thoughtfully designed for extended stays with all the comforts of home.</p>
+                                    <a href="rooms.html#studio" class="btn btn--primary room-card__view-btn">Book Now</a>
+                                </div>
+                            </div>
+                            <div class="room-card__content">
+                                <div class="room-card__info room-card__info--visible">
+                                    <div class="room-card__info-item">
+                                        <i data-lucide="scan" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">30m²</span>
+                                    </div>
+                                    <div class="room-card__info-item">
+                                        <i data-lucide="user" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">2 Adults</span>
+                                    </div>
+                                    <div class="room-card__info-item room-card__info-item--price">
+                                        <i data-lucide="tag" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">$125/night</span>
+                                    </div>
+                                </div>
+                                <h3 class="room-card__title">Studio</h3>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Row 2: 3 Vertical Cards -->
+                    <div class="rooms-available__row rooms-available__row--vertical">
+                        <!-- Family Room -->
+                        <article class="room-card">
+                            <div class="room-card__image" style="background-image: url('assets/images/familyroom.png');">
+                                <div class="room-card__details">
+                                    <p class="room-card__hover-desc">Spacious and warmly appointed, this room offers interconnected sleeping areas and generous living space perfect for families exploring the mountains together.</p>
+                                    <a href="rooms.html#family-room" class="btn btn--primary room-card__view-btn">Book Now</a>
+                                </div>
+                            </div>
+                            <div class="room-card__content">
+                                <div class="room-card__info room-card__info--visible">
+                                    <div class="room-card__info-item">
+                                        <i data-lucide="scan" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">45m²</span>
+                                    </div>
+                                    <div class="room-card__info-item">
+                                        <i data-lucide="user" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">4 Adults</span>
+                                    </div>
+                                    <div class="room-card__info-item room-card__info-item--price">
+                                        <i data-lucide="tag" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">$185/night</span>
+                                    </div>
+                                </div>
+                                <h3 class="room-card__title">Family Room</h3>
+                            </div>
+                        </article>
+
+                        <!-- Junior Suite -->
+                        <article class="room-card">
+                            <div class="room-card__image" style="background-image: url('assets/images/deluxsuite.png');">
+                                <div class="room-card__details">
+                                    <p class="room-card__hover-desc">Wake up to sweeping coastal panoramas in this elegantly furnished room, where every detail is designed to complement the breathtaking sea views beyond your window.</p>
+                                    <a href="rooms.html#deluxe-sea-view" class="btn btn--primary room-card__view-btn">Book Now</a>
+                                </div>
+                            </div>
+                            <div class="room-card__content">
+                                <div class="room-card__info room-card__info--visible">
+                                    <div class="room-card__info-item">
+                                        <i data-lucide="scan" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">40m²</span>
+                                    </div>
+                                    <div class="room-card__info-item">
+                                        <i data-lucide="user" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">2 Adults</span>
+                                    </div>
+                                    <div class="room-card__info-item room-card__info-item--price">
+                                        <i data-lucide="tag" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">$195/night</span>
+                                    </div>
+                                </div>
+                                <h3 class="room-card__title">Deluxe Room - Sea View</h3>
+                            </div>
+                        </article>
+
+                        <!-- Executive Suite -->
+                        <article class="room-card">
+                            <div class="room-card__image" style="background-image: url('assets/images/execsuite.png');">
+                                <div class="room-card__details">
+                                    <p class="room-card__hover-desc">Our finest accommodation featuring a grand living room, private balcony, and luxurious appointments — a distinguished retreat for the most discerning guests.</p>
+                                    <a href="rooms.html#executive-suite" class="btn btn--primary room-card__view-btn">Book Now</a>
+                                </div>
+                            </div>
+                            <div class="room-card__content">
+                                <div class="room-card__info room-card__info--visible">
+                                    <div class="room-card__info-item">
+                                        <i data-lucide="scan" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">75m²</span>
+                                    </div>
+                                    <div class="room-card__info-item">
+                                        <i data-lucide="user" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">4 Adults</span>
+                                    </div>
+                                    <div class="room-card__info-item room-card__info-item--price">
+                                        <i data-lucide="tag" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">$325/night</span>
+                                    </div>
+                                </div>
+                                <h3 class="room-card__title">Executive Suite</h3>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Row 3: 2 Horizontal Cards -->
+                    <div class="rooms-available__row rooms-available__row--horizontal">
+                        <!-- Deluxe Sea View -->
+                        <article class="room-card room-card--horizontal">
+                            <div class="room-card__image" style="background-image: url('assets/images/juniorsuite.jpeg');">
+                                <div class="room-card__details">
+                                    <p class="room-card__hover-desc">An elevated experience with a separate seating area, premium furnishings, and panoramic views that bring the beauty of Bzommar right to your room.</p>
+                                    <a href="rooms.html#junior-suite" class="btn btn--primary room-card__view-btn">Book Now</a>
+                                </div>
+                            </div>
+                            <div class="room-card__content">
+                                <div class="room-card__info room-card__info--visible">
+                                    <div class="room-card__info-item">
+                                        <i data-lucide="scan" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">55m²</span>
+                                    </div>
+                                    <div class="room-card__info-item">
+                                        <i data-lucide="user" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">3 Adults</span>
+                                    </div>
+                                    <div class="room-card__info-item room-card__info-item--price">
+                                        <i data-lucide="tag" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">$245/night</span>
+                                    </div>
+                                </div>
+                                <h3 class="room-card__title">Junior Suite</h3>
+                            </div>
+                        </article>
+
+                        <!-- Standard Mountain View -->
+                        <article class="room-card room-card--horizontal">
+                            <div class="room-card__image" style="background-image: url('assets/images/standardroom.jpg');">
+                                <div class="room-card__details">
+                                    <p class="room-card__hover-desc">A serene sanctuary overlooking Bzommar's lush peaks, offering a peaceful atmosphere with modern comforts and the calming presence of nature at every turn.</p>
+                                    <a href="rooms.html#standard-mountain-view" class="btn btn--primary room-card__view-btn">Book Now</a>
+                                </div>
+                            </div>
+                            <div class="room-card__content">
+                                <div class="room-card__info room-card__info--visible">
+                                    <div class="room-card__info-item">
+                                        <i data-lucide="scan" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">35m²</span>
+                                    </div>
+                                    <div class="room-card__info-item">
+                                        <i data-lucide="user" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">2 Adults</span>
+                                    </div>
+                                    <div class="room-card__info-item room-card__info-item--price">
+                                        <i data-lucide="tag" class="room-card__info-icon"></i>
+                                        <span class="room-card__info-value">$155/night</span>
+                                    </div>
+                                </div>
+                                <h3 class="room-card__title">Standard Room - Mountain View</h3>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="rooms-available__mobile-carousel">
+                    <div class="rooms-available__mobile-body">
+                        <div class="rooms-mobile__viewport">
+                            <div class="rooms-mobile__track"></div>
+                        </div>
+                    </div>
+                    <div class="rooms-mobile__pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wedding Venue Section -->
+        <section class="wedding-venue">
+            <div class="wedding-venue__sticky">
+                <div class="wedding-venue__image-wrap">
+                    <div class="wedding-venue__image" style="background-image: url('assets/images/weddingvenue1.webp');"></div>
+                    <div class="wedding-venue__overlay"></div>
+                </div>
+                <div class="wedding-venue__content">
+                    <div class="wedding-venue__header">
+                        <span class="wedding-venue__eyebrow">Celebrate With Us</span>
+                        <h2 class="wedding-venue__title">Your Dream Wedding<br>Awaits</h2>
+                        <p class="wedding-venue__subtitle">An enchanting mountain backdrop, impeccable service, and every detail crafted to make your special day truly unforgettable.</p>
+                    </div>
+                    <div class="wedding-venue__cards">
+                        <div class="wedding-venue__card" data-card="0">
+                            <h3 class="wedding-venue__card-title">Breathtaking Setting</h3>
+                            <p class="wedding-venue__card-desc">Exchange vows surrounded by sweeping mountain panoramas and lush gardens, with golden hour light that photographers dream of.</p>
+                        </div>
+                        <div class="wedding-venue__card" data-card="1">
+                            <h3 class="wedding-venue__card-title">Elegant Ballroom</h3>
+                            <p class="wedding-venue__card-desc">Our grand ballroom accommodates up to 300 guests with soaring ceilings, crystal chandeliers, and refined décor tailored to your vision.</p>
+                        </div>
+                        <div class="wedding-venue__card" data-card="2">
+                            <h3 class="wedding-venue__card-title">Bespoke Catering</h3>
+                            <p class="wedding-venue__card-desc">From intimate dinners to lavish receptions, our culinary team crafts menus that blend Lebanese tradition with contemporary flair.</p>
+                        </div>
+                        <div class="wedding-venue__card" data-card="3">
+                            <h3 class="wedding-venue__card-title">Dedicated Planning</h3>
+                            <p class="wedding-venue__card-desc">Our experienced coordinators handle every detail, from florals to music and lighting, so you can focus on celebrating your love story.</p>
+                        </div>
+                    </div>
+                    <div class="wedding-venue__cta">
+                        <span class="star-border">
+                            <span class="star-border__glow-bottom"></span>
+                            <span class="star-border__glow-top"></span>
+                            <a href="wedding-packages.html" class="btn btn--outline wedding-venue__btn" data-smooth-page-target="#wedding-venues-counter">Book Venue</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section class="events-showcase">
+            <div class="container">
+                <div class="events-showcase__grid">
+                    <article class="events-showcase__card">
+                        <div class="events-showcase__card-image" style="background-image: url('assets/images/bzommarservices/conferencehall.jpg');"></div>
+                        <div class="events-showcase__card-overlay"></div>
+                        <div class="events-showcase__card-content">
+                            <span class="events-showcase__card-eyebrow">Corporate</span>
+                            <h3 class="events-showcase__card-title">Conferences & Meetings</h3>
+                            <p class="events-showcase__card-desc">Professional venues with full AV support and catering services.</p>
+                            <a href="event-packages.html#corporate" class="events-showcase__card-link">
+                                <span class="events-showcase__card-link-text">LEARN MORE</span>
+                                <svg class="events-showcase__card-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="7 17 17 7"></polyline>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="events-showcase__card">
+                        <div class="events-showcase__card-image" style="background-image: url('assets/images/birthdays.jpeg');"></div>
+                        <div class="events-showcase__card-overlay"></div>
+                        <div class="events-showcase__card-content">
+                            <span class="events-showcase__card-eyebrow">Celebrations</span>
+                            <h3 class="events-showcase__card-title">Birthdays & Galas</h3>
+                            <p class="events-showcase__card-desc">Elegant spaces for milestone celebrations and private parties.</p>
+                            <a href="event-packages.html#birthdays-galas" class="events-showcase__card-link">
+                                <span class="events-showcase__card-link-text">LEARN MORE</span>
+                                <svg class="events-showcase__card-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="7 17 17 7"></polyline>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="events-showcase__card">
+                        <div class="events-showcase__card-image" style="background-image: url('assets/images/gardens.png');"></div>
+                        <div class="events-showcase__card-overlay"></div>
+                        <div class="events-showcase__card-content">
+                            <span class="events-showcase__card-eyebrow">Escape</span>
+                            <h3 class="events-showcase__card-title">Wellness Retreats</h3>
+                            <p class="events-showcase__card-desc">Elevate your healing journey in our dedicated space.</p>
+                            <a href="event-packages.html#wellness-retreats" class="events-showcase__card-link">
+                                <span class="events-showcase__card-link-text">LEARN MORE</span>
+                                <svg class="events-showcase__card-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="7 17 17 7"></polyline>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="events-showcase__card">
+                        <div class="events-showcase__card-image" style="background-image: url('assets/images/culinary.png');"></div>
+                        <div class="events-showcase__card-overlay"></div>
+                        <div class="events-showcase__card-content">
+                            <span class="events-showcase__card-eyebrow">Dining</span>
+                            <h3 class="events-showcase__card-title">Culinary Experience</h3>
+                            <p class="events-showcase__card-desc">Exquisite luxury dining in an intimate mountain setting.</p>
+                            <a href="tilalbzommar.html" class="events-showcase__card-link">
+                                <span class="events-showcase__card-link-text">LEARN MORE</span>
+                                <svg class="events-showcase__card-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="7 17 17 7"></polyline>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="events-showcase__card">
+                        <div class="events-showcase__card-image" style="background-image: url('assets/images/bzommarservices/liveperformance.png');"></div>
+                        <div class="events-showcase__card-overlay"></div>
+                        <div class="events-showcase__card-content">
+                            <span class="events-showcase__card-eyebrow">Events</span>
+                            <h3 class="events-showcase__card-title">Live Performance</h3>
+                            <p class="events-showcase__card-desc">Your stage for unforgettable nights of live music.</p>
+                            <a href="event-packages.html#live-performance" class="events-showcase__card-link">
+                                <span class="events-showcase__card-link-text">LEARN MORE</span>
+                                <svg class="events-showcase__card-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="7 17 17 7"></polyline>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="events-showcase__mobile-carousel">
+                    <div class="events-showcase__mobile-header">
+                        <span class="events-showcase__mobile-eyebrow">Packages</span>
+                        <h2 class="events-showcase__mobile-title">Thoughtfully Curated<br>For Every Occasion</h2>
+                        <p class="events-showcase__mobile-subtitle">From elegant celebrations to restorative escapes, discover experiences designed to make every gathering memorable.</p>
+                    </div>
+                    <div class="events-showcase__mobile-viewport">
+                        <div class="events-showcase__mobile-track"></div>
+                    </div>
+                    <div class="events-showcase__pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Services Carousel Section -->
+        <section class="services-carousel">
+            <div class="services-carousel__container">
+                <!-- ── Services Split Layout (desktop) ── -->
+                <div class="services-sv">
+                    <div class="services-sv__left">
+                        <span class="services-sv__label">Experiences</span>
+                        <div class="services-sv__meta">
+                            <span class="services-sv__cur">01</span>
+                            <span class="services-sv__sep"> / </span>
+                            <span class="services-sv__tot">09</span>
+                        </div>
+                        <span class="services-sv__eyebrow"></span>
+                        <h2 class="services-sv__title"></h2>
+                        <p class="services-sv__desc"></p>
+                        <a href="tilalbzommar.html" class="services-sv__cta" aria-label="Explore this service">
+                            <span class="services-sv__cta-text">EXPLORE SERVICE</span>
+                            <svg class="services-sv__cta-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="7 17 17 7"></polyline>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </a>
+                        <div class="services-sv__nav">
+                            <button class="services-sv__btn services-sv__btn--prev" aria-label="Previous service">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                            </button>
+                            <button class="services-sv__btn services-sv__btn--next" aria-label="Next service">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"></polyline></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="services-sv__right">
+                        <div class="services-sv__track"></div>
+                    </div>
+                </div>
+
+                <!-- Data source for desktop + mobile JS (hidden from view) -->
+                <div class="services-carousel__body" aria-hidden="true" style="display:none">
+                    <div class="services-carousel__viewport">
+                        <div class="services-carousel__track">
+
+                        <article class="service-card" data-service="tilal" data-link="tilalbzommar.html">
+                            <div class="service-card__image" style="background-image: url('assets/images/tilalbzommarservice.jpg');">
+                                <div class="service-card__image-placeholder">Tilal Bzommar</div>
+                            </div>
+                            <div class="service-card__overlay"></div>
+                            <div class="service-card__content">
+                                <span class="service-card__subtitle">Restaurant</span>
+                                <h3 class="service-card__title">Tilal Bzommar</h3>
+                                <p class="service-card__description">Refined dining with sweeping mountain views and warm, attentive hospitality. Every dish is crafted from seasonal ingredients, paired with an expertly curated wine selection.</p>
+                            </div>
+                        </article>
+
+                        <article class="service-card" data-service="piano-bar" data-link="pianobar.html">
+                            <div class="service-card__image" style="background-image: url('assets/images/bzommarservices/pianobar.jpg');">
+                                <div class="service-card__image-placeholder">Piano Bar</div>
+                            </div>
+                            <div class="service-card__overlay"></div>
+                            <div class="service-card__content">
+                                <span class="service-card__subtitle">Bar &amp; Lounge</span>
+                                <h3 class="service-card__title">Piano Bar</h3>
+                                <p class="service-card__description">An intimate setting for signature cocktails and live piano melodies drifting through the evening air. Sink into plush seating and let the night unfold at its own graceful pace.</p>
+                            </div>
+                        </article>
+
+                        <article class="service-card" data-service="pool" data-link="pool.html">
+                            <div class="service-card__image" style="background-image: url('assets/images/bzommarservices/pool.jpg');">
+                                <div class="service-card__image-placeholder">Pool</div>
+                            </div>
+                            <div class="service-card__overlay"></div>
+                            <div class="service-card__content">
+                                <span class="service-card__subtitle">Leisure &amp; Relaxation</span>
+                                <h3 class="service-card__title">Pool</h3>
+                                <p class="service-card__description">A serene escape designed for comfort, sun, and quiet moments away from the world. Lounge poolside with panoramic views of the Lebanese mountain landscape surrounding you.</p>
+                            </div>
+                        </article>
+
+                        <article class="service-card" data-service="garden">
+                            <div class="service-card__image" style="background-image: url('assets/images/gardenservices.png');">
+                                <div class="service-card__image-placeholder">Garden</div>
+                            </div>
+                            <div class="service-card__overlay"></div>
+                            <div class="service-card__content">
+                                <span class="service-card__subtitle">Outdoor Retreat</span>
+                                <h3 class="service-card__title">Garden</h3>
+                                <p class="service-card__description">Elegant open-air surroundings framed by lush greenery and the cool mountain breeze. A peaceful retreat perfect for quiet reflection or intimate outdoor gatherings.</p>
+                            </div>
+                        </article>
+
+                        <article class="service-card" data-service="wedding">
+                            <div class="service-card__image" style="background-image: url('assets/images/bzommarservices/weddingvenue.jpeg');">
+                                <div class="service-card__image-placeholder">Wedding Venue</div>
+                            </div>
+                            <div class="service-card__overlay"></div>
+                            <div class="service-card__content">
+                                <span class="service-card__subtitle">Celebrations &amp; Events</span>
+                                <h3 class="service-card__title">Wedding Venue</h3>
+                                <p class="service-card__description">A timeless setting where every detail is arranged to make your celebration unforgettable. From grand receptions to intimate ceremonies, we bring your vision to life with grace.</p>
+                            </div>
+                        </article>
+
+                        <article class="service-card" data-service="conference">
+                            <div class="service-card__image" style="background-image: url('assets/images/bzommarservices/conferencehall.jpg');">
+                                <div class="service-card__image-placeholder">Conference Hall</div>
+                            </div>
+                            <div class="service-card__overlay"></div>
+                            <div class="service-card__content">
+                                <span class="service-card__subtitle">Meetings &amp; Business</span>
+                                <h3 class="service-card__title">Conference Hall</h3>
+                                <p class="service-card__description">A professional venue fully equipped for conferences, executive meetings, and formal gatherings. State-of-the-art AV facilities and attentive service ensure every session runs seamlessly.</p>
+                            </div>
+                        </article>
+
+                        <article class="service-card" data-service="terrace">
+                            <div class="service-card__image" style="background-image: url('assets/images/bzommarservices/terrace.jpg');">
+                                <div class="service-card__image-placeholder">Terrace</div>
+                            </div>
+                            <div class="service-card__overlay"></div>
+                            <div class="service-card__content">
+                                <span class="service-card__subtitle">Views &amp; Gatherings</span>
+                                <h3 class="service-card__title">Terrace</h3>
+                                <p class="service-card__description">An elevated open-air space that commands breathtaking views across the valley and mountain peaks. Ideal for sunset aperitivos, private events, or simply unwinding above it all.</p>
+                            </div>
+                        </article>
+
+                        <article class="service-card" data-service="gym">
+                            <div class="service-card__image" style="background-image: url('assets/images/gymservice.webp');">
+                                <div class="service-card__image-placeholder">Gym</div>
+                            </div>
+                            <div class="service-card__overlay"></div>
+                            <div class="service-card__content">
+                                <span class="service-card__subtitle">Wellness &amp; Fitness</span>
+                                <h3 class="service-card__title">Gym</h3>
+                                <p class="service-card__description">A fully equipped fitness space designed to keep your routine uninterrupted during your stay. Modern equipment and natural light create an energising environment for every workout.</p>
+                            </div>
+                        </article>
+
+                        <article class="service-card" data-service="games">
+                            <div class="service-card__image" style="background-image: url('assets/images/bzommarservices/gaminglounge.jpg');">
+                                <div class="service-card__image-placeholder">Games Lounge</div>
+                            </div>
+                            <div class="service-card__overlay"></div>
+                            <div class="service-card__content">
+                                <span class="service-card__subtitle">Entertainment Lounge</span>
+                                <h3 class="service-card__title">Games Lounge</h3>
+                                <p class="service-card__description">A relaxed social space featuring billiards, foosball, and a laid-back atmosphere for unwinding. The perfect spot to gather with friends and let the evening take a lighter turn.</p>
+                            </div>
+                        </article>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services-carousel__mobile-carousel">
+                    <div class="services-carousel__mobile-header">
+                        <span class="services-carousel__mobile-eyebrow">Experiences</span>
+                        <h2 class="services-carousel__mobile-title">Moments Made<br>To Be Remembered</h2>
+                        <p class="services-carousel__mobile-subtitle">Discover thoughtful spaces and memorable experiences designed to make every moment of your stay feel special.</p>
+                    </div>
+                    <div class="services-carousel__mobile-viewport">
+                        <div class="services-carousel__mobile-track"></div>
+                    </div>
+                    <div class="services-carousel__mobile-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="reviews" aria-label="Guest reviews">
+            <div class="reviews__header">
+                <span class="reviews__eyebrow">Testimonials</span>
+                <h2 class="reviews__title">What Our Guests Say</h2>
+                <p class="reviews__description">Real stories from visitors who have experienced the warmth and elegance of Bzommar Palace Hotel.</p>
+            </div>
+            <div class="reviews__container">
+                <div class="reviews__summary">
+                    <span class="reviews__score">4.2</span>
+                    <div class="reviews__stars" aria-label="4.2 out of 5 stars">
+                        <svg viewBox="0 0 20 20" class="reviews__star is-full"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                        <svg viewBox="0 0 20 20" class="reviews__star is-full"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                        <svg viewBox="0 0 20 20" class="reviews__star is-full"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                        <svg viewBox="0 0 20 20" class="reviews__star is-full"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                        <svg viewBox="0 0 20 20" class="reviews__star is-partial"><defs><linearGradient id="star-partial"><stop offset="20%" stop-color="var(--color-accent)"/><stop offset="20%" stop-color="rgba(255,255,255,0.15)"/></linearGradient></defs><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z" fill="url(#star-partial)"/></svg>
+                    </div>
+                    <span class="reviews__count">(200+ reviews)</span>
+                </div>
+                <div class="reviews__carousel">
+                    <div class="reviews__viewport">
+                        <div class="reviews__track">
+                            <div class="reviews__slide">
+                                <div class="reviews__review-stars">
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                </div>
+                                <p class="reviews__text">"The views from our room were absolutely breathtaking. The staff was incredibly welcoming and went above and beyond to make our stay special. We'll definitely be coming back."</p>
+                                <span class="reviews__name">Maria K.</span>
+                            </div>
+                            <div class="reviews__slide">
+                                <div class="reviews__review-stars">
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                </div>
+                                <p class="reviews__text">"A hidden gem in the mountains. The restaurant was outstanding and the garden area was perfect for a quiet morning coffee. Highly recommend for couples."</p>
+                                <span class="reviews__name">James T.</span>
+                            </div>
+                            <div class="reviews__slide">
+                                <div class="reviews__review-stars">
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20" class="reviews__star-empty"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                </div>
+                                <p class="reviews__text">"We hosted our wedding here and it was beyond our expectations. The venue, the food, the service, everything was flawless. Our guests are still talking about it."</p>
+                                <span class="reviews__name">Lena & Marc A.</span>
+                            </div>
+                            <div class="reviews__slide">
+                                <div class="reviews__review-stars">
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                </div>
+                                <p class="reviews__text">"Perfect getaway. The rooms are spacious and beautifully decorated. The piano bar in the evening was a wonderful touch. Can't wait to return."</p>
+                                <span class="reviews__name">Sophie R.</span>
+                            </div>
+                            <div class="reviews__slide">
+                                <div class="reviews__review-stars">
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20" class="reviews__star-empty"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                </div>
+                                <p class="reviews__text">"Great location for a conference. The meeting rooms were well equipped and the team handled all our needs professionally. The terrace views were a bonus."</p>
+                                <span class="reviews__name">David H.</span>
+                            </div>
+                            <div class="reviews__slide">
+                                <div class="reviews__review-stars">
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                </div>
+                                <p class="reviews__text">"An unforgettable family holiday. The kids loved the pool and games lounge, while we enjoyed the peaceful surroundings. A place that has something for everyone."</p>
+                                <span class="reviews__name">Nadia B.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews__dots"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="main-tail">
+    <!-- Pre-Footer Banner -->
+    <section class="prefooter-banner" aria-label="About the hotel">
+        <div class="prefooter-banner__content">
+            <span class="prefooter-banner__eyebrow">A Distinctive Mountain Retreat</span>
+            <h2 class="prefooter-banner__title">Where Mountain Elegance<br>Meets Timeless Comfort</h2>
+            <p class="prefooter-banner__text">
+                Whether you seek adventure or relaxation, we 
+                focus on every detail to ensure your mountain stay is truly special.
+            </p>
+            <span class="star-border">
+                <a href="about.html" class="btn prefooter-banner__btn">Learn About Us</a>
+            </span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-newsletter">
+                <div class="footer-newsletter__inner">
+                    <div class="footer-newsletter__content">
+                        <h3 class="footer-newsletter__heading">Sign up for our Newsletter</h3>
+                        <p class="footer-newsletter__text">Sign up to be the first to receive special news and event updates from us.</p>
+                    </div>
+                    <form class="footer-newsletter__form" action="#" method="post">
+                        <div class="footer-newsletter__input-row">
+                            <input type="email" class="footer-newsletter__input" placeholder="Your Email Address" required>
+                            <button type="submit" class="footer-newsletter__btn" aria-label="Subscribe">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </button>
+                        </div>
+                        <label class="footer-newsletter__checkbox">
+                            <input type="checkbox" required>
+                            <span>I agree to the <a href="privacy-policy.html" class="footer-newsletter__link">Privacy Policy</a></span>
+                        </label>
+                    </form>
+                </div>
+            </div>
+
+            <div class="site-footer__grid">
+                <div class="site-footer__col site-footer__col--brand">
+                    <h3 class="site-footer__logo">Bzommar</h3>
+                    <span class="site-footer__tagline">Palace Hotel</span>
+                    <p class="site-footer__brand-text">
+                        Set against the breathtaking backdrop of Bzommar's peaks, our hotel 
+                        combines thoughtful design with warm hospitality.
+                    </p>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Quick Links</h4>
+                    <ul class="site-footer__list">
+                        <li><a href="rooms.html" class="site-footer__link">Rooms</a></li>
+                        <li><a href="events.html" class="site-footer__link">Events</a></li>
+                        <li><a href="about.html" class="site-footer__link">About</a></li>
+                        <li><a href="contact.html" class="site-footer__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Experiences</h4>
+                    <ul class="site-footer__list">
+                        <li><a href="tilalbzommar.html" class="site-footer__link">Tilal Bzommar</a></li>
+                        <li><a href="pianobar.html" class="site-footer__link">Piano Bar</a></li>
+                        <li><a href="pool.html" class="site-footer__link">Pool &amp; Terrace</a></li>
+                        <li><a href="#" class="site-footer__link">Wedding Venue</a></li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__col">
+                    <h4 class="site-footer__heading">Contact</h4>
+                    <address class="site-footer__address">
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="map-pin" class="site-footer__icon"></i>
+                            <a href="https://maps.app.goo.gl/69iL68mLTKK5ZNaXA" target="_blank" rel="noopener noreferrer" class="site-footer__link">Bzommar, Lebanon</a>
+                        </p>
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="phone" class="site-footer__icon"></i>
+                            <a href="tel:+96112345678" class="site-footer__link">+961 1 234 5678</a>
+                        </p>
+                        <p class="site-footer__contact-item">
+                            <i data-lucide="mail" class="site-footer__icon"></i>
+                            <a href="mailto:info@bzommar.com" class="site-footer__link">info@bzommar.com</a>
+                        </p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="site-footer__bottom">
+                <p>&copy; 2026 Bzommar Palace Hotel. All rights reserved.</p>
+                <a href="privacy-policy.html" class="site-footer__bottom-link">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
